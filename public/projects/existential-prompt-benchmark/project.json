@@ -1,0 +1,125 @@
+{
+  "id": "existential-prompt-benchmark",
+  "identity": {
+    "name": "Existential Prompt Benchmark",
+    "subtitle": {
+      "pt": "Prompts, robustez e regras de negócio em LLMs",
+      "en": "Prompts, robustness and business rules in LLMs"
+    },
+    "status": {
+      "pt": "estudo publicado",
+      "en": "published study"
+    }
+  },
+  "visual": {
+    "background": "#12161b",
+    "foreground": "#e7eced",
+    "accent": "#c4afe4",
+    "font": "system-ui, sans-serif",
+    "atmosphere": "grid",
+    "vignette": false,
+    "overlay": 0.3,
+    "backgroundOpacity": 0.75,
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "tone": "neutral"
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 300
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "Existential Prompt Benchmark",
+      "eyebrow": {
+        "pt": "estudo publicado",
+        "en": "published study"
+      },
+      "description": {
+        "pt": "Prompts, robustez e regras de negócio em LLMs",
+        "en": "Prompts, robustness and business rules in LLMs"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre o projeto",
+        "en": "About the project"
+      },
+      "body": {
+        "pt": "Pesquisa experimental que compara estilos de prompting em modelos de linguagem. O estudo combina cenários comerciais e adversariais para investigar comportamento, persuasão, robustez, violações de regras de negócio e alucinações. Os resultados discutem vantagens e limites de cada estratégia.",
+        "en": "An experimental study comparing prompting styles in language models. It combines commercial and adversarial scenarios to investigate behavior, persuasion, robustness, business-rule violations and hallucinations. The results discuss the strengths and limitations of each strategy."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Tecnologias",
+        "en": "Technologies"
+      },
+      "body": {
+        "pt": "Python · LLMs · benchmarking · engenharia de prompts · avaliação adversarial",
+        "en": "Python · LLMs · benchmarking · prompt engineering · adversarial evaluation"
+      }
+    },
+    {
+      "type": "stats",
+      "title": {
+        "pt": "Desenho do estudo",
+        "en": "Study design"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Modelos",
+            "en": "Models"
+          },
+          "value": "4",
+          "note": {
+            "pt": "Modelos avaliados no estudo.",
+            "en": "Models evaluated in the study."
+          }
+        },
+        {
+          "label": {
+            "pt": "Estilos de prompt",
+            "en": "Prompt styles"
+          },
+          "value": "3",
+          "note": {
+            "pt": "Comparação de estratégias de prompting.",
+            "en": "Comparison of prompting strategies."
+          }
+        },
+        {
+          "label": {
+            "pt": "Conversas simuladas",
+            "en": "Simulated conversations"
+          },
+          "value": "240",
+          "note": {
+            "pt": "Cenários comerciais e adversariais do protocolo.",
+            "en": "Commercial and adversarial scenarios in the protocol."
+          }
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Código e documentação",
+        "en": "Code and documentation"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Repositório público",
+            "en": "Public repository"
+          },
+          "href": "https://github.com/SamuelMatos78/existential-prompt-benchmark"
+        }
+      ]
+    }
+  ]
+}

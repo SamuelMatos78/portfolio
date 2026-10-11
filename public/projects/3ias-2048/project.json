@@ -1,0 +1,114 @@
+{
+  "id": "3ias-2048",
+  "identity": {
+    "name": "3IAsParaVencer2048",
+    "subtitle": {
+      "pt": "Três agentes, um tabuleiro de 2048",
+      "en": "Three agents, one 2048 board"
+    },
+    "status": {
+      "pt": "projeto educacional",
+      "en": "educational project"
+    }
+  },
+  "visual": {
+    "background": "#080e13",
+    "foreground": "#e7f1f5",
+    "accent": "#b9caed",
+    "font": "ui-monospace, Consolas, monospace",
+    "atmosphere": "scanlines",
+    "vignette": true,
+    "overlay": 0.3,
+    "backgroundOpacity": 0.75,
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "tone": "intimidating"
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 300
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "3IAsParaVencer2048",
+      "eyebrow": {
+        "pt": "projeto educacional",
+        "en": "educational project"
+      },
+      "description": {
+        "pt": "Três agentes, um tabuleiro de 2048",
+        "en": "Three agents, one 2048 board"
+      }
+    },
+    {
+      "type": "stats",
+      "title": {
+        "pt": "Resultados no 2048",
+        "en": "2048 results"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Taxa de vitória para atingir a peça 2048",
+            "en": "Win rate for reaching the 2048 tile"
+          },
+          "value": "100%",
+          "note": {
+            "pt": "As IAs atingiram a peça 2048 em todas as tentativas realizadas. Resultado informado pelo autor.",
+            "en": "The AI agents reached the 2048 tile in every attempt performed. Result reported by the author."
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre o projeto",
+        "en": "About the project"
+      },
+      "body": {
+        "pt": "Desenvolvimento e comparação de três agentes para jogar 2048: Monte Carlo, Circular Brain e MacroIA. O projeto explora modelagem de estados, aleatoriedade, avaliação de movimentos e heurísticas especializadas, sem depender de modelos de linguagem.",
+        "en": "Development and comparison of three agents for playing 2048: Monte Carlo, Circular Brain and MacroIA. The project explores state modeling, randomness, move evaluation and specialized heuristics without relying on language models."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Tecnologias",
+        "en": "Technologies"
+      },
+      "body": {
+        "pt": "C · algoritmos · inteligência artificial · heurísticas",
+        "en": "C · algorithms · artificial intelligence · heuristics"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Os três agentes",
+        "en": "The three agents"
+      },
+      "body": {
+        "pt": "Monte Carlo avalia movimentos por simulações. Circular Brain prioriza espaço livre no tabuleiro. MacroIA combina características das duas abordagens. O repositório apresenta o código e explica a seleção dos agentes.",
+        "en": "Monte Carlo evaluates moves through simulations. Circular Brain prioritizes free space on the board. MacroIA combines features of the two approaches. The repository provides the code and explains agent selection."
+      }
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Código e documentação",
+        "en": "Code and documentation"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Repositório público",
+            "en": "Public repository"
+          },
+          "href": "https://github.com/SamuelMatos78/3IAsParaVencer2048"
+        }
+      ]
+    }
+  ]
+}

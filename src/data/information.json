@@ -1,0 +1,180 @@
+{
+  "titles": [
+    {
+      "type": "text",
+      "title": {
+        "pt": "Google for Startups Accelerator · Brazil 2026",
+        "en": "Google for Startups Accelerator · Brazil 2026"
+      },
+      "body": {
+        "pt": "Integrei a equipe da Quero Meus Direitos, startup selecionada para a turma de 2026 do Google for Startups Accelerator: Brazil. A experiência se conecta ao meu trabalho com tecnologia, inteligência artificial e automação.",
+        "en": "I was part of the Quero Meus Direitos team, a startup selected for the 2026 Google for Startups Accelerator: Brazil cohort. This experience connects to my work with technology, artificial intelligence and automation."
+      }
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Referências",
+        "en": "References"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Programa e turma oficial",
+            "en": "Official program and cohort"
+          },
+          "href": "https://startup.google.com.br/programs/accelerator/brazil/"
+        },
+        {
+          "label": {
+            "pt": "Publicação da Quero Meus Direitos",
+            "en": "Quero Meus Direitos announcement"
+          },
+          "href": "https://pt.linkedin.com/posts/quero-meus-direitos_googleforstartups-legaltech-ia-activity-7458550345783271424-BiWY"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Fundação do Projeto Celesto",
+        "en": "Founding Projeto Celesto"
+      },
+      "body": {
+        "pt": "Sou fundador do Projeto Celesto, iniciado em março de 2025. A iniciativa explora automação e computação em atividades astronômicas e na busca por corpos celestes.",
+        "en": "I am the founder of Projeto Celesto, started in March 2025. The initiative explores automation and computing in astronomical activities and the search for celestial bodies."
+      }
+    }
+  ],
+  "contact": [
+    {
+      "type": "links",
+      "title": {
+        "pt": "Vamos conversar",
+        "en": "Let’s connect"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Meu LinkedIn",
+            "en": "My LinkedIn"
+          },
+          "href": "https://www.linkedin.com/in/samuel-oliveira-matos-a9b753237"
+        },
+        {
+          "label": {
+            "pt": "Meu GitHub",
+            "en": "My GitHub"
+          },
+          "href": "https://github.com/SamuelMatos78"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Ideias que me interessam",
+        "en": "Ideas that interest me"
+      },
+      "body": {
+        "pt": "Engenharia de software, automação, sistemas inteligentes, baixo nível, otimização e pesquisa aplicada. Os perfis acima são meus canais públicos para iniciar uma conversa.",
+        "en": "Software engineering, automation, intelligent systems, low-level programming, optimization and applied research. The profiles above are my public channels to start a conversation."
+      }
+    }
+  ],
+  "curriculum": [
+    {
+      "type": "text",
+      "title": {
+        "pt": "Formação",
+        "en": "Education"
+      },
+      "body": {
+        "pt": "Estudo Engenharia de Software na PUC Minas. Comecei em Engenharia da Computação e migrei para Engenharia de Software. O período acadêmico informado é 2022–2027.",
+        "en": "I study Software Engineering at PUC Minas. I started in Computer Engineering and later moved to Software Engineering. My stated academic period is 2022–2027."
+      }
+    },
+    {
+      "type": "stats",
+      "title": {
+        "pt": "Experiência profissional e iniciativas",
+        "en": "Professional experience and initiatives"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Quero Meus Direitos",
+            "en": "Quero Meus Direitos"
+          },
+          "value": {
+            "pt": "≈ 2 anos",
+            "en": "≈ 2 years"
+          },
+          "note": {
+            "pt": "Experiência em uma startup brasileira de tecnologia jurídica que aplica automação e inteligência artificial ao acesso a serviços e direitos.",
+            "en": "Experience at a Brazilian legal technology startup applying automation and AI to access to legal services and rights."
+          }
+        },
+        {
+          "label": {
+            "pt": "EMATER",
+            "en": "EMATER"
+          },
+          "value": {
+            "pt": "≈ 8 meses",
+            "en": "≈ 8 months"
+          },
+          "note": {
+            "pt": "Experiência profissional na EMATER.",
+            "en": "Professional experience at EMATER."
+          }
+        },
+        {
+          "label": {
+            "pt": "Projeto Celesto",
+            "en": "Projeto Celesto"
+          },
+          "value": "03/2025",
+          "note": {
+            "pt": "Fundador. Automação e computação aplicadas à busca por corpos celestes e a atividades astronômicas.",
+            "en": "Founder. Automation and computing applied to the search for celestial bodies and astronomical activities."
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Ferramentas e tecnologias",
+        "en": "Tools and technologies"
+      },
+      "body": {
+        "pt": "Linguagens: C, C++, Java, Python, C# e JavaScript.\nEngenharia: Spring Boot, Maven, React, Node.js, APIs REST, SQL e JSON.\nSistemas e ferramentas: Linux, Ubuntu, Docker, Git, GitHub, CMake, GCC e Clang.\nAutomação: testes automatizados, processamento de documentos, OCR, ferramentas CLI e automação de navegadores.",
+        "en": "Languages: C, C++, Java, Python, C# and JavaScript.\nEngineering: Spring Boot, Maven, React, Node.js, REST APIs, SQL and JSON.\nSystems and tools: Linux, Ubuntu, Docker, Git, GitHub, CMake, GCC and Clang.\nAutomation: automated testing, document processing, OCR, CLI tools and browser automation."
+      }
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Perfis e trabalhos públicos",
+        "en": "Profiles and public work"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Histórico profissional no LinkedIn",
+            "en": "Professional history on LinkedIn"
+          },
+          "href": "https://www.linkedin.com/in/samuel-oliveira-matos-a9b753237"
+        },
+        {
+          "label": {
+            "pt": "Catálogo de repositórios",
+            "en": "Repository catalog"
+          },
+          "href": "https://github.com/SamuelMatos78?tab=repositories"
+        }
+      ]
+    }
+  ]
+}

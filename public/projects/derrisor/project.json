@@ -1,0 +1,162 @@
+{
+  "id": "derrisor",
+  "identity": {
+    "name": "Derrisor",
+    "subtitle": {
+      "pt": "Agente autônomo de Balatro",
+      "en": "Autonomous Balatro Agent"
+    },
+    "status": {
+      "pt": "dormente",
+      "en": "dormant"
+    }
+  },
+  "visual": {
+    "background": "#080e13",
+    "backgroundImage": "assets/portrait.jpeg",
+    "foreground": "#e7f1f5",
+    "accent": "#a6d8e8",
+    "font": "ui-monospace, SFMono-Regular, Consolas, monospace",
+    "overlay": 0.32,
+    "vignette": true,
+    "atmosphere": "scanlines",
+    "tone": "intimidating",
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "backgroundOpacity": 0.75
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 360
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "DERRISOR",
+      "eyebrow": {
+        "pt": "CAMPEÃO COMPETITIVO / DORMENTE",
+        "en": "COMPETITIVE CHAMPION / DORMANT"
+      },
+      "description": {
+        "pt": "AGENTE AUTÔNOMO DE BALATRO",
+        "en": "AUTONOMOUS BALATRO AGENT"
+      },
+      "image": "assets/portrait.jpeg"
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre",
+        "en": "About"
+      },
+      "body": {
+        "pt": "Derrisor é um projeto de agente autônomo para Balatro. Investigo como um algoritmo especializado pode tomar decisões complexas a partir das informações disponíveis ao jogador, sem conhecimento privilegiado do futuro. O projeto combina modelagem de estados, cartas e modificadores com avaliação probabilística e heurísticas.",
+        "en": "Derrisor is an autonomous-agent project for Balatro. I investigate how a specialized algorithm can make complex decisions from information available to the player, without privileged knowledge of the future. It combines state, card and modifier modeling with probabilistic evaluation and heuristics."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Arquitetura",
+        "en": "Architecture"
+      },
+      "body": {
+        "pt": "O motor decisório é desenvolvido em C, com integração em Python. A arquitetura separa as decisões da interpretação do ambiente e investiga estratégias que reduzam a expansão temporal extensiva. H-Suppression fornece uma base experimental para essa investigação.",
+        "en": "The decision engine is developed in C with Python integration. The architecture separates decision making from environment interpretation and investigates strategies that reduce extensive temporal expansion. H-Suppression provides an experimental foundation for this investigation."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Evidências e escopo",
+        "en": "Evidence and scope"
+      },
+      "body": {
+        "pt": "Os resultados publicados em H-Suppression pertencem a cenários sintéticos e às implementações avaliadas naquele experimento. Eles não comprovam desempenho competitivo do Derrisor em partidas reais de Balatro. Campanhas, taxa de vitória e benchmarks específicos de Balatro permanecem pendentes.",
+        "en": "The results published in H-Suppression belong to synthetic scenarios and the implementations evaluated in that experiment. They do not establish competitive performance for Derrisor in real Balatro matches. Campaigns, win rates and Balatro-specific benchmarks remain pending."
+      }
+    },
+    {
+      "type": "stats",
+      "title": {
+        "pt": "Histórico competitivo / Benchmarks",
+        "en": "Combat Record / Benchmarks"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Campanhas",
+            "en": "Campaigns"
+          },
+          "value": "—",
+          "note": {
+            "pt": "EM PREPARAÇÃO · sem dados de campanhas",
+            "en": "PLACEHOLDER · no campaign data supplied"
+          }
+        },
+        {
+          "label": {
+            "pt": "Taxa de vitórias",
+            "en": "Win rate"
+          },
+          "value": "—",
+          "note": {
+            "pt": "EM PREPARAÇÃO · ainda não medido",
+            "en": "PLACEHOLDER · not measured"
+          }
+        },
+        {
+          "label": "Benchmarks",
+          "value": "—",
+          "note": {
+            "pt": "EM PREPARAÇÃO · resultados pendentes",
+            "en": "PLACEHOLDER · results pending"
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "title": {
+        "pt": "Identidade visual",
+        "en": "Visual identity"
+      },
+      "items": [
+        {
+          "image": "assets/portrait.jpeg",
+          "alt": {
+            "pt": "Carta de Joker fornecida como visual inicial de Derrisor",
+            "en": "Joker card supplied as the initial visual for Derrisor"
+          },
+          "caption": {
+            "pt": "Visual inicial fornecido com o portfólio.",
+            "en": "Initial visual supplied with the portfolio."
+          }
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Código e documentação",
+        "en": "Code and documentation"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Base experimental: H-Suppression",
+            "en": "Experimental foundation: H-Suppression"
+          },
+          "href": "https://github.com/SamuelMatos78/H-supression"
+        },
+        {
+          "label": {
+            "pt": "Relatório e motivação para Derrisor",
+            "en": "Report and motivation for Derrisor"
+          },
+          "href": "https://github.com/SamuelMatos78/H-supression/blob/main/RELATORIO.md"
+        }
+      ]
+    }
+  ]
+}

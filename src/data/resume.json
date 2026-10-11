@@ -1,0 +1,37 @@
+{
+  "eyebrow": {
+    "pt": "TRAJETÓRIA / ENGENHARIA / PESQUISA",
+    "en": "JOURNEY / ENGINEERING / RESEARCH"
+  },
+  "role": {
+    "pt": "Desenvolvedor · Engenharia de Software",
+    "en": "Developer · Software Engineering"
+  },
+  "statement": {
+    "pt": "Ideias investigadas. Sistemas construídos.",
+    "en": "Ideas investigated. Systems built."
+  },
+  "focus": [
+    "C / C++",
+    "Python",
+    "Java",
+    "React",
+    {
+      "pt": "IA",
+      "en": "AI"
+    }
+  ],
+  "contactCards": [
+    "linkedin",
+    "github"
+  ],
+  "selectedProjects": [
+    "h-suppression",
+    "pdfall",
+    "3ias-2048"
+  ],
+  "documents": {
+    "pt": "samuel-oliveira-matos-pt.pdf",
+    "en": "samuel-oliveira-matos-en.pdf"
+  }
+}

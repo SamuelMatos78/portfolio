@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "predev": "npm run resume:pdf",
+    "dev": "vite",
+    "build": "npm run resume:pdf && tsc -b && vite build",
+    "resume:pdf": "node scripts/generate-resume.mjs",
+    "lint": "oxlint",
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "content": "node scripts/content-helper.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "pdfkit": "^0.20.2",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}

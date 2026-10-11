@@ -1,0 +1,5 @@
+{
+  "intimidating": { "background": "#080e13", "foreground": "#e7f1f5", "accent": "#a6d8e8", "font": "ui-monospace, Consolas, monospace", "atmosphere": "scanlines", "vignette": true },
+  "neutral": { "background": "#12161b", "foreground": "#e7eced", "accent": "#b2c8d6", "font": "system-ui, sans-serif", "atmosphere": "grid", "vignette": false },
+  "humanitarian": { "background": "#f0eee2", "foreground": "#213b31", "accent": "#446649", "font": "system-ui, sans-serif", "atmosphere": "none", "vignette": false }
+}

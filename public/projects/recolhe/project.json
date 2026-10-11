@@ -1,0 +1,64 @@
+{
+  "id": "recolhe",
+  "identity": {
+    "name": "ReColhe",
+    "subtitle": {
+      "pt": "Projeto acadêmico com backend e colaboração em sprints",
+      "en": "Academic project with backend development and sprint collaboration"
+    },
+    "status": {
+      "pt": "projeto acadêmico",
+      "en": "academic project"
+    }
+  },
+  "visual": {
+    "background": "#f0eee2",
+    "foreground": "#213b31",
+    "accent": "#446649",
+    "font": "system-ui, sans-serif",
+    "overlay": 0.3,
+    "vignette": false,
+    "atmosphere": "none",
+    "tone": "humanitarian"
+  },
+  "entrance": {
+    "transition": "fade",
+    "durationMs": 280
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "ReColhe",
+      "eyebrow": {
+        "pt": "PROJETO ACADÊMICO / COLABORAÇÃO",
+        "en": "ACADEMIC PROJECT / COLLABORATION"
+      },
+      "description": {
+        "pt": "Projeto acadêmico com backend e colaboração em sprints",
+        "en": "Academic project with backend development and sprint collaboration"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre",
+        "en": "About"
+      },
+      "body": {
+        "pt": "Projeto acadêmico de desenvolvimento de software, com planejamento em sprints, histórias de usuário e divisão de responsabilidades entre integrantes.",
+        "en": "An academic software development project with sprint planning, user stories and responsibilities shared across team members."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Minha participação",
+        "en": "My contribution"
+      },
+      "body": {
+        "pt": "Sou o principal responsável pelo desenvolvimento backend. Outros integrantes também podem contribuir nessa camada.",
+        "en": "I am primarily responsible for backend development. Other team members may also contribute to this layer."
+      }
+    }
+  ]
+}

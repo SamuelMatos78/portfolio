@@ -1,0 +1,67 @@
+{
+  "id": "celesto",
+  "identity": {
+    "name": "Projeto Celesto",
+    "subtitle": {
+      "pt": "Automação e computação aplicadas à astronomia",
+      "en": "Automation and computing applied to astronomy"
+    },
+    "status": {
+      "pt": "iniciativa científica",
+      "en": "scientific initiative"
+    }
+  },
+  "visual": {
+    "background": "#12161b",
+    "foreground": "#e7eced",
+    "accent": "#c4afe4",
+    "font": "system-ui, sans-serif",
+    "atmosphere": "grid",
+    "vignette": false,
+    "overlay": 0.3,
+    "backgroundOpacity": 0.75,
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "tone": "neutral"
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 300
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "Projeto Celesto",
+      "eyebrow": {
+        "pt": "iniciativa científica",
+        "en": "scientific initiative"
+      },
+      "description": {
+        "pt": "Automação e computação aplicadas à astronomia",
+        "en": "Automation and computing applied to astronomy"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre o projeto",
+        "en": "About the project"
+      },
+      "body": {
+        "pt": "Sou fundador do Projeto Celesto, iniciado em março de 2025. A iniciativa explora automação e computação na busca por corpos celestes e em outras atividades astronômicas. A arquitetura detalhada e eventuais descobertas ainda não foram documentadas neste portfólio.",
+        "en": "I am the founder of Projeto Celesto, started in March 2025. The initiative explores automation and computing in the search for celestial bodies and other astronomical activities. Detailed architecture and any discoveries have not yet been documented in this portfolio."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Tecnologias",
+        "en": "Technologies"
+      },
+      "body": {
+        "pt": "Automação · computação · astronomia",
+        "en": "Automation · computing · astronomy"
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "portfolio",
+  "identity": {
+    "name": "Portfólio interativo",
+    "subtitle": {
+      "pt": "Um mundo navegável, configurado por dados",
+      "en": "A navigable world configured through data"
+    },
+    "status": {
+      "pt": "neste domínio",
+      "en": "within this domain"
+    }
+  },
+  "visual": {
+    "background": "#12161b",
+    "foreground": "#e7eced",
+    "accent": "#b7d1c9",
+    "font": "system-ui, sans-serif",
+    "atmosphere": "grid",
+    "vignette": false,
+    "overlay": 0.3,
+    "backgroundOpacity": 0.75,
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "tone": "neutral"
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 300
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "Portfólio interativo",
+      "eyebrow": {
+        "pt": "neste domínio",
+        "en": "within this domain"
+      },
+      "description": {
+        "pt": "Um mundo navegável, configurado por dados",
+        "en": "A navigable world configured through data"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre o projeto",
+        "en": "About the project"
+      },
+      "body": {
+        "pt": "Este portfólio combina navegação imersiva, terminal interativo, cenas de projetos e apresentações em português e inglês. Conteúdo JSON, presets visuais e componentes reutilizáveis permitem adicionar territórios sem criar uma página específica para cada projeto. O terminal e os botões compartilham o mesmo fluxo de comandos.",
+        "en": "This portfolio combines immersive navigation, an interactive terminal, project scenes and presentations in Portuguese and English. JSON content, visual presets and reusable components allow territories to be added without creating a separate page for each project. The terminal and buttons share the same command flow."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Tecnologias",
+        "en": "Technologies"
+      },
+      "body": {
+        "pt": "React · TypeScript · Vite · JSON · CSS",
+        "en": "React · TypeScript · Vite · JSON · CSS"
+      }
+    }
+  ]
+}

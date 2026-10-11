@@ -1,0 +1,165 @@
+{
+  "intro": {
+    "eyebrow": {
+      "pt": "VOCÊ CHEGOU AO DOMÍNIO DE SAMUEL",
+      "en": "YOU HAVE ARRIVED IN SAMUEL'S DOMAIN"
+    },
+    "title": {
+      "pt": "Você entrou no meu mundo.",
+      "en": "You've entered my world."
+    },
+    "role": {
+      "pt": "SAMUEL MATOS / ENGENHARIA DE SOFTWARE",
+      "en": "SAMUEL MATOS / SOFTWARE ENGINEERING"
+    },
+    "description": {
+      "pt": "Meus generais guardam o competitivo. Projetos ocupam seus territórios. Causas abrem espaço para as pessoas. Escolha uma região e descubra o que existe além da entrada.",
+      "en": "My generals guard the competitive. Projects occupy their territories. Causes make room for people. Choose a region and discover what lies beyond the entrance."
+    }
+  },
+  "navigation": [
+    {
+      "label": {
+        "pt": "Novidades",
+        "en": "Updates"
+      },
+      "command": "tp updates"
+    },
+    {
+      "label": {
+        "pt": "Projetos",
+        "en": "Projects"
+      },
+      "command": "tp projects"
+    },
+    {
+      "label": {
+        "pt": "Generais",
+        "en": "Generals"
+      },
+      "command": "tp champions"
+    },
+    {
+      "label": {
+        "pt": "Conquistas",
+        "en": "Titles"
+      },
+      "command": "tp titles"
+    },
+    {
+      "label": {
+        "pt": "Sobre mim",
+        "en": "About"
+      },
+      "command": "tp about"
+    },
+    {
+      "label": {
+        "pt": "Contato",
+        "en": "Contact"
+      },
+      "command": "tp contact"
+    },
+    {
+      "label": {
+        "pt": "Currículo",
+        "en": "Resume"
+      },
+      "command": "tp curriculum"
+    }
+  ],
+  "information": [
+    {
+      "id": "titles",
+      "title": {
+        "pt": "Conquistas",
+        "en": "Titles"
+      },
+      "description": {
+        "pt": "Conquistas e marcos da minha trajetória.",
+        "en": "Achievements and milestones in my journey."
+      }
+    },
+    {
+      "id": "about",
+      "title": {
+        "pt": "Sobre mim",
+        "en": "About"
+      },
+      "description": {
+        "pt": "Samuel Oliveira Matos · Desenvolvedor e estudante de Engenharia de Software na PUC Minas.",
+        "en": "Samuel Oliveira Matos · Developer and Software Engineering student at PUC Minas."
+      },
+      "content": "profile"
+    },
+    {
+      "id": "contact",
+      "title": {
+        "pt": "Contato",
+        "en": "Contact"
+      },
+      "description": {
+        "pt": "Conecte-se comigo pelo LinkedIn ou explore meus trabalhos no GitHub.",
+        "en": "Connect with me on LinkedIn or explore my work on GitHub."
+      }
+    },
+    {
+      "id": "curriculum",
+      "title": {
+        "pt": "Currículo",
+        "en": "Resume"
+      },
+      "description": {
+        "pt": "Samuel Oliveira Matos · Formação, experiência e competências.",
+        "en": "Samuel Oliveira Matos · Education, experience and skills."
+      },
+      "content": "resume"
+    }
+  ],
+  "paths": [
+    {
+      "label": {
+        "pt": "Fortaleza dos Generais",
+        "en": "Fortress of the Generals"
+      },
+      "description": {
+        "pt": "Os campeões do competitivo têm seu próprio território. Presença fria. Acompanhe seus comunicados.",
+        "en": "Competitive champions have their own territory. Cold presence. Follow their dispatches."
+      },
+      "command": "tp champions",
+      "symbol": "◇",
+      "tone": "intimidating",
+      "category": "champions",
+      "icon": "swords"
+    },
+    {
+      "label": {
+        "pt": "Territórios de projetos",
+        "en": "Project territories"
+      },
+      "description": {
+        "pt": "Sistemas, ferramentas e experimentos. Cada criação com seu espaço e sua identidade.",
+        "en": "Systems, tools and experiments. Each creation with its own space and identity."
+      },
+      "command": "tp projects",
+      "symbol": "⌘",
+      "tone": "neutral",
+      "icon": "layers"
+    },
+    {
+      "label": {
+        "pt": "Causas e iniciativas",
+        "en": "Causes and initiatives"
+      },
+      "description": {
+        "pt": "Um lugar mais acolhedor. Tecnologia, cuidado e impacto social orientados às pessoas.",
+        "en": "A more welcoming place. Technology, care and social impact centered on people."
+      },
+      "command": "tp initiatives",
+      "symbol": "○",
+      "tone": "humanitarian",
+      "category": "initiatives",
+      "icon": "heart-handshake"
+    }
+  ]
+}

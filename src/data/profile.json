@@ -1,0 +1,249 @@
+{
+  "name": "Samuel Oliveira Matos",
+  "photo": {
+    "src": "me.jpeg",
+    "alt": {
+      "pt": "Samuel Oliveira Matos, de braços cruzados, vestindo um terno claro.",
+      "en": "Samuel Oliveira Matos with his arms crossed, wearing a light suit."
+    },
+    "position": "50% 35%"
+  },
+  "eyebrow": {
+    "pt": "QUEM ESTÁ POR TRÁS DESTE MUNDO",
+    "en": "THE PERSON BEHIND THIS WORLD"
+  },
+  "title": {
+    "pt": "Um pouco sobre mim.",
+    "en": "A little about me."
+  },
+  "summary": {
+    "pt": "Sou Samuel Oliveira Matos, desenvolvedor brasileiro e estudante de Engenharia de Software na PUC Minas. Construo sistemas, automações e algoritmos de decisão, com interesse em baixo nível, desempenho e arquiteturas reutilizáveis.",
+    "en": "I’m Samuel Oliveira Matos, a Brazilian developer and Software Engineering student at PUC Minas. I build systems, automation tools and decision algorithms, with an interest in low-level programming, performance and reusable architectures."
+  },
+  "details": [
+    {
+      "label": {
+        "pt": "Formação",
+        "en": "Education"
+      },
+      "value": {
+        "pt": "Engenharia de Software · PUC Minas",
+        "en": "Software Engineering · PUC Minas"
+      }
+    },
+    {
+      "label": {
+        "pt": "Foco técnico",
+        "en": "Technical focus"
+      },
+      "value": {
+        "pt": "Algoritmos, sistemas inteligentes e desempenho",
+        "en": "Algorithms, intelligent systems and performance"
+      }
+    },
+    {
+      "label": {
+        "pt": "Idiomas",
+        "en": "Languages"
+      },
+      "value": {
+        "pt": "Português brasileiro · Inglês avançado",
+        "en": "Brazilian Portuguese · Advanced English"
+      }
+    }
+  ],
+  "full": {
+    "title": {
+      "pt": "Sobre mim",
+      "en": "About me"
+    },
+    "paragraphs": [
+      {
+        "pt": "Minha trajetória reúne experiência profissional em tecnologia, iniciativas de inovação e projetos independentes de caráter experimental e científico. Gosto de entender os mecanismos por trás dos sistemas e transformar problemas recorrentes em ferramentas reutilizáveis.",
+        "en": "My path brings together professional technology experience, innovation initiatives and independent experimental and scientific projects. I like understanding the mechanisms behind systems and turning recurring problems into reusable tools."
+      },
+      {
+        "pt": "Neste mundo, meus generais guardam os sistemas competitivos. Outros territórios recebem ferramentas, experimentos e iniciativas colaborativas. Cada criação tem sua identidade, seu espaço e suas próprias evidências.",
+        "en": "In this world, my generals guard the competitive systems. Other territories host tools, experiments and collaborative initiatives. Each creation has its own identity, space and evidence."
+      }
+    ],
+    "sections": [
+      {
+        "type": "text",
+        "title": {
+          "pt": "Formação",
+          "en": "Education"
+        },
+        "body": {
+          "pt": "Estudo Engenharia de Software na PUC Minas. Comecei em Engenharia da Computação e migrei para Engenharia de Software. O período acadêmico informado é 2022–2027.",
+          "en": "I study Software Engineering at PUC Minas. I started in Computer Engineering and later moved to Software Engineering. My stated academic period is 2022–2027."
+        }
+      },
+      {
+        "type": "stats",
+        "title": {
+          "pt": "Experiência profissional e iniciativas",
+          "en": "Professional experience and initiatives"
+        },
+        "items": [
+          {
+            "label": {
+              "pt": "Quero Meus Direitos",
+              "en": "Quero Meus Direitos"
+            },
+            "value": {
+              "pt": "≈ 2 anos",
+              "en": "≈ 2 years"
+            },
+            "note": {
+              "pt": "Experiência em uma startup brasileira de tecnologia jurídica que aplica automação e inteligência artificial ao acesso a serviços e direitos.",
+              "en": "Experience at a Brazilian legal technology startup applying automation and AI to access to legal services and rights."
+            }
+          },
+          {
+            "label": {
+              "pt": "EMATER",
+              "en": "EMATER"
+            },
+            "value": {
+              "pt": "≈ 8 meses",
+              "en": "≈ 8 months"
+            },
+            "note": {
+              "pt": "Experiência profissional na EMATER.",
+              "en": "Professional experience at EMATER."
+            }
+          },
+          {
+            "label": {
+              "pt": "Projeto Celesto",
+              "en": "Projeto Celesto"
+            },
+            "value": "03/2025",
+            "note": {
+              "pt": "Fundador. Automação e computação aplicadas à busca por corpos celestes e a atividades astronômicas.",
+              "en": "Founder. Automation and computing applied to the search for celestial bodies and astronomical activities."
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": {
+          "pt": "Ferramentas e tecnologias",
+          "en": "Tools and technologies"
+        },
+        "body": {
+          "pt": "Linguagens: C, C++, Java, Python, C# e JavaScript.\nEngenharia: Spring Boot, Maven, React, Node.js, APIs REST, SQL e JSON.\nSistemas e ferramentas: Linux, Ubuntu, Docker, Git, GitHub, CMake, GCC e Clang.\nAutomação: testes automatizados, processamento de documentos, OCR, ferramentas CLI e automação de navegadores.",
+          "en": "Languages: C, C++, Java, Python, C# and JavaScript.\nEngineering: Spring Boot, Maven, React, Node.js, REST APIs, SQL and JSON.\nSystems and tools: Linux, Ubuntu, Docker, Git, GitHub, CMake, GCC and Clang.\nAutomation: automated testing, document processing, OCR, CLI tools and browser automation."
+        }
+      },
+      {
+        "type": "text",
+        "title": {
+          "pt": "Inteligência artificial e decisão",
+          "en": "Artificial intelligence and decision making"
+        },
+        "body": {
+          "pt": "Investigo algoritmos de decisão, Monte Carlo, MCTS, Expectimax, heurísticas especializadas e modelagem probabilística. Também trabalho com LLMs, engenharia de prompts, avaliação adversarial, integração de APIs de IA e sistemas de agentes. Minha experiência experimental inclui inferência local, quantização, modelos Mixture of Experts e famílias como Qwen e Mistral com llama.cpp.",
+          "en": "I investigate decision algorithms, Monte Carlo, MCTS, Expectimax, specialized heuristics and probabilistic modeling. I also work with LLMs, prompt engineering, adversarial evaluation, AI API integration and agent systems. My experimental experience includes local inference, quantization, Mixture of Experts models and families such as Qwen and Mistral with llama.cpp."
+        }
+      },
+      {
+        "type": "text",
+        "title": {
+          "pt": "Como penso engenharia",
+          "en": "How I approach engineering"
+        },
+        "body": {
+          "pt": "Começo pelo resultado esperado e procuro eliminar etapas desnecessárias. Gosto de abstrações reutilizáveis, separação de responsabilidades e controle de recursos. Investigo representações matemáticas que possam reduzir o custo das decisões. Comparo métodos com experimentos reproduzíveis, preservando resultados negativos e os limites de cada conclusão.",
+          "en": "I start with the intended outcome and look for unnecessary steps to remove. I value reusable abstractions, separation of responsibilities and resource control. I investigate mathematical representations that may reduce decision costs. I compare methods through reproducible experiments, keeping negative results and the limits of each conclusion."
+        }
+      },
+      {
+        "type": "text",
+        "title": {
+          "pt": "Idiomas",
+          "en": "Languages"
+        },
+        "body": {
+          "pt": "Português brasileiro e inglês avançado.",
+          "en": "Brazilian Portuguese and advanced English."
+        }
+      }
+    ]
+  },
+  "cards": [
+    {
+      "id": "linkedin",
+      "type": "link",
+      "symbol": "in",
+      "title": "LinkedIn",
+      "description": {
+        "pt": "Minha trajetória profissional, formação e conexões.",
+        "en": "My professional path, education and connections."
+      },
+      "href": "https://www.linkedin.com/in/samuel-oliveira-matos-a9b753237",
+      "published": true
+    },
+    {
+      "id": "github",
+      "type": "link",
+      "symbol": "</>",
+      "title": "GitHub",
+      "description": {
+        "pt": "Código, relatórios e experimentos públicos. Explore o que estou construindo.",
+        "en": "Public code, reports and experiments. Explore what I’m building."
+      },
+      "href": "https://github.com/SamuelMatos78",
+      "published": true
+    },
+    {
+      "id": "building",
+      "type": "note",
+      "symbol": "⌘",
+      "title": {
+        "pt": "Meu jeito de construir",
+        "en": "How I approach building"
+      },
+      "body": {
+        "pt": "Entender o resultado. Simplificar a arquitetura. Comparar métodos. Reutilizar o que funciona e documentar o que ainda precisa melhorar.",
+        "en": "Understand the outcome. Simplify the architecture. Compare methods. Reuse what works and document what still needs improvement."
+      },
+      "published": true
+    },
+    {
+      "id": "google-accelerator",
+      "type": "link",
+      "symbol": "✦",
+      "title": "Google for Startups · 2026",
+      "description": {
+        "pt": "Integrei a equipe da Quero Meus Direitos, selecionada para o Accelerator: Brazil 2026. Uma experiência de tecnologia, automação e IA em uma legaltech brasileira.",
+        "en": "I was part of the Quero Meus Direitos team, selected for Accelerator: Brazil 2026. A technology, automation and AI experience at a Brazilian legaltech."
+      },
+      "href": "https://startup.google.com.br/programs/accelerator/brazil/",
+      "published": true
+    },
+    {
+      "id": "selected-testimonial",
+      "type": "testimonial",
+      "symbol": "“",
+      "published": false,
+      "title": {
+        "pt": "Quem já trabalhou comigo",
+        "en": "From someone I've worked with"
+      },
+      "quote": {
+        "pt": "EM PREPARAÇÃO — insira aqui um depoimento real selecionado.",
+        "en": "PLACEHOLDER — add a real, selected testimonial here."
+      },
+      "author": {
+        "name": "NOME DO AUTOR",
+        "role": {
+          "pt": "FUNÇÃO DO AUTOR",
+          "en": "AUTHOR'S ROLE"
+        }
+      }
+    }
+  ]
+}

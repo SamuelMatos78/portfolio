@@ -1,0 +1,219 @@
+{
+  "id": "h-suppression",
+  "identity": {
+    "name": "H-Suppression",
+    "subtitle": {
+      "pt": "Arquitetura experimental de decisão algorítmica",
+      "en": "Experimental algorithmic decision architecture"
+    },
+    "status": {
+      "pt": "pesquisa experimental",
+      "en": "experimental research"
+    }
+  },
+  "visual": {
+    "background": "#12161b",
+    "foreground": "#e7eced",
+    "accent": "#c4afe4",
+    "font": "system-ui, sans-serif",
+    "atmosphere": "grid",
+    "vignette": false,
+    "overlay": 0.3,
+    "backgroundOpacity": 0.75,
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "tone": "neutral"
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 300
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "H-Suppression",
+      "eyebrow": {
+        "pt": "pesquisa experimental",
+        "en": "experimental research"
+      },
+      "description": {
+        "pt": "Arquitetura experimental de decisão algorítmica",
+        "en": "Experimental algorithmic decision architecture"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre o projeto",
+        "en": "About the project"
+      },
+      "body": {
+        "pt": "Investigo quando a avaliação matemática de ações admissíveis pode reduzir a dependência de árvores temporais de estados sucessores. A arquitetura combina prioridades lexicográficas, supressão de alternativas equivalentes, seleção incremental de candidatos e modelagem probabilística. O estudo compara a abordagem com referências de MCTS, Expectimax, alfa-beta e métodos locais especializados.",
+        "en": "I investigate when mathematical evaluation of admissible actions may reduce reliance on temporal trees of successor states. The architecture combines lexicographic priorities, suppression of equivalent alternatives, incremental candidate selection and probabilistic modeling. The study compares the approach with MCTS, Expectimax, alpha-beta and specialized local references."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Tecnologias",
+        "en": "Technologies"
+      },
+      "body": {
+        "pt": "C11 · Python · CMake · benchmarking · análise de desempenho",
+        "en": "C11 · Python · CMake · benchmarking · performance analysis"
+      }
+    },
+    {
+      "type": "stats",
+      "title": {
+        "pt": "Escopo do experimento sintético",
+        "en": "Synthetic experiment scope"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Partidas",
+            "en": "Matches"
+          },
+          "value": {
+            "pt": "2.016",
+            "en": "2,016"
+          },
+          "note": {
+            "pt": "Partidas sintéticas preservadas no experimento futures-2026-10-02.",
+            "en": "Synthetic matches preserved in the futures-2026-10-02 experiment."
+          }
+        },
+        {
+          "label": {
+            "pt": "Decisões registradas",
+            "en": "Recorded decisions"
+          },
+          "value": {
+            "pt": "40.320",
+            "en": "40,320"
+          },
+          "note": {
+            "pt": "Registros do experimento publicado.",
+            "en": "Records from the published experiment."
+          }
+        },
+        {
+          "label": {
+            "pt": "Medições de escala",
+            "en": "Scale measurements"
+          },
+          "value": {
+            "pt": "2.688",
+            "en": "2,688"
+          },
+          "note": {
+            "pt": "Observações equivalentes, um aquecimento e sete repetições.",
+            "en": "Equivalent observations, one warm-up and seven repetitions."
+          }
+        },
+        {
+          "label": {
+            "pt": "Controles locais",
+            "en": "Local controls"
+          },
+          "value": "119",
+          "note": {
+            "pt": "Sem caps de tempo/avaliações no protocolo descrito.",
+            "en": "Without time/evaluation caps in the documented protocol."
+          }
+        },
+        {
+          "label": {
+            "pt": "Ações inválidas",
+            "en": "Invalid actions"
+          },
+          "value": "0",
+          "note": {
+            "pt": "Registradas para HS nesta amostra sintética.",
+            "en": "Recorded for HS in this synthetic sample."
+          }
+        },
+        {
+          "label": {
+            "pt": "Sucessores hipotéticos expandidos",
+            "en": "Hypothetical successors expanded"
+          },
+          "value": "0",
+          "note": {
+            "pt": "Contagem para HS; a enumeração de ações atuais ainda tem custo.",
+            "en": "Count for HS; current-action enumeration still has a cost."
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Comparação de custo: um cenário específico",
+        "en": "Cost comparison: one specific scenario"
+      },
+      "body": {
+        "pt": "Na sondagem inicial de recursos compartilhados, com oito fontes, 20 jogadas e orçamento de 4.096 avaliações (work4096), a mediana de sete repetições foi: H-Suppression 2,37 ms; Greedy 6,91 ms; Expectimax 14,33 ms; MCTS 4.046,46 ms. Não havia prazo da política nesse regime. Esses tempos comparam as implementações e condições descritas no relatório; não demonstram superioridade universal.",
+        "en": "In the initial shared-resource probe, with eight sources, 20 moves and a budget of 4,096 evaluations (work4096), the median of seven repetitions was: H-Suppression 2.37 ms; Greedy 6.91 ms; Expectimax 14.33 ms; MCTS 4,046.46 ms. This regime had no policy deadline. These timings compare the implementations and conditions documented in the report; they do not demonstrate universal superiority."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Resultados e limites",
+        "en": "Results and limits"
+      },
+      "body": {
+        "pt": "HS venceu a referência MCTS em 32 de 32 partidas determinísticas em cada regime avaliado. O estudo também preserva derrotas em famílias probabilísticas, empates com controles locais e casos em que algoritmos especializados são mais rápidos. Nove decisões foram analisadas com pequenos oráculos. Os cenários são sintéticos e não comprovam desempenho competitivo em Balatro. A aplicação ao Derrisor é uma hipótese arquitetural em investigação.",
+        "en": "HS defeated the MCTS reference in 32 of 32 deterministic matches in each evaluated regime. The study also preserves losses in probabilistic families, draws against local controls and cases where specialized algorithms are faster. Nine decisions were examined with small oracles. These synthetic scenarios do not establish competitive performance in Balatro. Application to Derrisor remains an architectural hypothesis under investigation."
+      }
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Código e documentação",
+        "en": "Code and documentation"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Relatório do experimento",
+            "en": "Experiment report"
+          },
+          "href": "https://github.com/SamuelMatos78/H-supression/blob/main/RELATORIO.md"
+        },
+        {
+          "label": {
+            "pt": "Metodologia e protocolo",
+            "en": "Methodology and protocol"
+          },
+          "href": "https://github.com/SamuelMatos78/H-supression/blob/main/METODOLOGIA.md"
+        },
+        {
+          "label": {
+            "pt": "Limitações e resultados desfavoráveis",
+            "en": "Limitations and unfavorable results"
+          },
+          "href": "https://github.com/SamuelMatos78/H-supression/blob/main/LIMITACOES.md"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Código e documentação",
+        "en": "Code and documentation"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Repositório público",
+            "en": "Public repository"
+          },
+          "href": "https://github.com/SamuelMatos78/H-supression"
+        }
+      ]
+    }
+  ]
+}

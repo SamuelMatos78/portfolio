@@ -1,0 +1,62 @@
+import type { Locale, LocalizedText } from "./types";
+
+export const messages = {
+  pt: {
+    terminalInvitationTitle: "UMA PORTA PARA ESTE MUNDO", terminalInvitation: "Use o terminal para descobrir coisas ou explore pelos cards.", tryTerminal: "Experimentar", dismissInvitation: "Fechar convite do terminal",
+    downloadResume: "Baixar currículo em PDF", resumeFormat: "PDF · Português", resumeProjects: "Projetos selecionados", resumeProjectsDescription: "Algumas das ideias que transformei em código e investigação.", resumeDetails: "Perfil profissional", resumeBack: "Explorar meu mundo", resumeExplore: "Explorar projeto", resumeUnavailable: "Currículo indisponível",
+    fullAbout: "Conhecer mais sobre mim", visitLink: "Abrir perfil ou link", linkPending: "Link em preparação", profileUnavailable: "Perfil indisponível", pauseCarousel: "Pausar alternância", resumeCarousel: "Retomar alternância", carouselAuto: "Explore", carouselPaused: "Alternância pausada",
+
+    commandExample: "ajuda",
+    updates: "Novidades", updatesTitle: "Comunicados do mundo", updatesDescription: "Campanhas, novos projetos e mudanças publicadas. Volte para acompanhar os próximos movimentos.", emptyUpdates: "Nenhum comunicado publicado ainda. As próximas campanhas e mudanças aparecerão aqui quando forem anunciadas.",
+    helpList: "Liste as regiões e projetos disponíveis.", helpPwd: "Mostre seu caminho atual no mundo.", restrictedRegion: "TERRITÓRIO DOS GENERAIS / PRESENÇA HOSTIL", welcomeRegion: "TERRITÓRIO DE CUIDADO / PORTAS ABERTAS", openRegion: "TERRITÓRIO DE CONSTRUÇÃO / EXPLORE", terminalWelcome: "Bem-vindo ao mundo de Samuel. Digite ajuda ou ls para explorar.", shellNavigation: "Navegação do domínio · Ctrl+L limpa · Tab completa · Esc fecha", minimizeTerminal: "Minimizar terminal", maximizeTerminal: "Alternar tamanho do terminal", quickExplore: "Explore agora", worldRegions: "Escolha uma região", worldRegionsDescription: "Cada território tem uma intenção. Os generais guardam o competitivo; as causas abrem as portas.",
+
+    metaDescription: "Samuel Oliveira Matos — Desenvolvedor e estudante de Engenharia de Software na PUC Minas. Algoritmos, automação e sistemas inteligentes.",
+    language: "Idioma", home: "Início", projects: "Projetos", champions: "Generais", category: "Hall de projetos", information: "Informações", "project-experience": "Experiência de projeto",
+    domain: "DOMÍNIO", brandHome: "Domínio do Samuel — Início", sceneControls: "Navegação entre cenas", back: "Voltar", explore: "Explorar", enterHall: "Entrar no hall", returnHome: "Voltar ao início",
+    homeNav: "Explore o domínio", featured: "Em destaque", featuredDescription: "Conheça os projetos e as ideias que estão tomando forma por aqui.", catalogIndex: "ÍNDICE DO DOMÍNIO",
+    exploreProjects: "Conhecer os projetos", aboutMe: "Um pouco sobre mim", homeInvitation: "Fique à vontade. Escolha por onde começar.", homeHint: "Prefere explorar pelo teclado? Abra o terminal e digite", quickPaths: "Encontre seu caminho", quickPathsDescription: "Projetos, sistemas competitivos e um pouco da minha história.",
+    projectsTitle: "Territórios de criação.", projectsDescription: "Escolha um hall e descubra o que está por trás de cada projeto.", championHall: "Conselho dos Generais", hall: "Hall de projetos", hallDescription: "Sistemas competitivos. Identidades próprias.", emptyHall: "Este hall está pronto para receber novos projetos.", unregisteredInfo: "Informação não registrada",
+    catalogUnavailable: "Catálogo de projetos indisponível", retryCatalog: "Tentar novamente", discovering: "Descobrindo projetos… Você pode continuar explorando.", emptyFeatured: "Os projetos em destaque aparecerão aqui quando o catálogo estiver disponível.", previousFeatured: "Projeto anterior", nextFeatured: "Próximo projeto", carousel: "Carrossel", visualPlaceholder: "VISUAL EM PREPARAÇÃO",
+    experience: "Experiência de projeto", status: "Estado", unavailable: "indisponível", retryExperience: "Tentar abrir novamente", arriving: "O conteúdo está chegando. A navegação e o terminal continuam disponíveis.",
+    terminal: "Power Terminal", openTerminal: "Abrir Power Terminal", closeTerminal: "Fechar Power Terminal", domainControl: "CONTROLE DO DOMÍNIO", terminalHint: "Digite help para ver os destinos. Tab completa · ↑ ↓ recuperam comandos · Escape fecha.", commandHistory: "Histórico de comandos da sessão", command: "Comando", commandPlaceholder: "tp generais", running: "Executando…", enter: "Executar ↵", waiting: "Qual será o próximo destino?",
+    usage: "Uso: tp <destino> ou ir <destino>. Digite ajuda ou ls.", unknownCommand: "Comando desconhecido: {value}. Digite help.", empty: "(vazio)", unknownDestination: "Destino desconhecido: {value}. Digite help.", destination: "Destino: {value}", newerNavigation: "Um comando de navegação mais recente teve prioridade.", backRequested: "Voltando à cena anterior, se houver.", terminalOpened: "Terminal aberto.", terminalClosed: "Terminal fechado.", commandFailed: "Não foi possível executar o comando.", destinations: "Destinos", aliases: "Atalhos", catalogHelpUnavailable: "Catálogo indisponível. Tente novamente em Projetos.",
+    helpTeleport: "Entre em uma cena ou projeto registrado.", helpBack: "Volte à cena anterior.", helpTerminal: "Abra ou feche o Power Terminal.", helpHelp: "Liste comandos e destinos.", helpClear: "Limpe a saída do terminal.",
+  },
+  en: {
+    terminalInvitationTitle: "A DOOR INTO THIS WORLD", terminalInvitation: "Use the terminal to discover things or explore through the cards.", tryTerminal: "Try it", dismissInvitation: "Dismiss terminal invitation",
+    downloadResume: "Download résumé as PDF", resumeFormat: "PDF · English", resumeProjects: "Selected projects", resumeProjectsDescription: "Some of the ideas I have turned into code and investigation.", resumeDetails: "Professional profile", resumeBack: "Explore my world", resumeExplore: "Explore project", resumeUnavailable: "Résumé unavailable",
+    fullAbout: "More about me", visitLink: "Open profile or link", linkPending: "Link in preparation", profileUnavailable: "Profile unavailable", pauseCarousel: "Pause rotation", resumeCarousel: "Resume rotation", carouselAuto: "Explore", carouselPaused: "Rotation paused",
+
+    commandExample: "help",
+    updates: "Updates", updatesTitle: "Dispatches from the world", updatesDescription: "Campaigns, new projects and published changes. Return to follow the next moves.", emptyUpdates: "No dispatches published yet. Upcoming campaigns and changes will appear here when announced.",
+    helpList: "List available regions and projects.", helpPwd: "Show your current path through the world.", restrictedRegion: "GENERALS' TERRITORY / HOSTILE PRESENCE", welcomeRegion: "TERRITORY OF CARE / OPEN DOORS", openRegion: "TERRITORY OF BUILDING / EXPLORE", terminalWelcome: "Welcome to Samuel's world. Type help or ls to explore.", shellNavigation: "Domain navigation · Ctrl+L clears · Tab completes · Esc closes", minimizeTerminal: "Minimize terminal", maximizeTerminal: "Toggle terminal size", quickExplore: "Explore now", worldRegions: "Choose a region", worldRegionsDescription: "Each territory has an intention. The generals guard the competitive; the causes open their doors.",
+
+    metaDescription: "Samuel Oliveira Matos — Developer and Software Engineering student at PUC Minas. Algorithms, automation and intelligent systems.",
+    language: "Language", home: "Home", projects: "Projects", champions: "Generals", category: "Project hall", information: "Information", "project-experience": "Project experience",
+    domain: "DOMAIN", brandHome: "Samuel's Domain — Home", sceneControls: "Scene controls", back: "Back", explore: "Explore", enterHall: "Enter hall", returnHome: "Return home",
+    homeNav: "Explore the domain", featured: "Featured projects", featuredDescription: "Meet the projects and ideas taking shape around here.", catalogIndex: "DOMAIN INDEX",
+    exploreProjects: "Explore the projects", aboutMe: "A little about me", homeInvitation: "Make yourself at home. Choose where to begin.", homeHint: "Prefer exploring with your keyboard? Open the terminal and type", quickPaths: "Find your way", quickPathsDescription: "Projects, competitive systems and a little of my story.",
+    projectsTitle: "Territories of creation.", projectsDescription: "Choose a hall and discover the thinking behind each project.", championHall: "Council of Generals", hall: "Project Hall", hallDescription: "Competitive systems. Individual identities.", emptyHall: "This hall is ready for new projects.", unregisteredInfo: "Unregistered information",
+    catalogUnavailable: "Project catalog unavailable", retryCatalog: "Retry catalog", discovering: "Discovering projects… You can keep exploring.", emptyFeatured: "Featured projects will appear here when the catalog is available.", previousFeatured: "Previous featured project", nextFeatured: "Next featured project", carousel: "Carousel", visualPlaceholder: "VISUAL IN PREPARATION",
+    experience: "Project experience", status: "Status", unavailable: "unavailable", retryExperience: "Retry experience", arriving: "The content is arriving. Navigation and terminal remain available.",
+    terminal: "Power Terminal", openTerminal: "Open Power Terminal", closeTerminal: "Close Power Terminal", domainControl: "DOMAIN CONTROL", terminalHint: "Type help for destinations. Tab completes · ↑ ↓ recalls · Escape closes.", commandHistory: "Session command history", command: "Command", commandPlaceholder: "tp <destination>", running: "Running…", enter: "Enter ↵", waiting: "Where will you go next?",
+    usage: "Usage: tp <destination>. Use help to list destinations.", unknownCommand: "Unknown command: {value}. Type help.", empty: "(empty)", unknownDestination: "Unknown destination: {value}. Type help.", destination: "Destination: {value}", newerNavigation: "A newer navigation command took priority.", backRequested: "Returning to the previous scene, if available.", terminalOpened: "Terminal opened.", terminalClosed: "Terminal closed.", commandFailed: "Command failed.", destinations: "Destinations", aliases: "Shortcuts", catalogHelpUnavailable: "Project catalog unavailable. Retry in Projects.",
+    helpTeleport: "Enter a registered scene or project.", helpBack: "Return to the previous scene.", helpTerminal: "Open or close the Power Terminal.", helpHelp: "List commands and destinations.", helpClear: "Clear terminal output.",
+  },
+} as const;
+
+export type MessageKey = keyof typeof messages.en;
+export function translate(locale: Locale, key: MessageKey, params: Record<string, string> = {}): string {
+  return messages[locale][key].replace(/\{(\w+)\}/g, (match, key: string) => params[key] ?? match);
+}
+export function localize(value: LocalizedText | undefined, locale: Locale): string {
+  return typeof value === "string" ? value : value?.[locale] ?? "";
+}
+export function preferredLocale(saved: string | null, languages: readonly string[]): Locale {
+  if (saved === "pt" || saved === "en") return saved;
+  for (const language of languages) {
+    if (language.toLowerCase().startsWith("pt")) return "pt";
+    if (language.toLowerCase().startsWith("en")) return "en";
+  }
+  return "pt";
+}

@@ -1,0 +1,5 @@
+{
+  "intimidating": { "icon": "swords", "secondaryAccent": "#d97b64", "imageFit": "contain", "imagePosition": "center" },
+  "neutral": { "icon": "layers", "secondaryAccent": "#b9a6d5", "imageFit": "contain", "imagePosition": "center" },
+  "humanitarian": { "icon": "heart-handshake", "secondaryAccent": "#a38a52", "imageFit": "contain", "imagePosition": "center" }
+}

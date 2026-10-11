@@ -1,0 +1,83 @@
+{
+  "id": "testese",
+  "identity": {
+    "name": "TestesE",
+    "subtitle": {
+      "pt": "Exercícios, desafios e experimentação em Java",
+      "en": "Exercises, challenges and experimentation in Java"
+    },
+    "status": {
+      "pt": "repositório público",
+      "en": "public repository"
+    }
+  },
+  "visual": {
+    "background": "#12161b",
+    "foreground": "#e7eced",
+    "accent": "#c4afe4",
+    "font": "system-ui, sans-serif",
+    "atmosphere": "grid",
+    "vignette": false,
+    "overlay": 0.3,
+    "backgroundOpacity": 0.75,
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "tone": "neutral"
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 300
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "TestesE",
+      "eyebrow": {
+        "pt": "repositório público",
+        "en": "public repository"
+      },
+      "description": {
+        "pt": "Exercícios, desafios e experimentação em Java",
+        "en": "Exercises, challenges and experimentation in Java"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre o projeto",
+        "en": "About the project"
+      },
+      "body": {
+        "pt": "Um espaço para exercícios, testes e experimentações técnicas em Java. As implementações exploram programação, lógica e tratamento de erros.",
+        "en": "A space for exercises, tests and technical experiments in Java. The implementations explore programming, logic and error handling."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Tecnologias",
+        "en": "Technologies"
+      },
+      "body": {
+        "pt": "Java",
+        "en": "Java"
+      }
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Código e documentação",
+        "en": "Code and documentation"
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Repositório público",
+            "en": "Public repository"
+          },
+          "href": "https://github.com/SamuelMatos78/TestesE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+# Dependencies and package-manager caches (keep lockfiles versioned)
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+
+# Builds, generated résumé PDFs and tool caches
+/dist/
+/dist-ssr/
+/public/resume/*.pdf
+*.tsbuildinfo
+.vite/
+.cache/
+.eslintcache
+.oxlintcache
+
+# Local environment and credentials (keep templates)
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+.aws/
+.continue/
+.codex/
+
+# Tests, browser reports and temporary artifacts
+coverage/
+playwright-report/
+test-results/
+.nyc_output/
+/.artifacts/
+/.tmp/
+/tmp/
+/public/projects/.content-lock/
+/public/projects/index.json.tmp-*
+
+# Logs and process files
+logs/
+*.log
+*.pid
+*.pid.lock
+
+# Local editor files; keep shared extension/task recommendations
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.swp
+*.swo
+*~
+*.bak
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini

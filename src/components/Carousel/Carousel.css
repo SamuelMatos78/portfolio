@@ -1,0 +1,36 @@
+.carousel { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; width: 100%; margin-top: 1.5rem; min-height: 280px; }
+.carousel__item { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 2.5rem; min-width: 0; }
+.carousel__image { max-height: 340px; border: 1px solid var(--border); }
+.carousel__copy .eyebrow { color: var(--card-accent); }
+.carousel__copy h2 { margin-top: 0.6rem; font-size: clamp(2rem, 4vw, 3rem); overflow-wrap: anywhere; }
+.carousel__copy > p:not(.eyebrow) { margin-top: 0.8rem; color: var(--muted); font-size: 0.9rem; }
+.carousel__copy button { margin-top: 1.5rem; font: 0.8rem var(--mono); }
+.carousel__copy button span { margin-left: 1.5rem; color: var(--card-accent); }
+.carousel__position { display: block; margin-top: 1.5rem; color: var(--muted); font: 0.65rem var(--mono); }
+.carousel__arrow { padding: 0.7rem; background: transparent; font-size: 1.2rem; }
+.carousel--empty { display: flex; color: var(--muted); font-size: 0.85rem; }
+.carousel__controls { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 0.7rem; padding-top: 0.4rem; color: var(--muted); font: 0.6rem/1.6 var(--mono); }
+.carousel__controls button { font: inherit; padding: 0.3rem 0.5rem; background: transparent; }
+.carousel__controls button span { margin-right: 0.3rem; }
+.carousel__portrait { position: relative; min-width: 0; animation: portrait-arrive 550ms cubic-bezier(.2,.7,.2,1) both; }
+.carousel__portrait > .project-emblem { position: absolute; left: .6rem; top: .6rem; width: 32px; height: 32px; font-size: 1rem; }
+.carousel__image { border-radius: 9px; background: radial-gradient(ellipse at 70% 10%, color-mix(in srgb, var(--surface-secondary) 22%, transparent), transparent 70%), #0d141a; box-shadow: 0 12px 24px -12px #000c, inset 0 1px #ffffff0c; }
+.carousel__image img { padding: 1.2rem; filter: drop-shadow(0 12px 10px #0009); transition: transform 500ms; }
+.carousel__item.tone--intimidating .carousel__image { border-top: 2px solid var(--surface-secondary); border-radius: 2px 12px 2px 2px; }
+.carousel__item.tone--intimidating .carousel__image img { transform: rotate(-4deg) scale(.94); }
+.carousel:hover .carousel__item.tone--intimidating .carousel__image img { transform: rotate(-1deg) scale(1.02); }
+.carousel__item.tone--humanitarian .carousel__image { background: radial-gradient(ellipse at 50% 25%, #f6f1df, #dce6d4); border-color: #44664944; border-radius: 16px; }
+.carousel__item.tone--humanitarian .visual__fallback { background: none; }
+.carousel__item.tone--humanitarian .visual__fallback small { color: #526258; text-align: center; padding-inline: .5rem; letter-spacing: .08em; font-size: .5rem; }
+.carousel__item.tone--humanitarian .carousel__copy :is(.eyebrow, button .icon) { color: #abcba1; }
+.carousel__arrow { display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.carousel__copy button .icon { transition: transform 250ms; }
+.carousel__copy button:hover .icon { transform: translate(3px, -3px); }
+@keyframes portrait-arrive { from { opacity: 0; transform: translateX(12px) scale(.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .carousel:hover .carousel__item.tone--intimidating .carousel__image img { transform: rotate(-4deg) scale(.94); } }
+@media (max-width: 700px) {
+  .carousel { gap: 0.6rem; }
+  .carousel__item { grid-template-columns: 1fr; gap: 1.3rem; }
+  .carousel__arrow { padding: 0.4rem; }
+  .carousel__copy h2 { font-size: 2rem; }
+}

@@ -1,0 +1,58 @@
+.home { max-width: 1480px; margin: auto; padding: 1rem 6vw 7rem; }
+.hero__navigation { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; padding-block: 0.7rem 1.3rem; border-bottom: 1px solid var(--border); }
+.hero__navigation button { font: 0.74rem var(--mono); color: #bac8ca; padding: 0.3rem 0; border: none; background: transparent; border-radius: 0; }
+.hero__navigation button:hover { color: #eff4eb; text-decoration: underline; text-underline-offset: 6px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: 3rem; padding-block: 2rem; }
+.hero .eyebrow { color: #b7c7ca; letter-spacing: 0.16em; }
+.hero__title { margin-top: 0.8rem; font-size: clamp(2.5rem, 4.3vw, 4.2rem); line-height: 1.05; color: #f1efea; }
+.hero__role { color: #bdcdd2; margin-top: 1rem; font: 0.7rem var(--mono); letter-spacing: 0.05em; }
+.hero__description { max-width: 570px; margin-top: 0.9rem; font-size: 0.86rem; color: #abb8bc; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
+.hero__actions button { padding: 0.7rem 1rem; font: 0.72rem var(--mono); }
+.hero__actions .home-primary { background: #d7ded9; color: #172522; border-color: #d7ded9; }
+.home-featured { padding: 1.3rem 1rem; border: 1px solid #ffffff1c; border-radius: 2px 20px 2px 2px; background: linear-gradient(140deg, #1b252baa, #080b10dd); min-width: 0; box-shadow: 0 25px 50px -25px #000b, inset 0 1px #ffffff10; }
+.home-featured .carousel { min-height: 220px; margin-top: 1rem; gap: 0.7rem; }
+.home-featured .carousel__item { grid-template-columns: 0.85fr 1fr; gap: 1.2rem; }
+.home-featured .carousel__image { aspect-ratio: 3 / 4; max-height: 230px; }
+.home-featured .carousel__copy h2 { font-size: clamp(1.7rem, 2.5vw, 2.3rem); }
+.home-featured .carousel__copy > p:not(.eyebrow) { font-size: 0.78rem; }
+.home-featured .carousel__copy button { font-size: 0.72rem; margin-top: 1rem; }
+.home-featured .carousel__position { margin-top: 1rem; }
+.home-featured .carousel__arrow { padding: 0.3rem; font-size: 1rem; }
+.home-section-intro h2, .section-heading h2 { font-size: 1.4rem; color: #eceee7; }
+.home-section-intro > p { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+.home-paths__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.home-path { display: flex; position: relative; overflow: hidden; flex-direction: column; align-items: flex-start; text-align: left; padding: 1.5rem; min-width: 0; border-color: #ffffff24; border-radius: 12px; background: linear-gradient(140deg, #202b34, #141c24); box-shadow: 0 15px 30px -20px #000c, inset 0 1px #ffffff10; transition: border-color 300ms, transform 300ms, box-shadow 300ms; }
+.home-path:not(:disabled):is(:hover, :focus-visible) { transform: translateY(-6px); background: linear-gradient(140deg, #283541, #18232c); box-shadow: 0 28px 40px -22px #000d, inset 0 1px #ffffff25; }
+.home-path .icon { transition: transform 350ms; }
+.home-path:is(:hover, :focus-visible) .home-path__symbol .icon { transform: rotate(-8deg) scale(1.1); }
+.home-path:is(:hover, :focus-visible) .home-path__arrow { transform: translate(3px, -3px); }
+.home-path__symbol { font-size: 1.5rem; color: #afc1cc; margin-bottom: 0.8rem; }
+.home-path__title { font-size: 1rem; line-height: 1.5; font-weight: 500; }
+.home-path__description { font-size: 0.78rem; line-height: 1.7; margin-top: 0.45rem; color: #a9b5bd; }
+.home-path__residents { margin-top: 1rem; font: 0.64rem/1.6 var(--mono); color: #c5d3dc; }
+.home-path__arrow { position: absolute; top: 1.5rem; right: 1.3rem; }
+.home-path.tone--intimidating { background: radial-gradient(ellipse at 100% 0, #642b3044, transparent 70%), linear-gradient(135deg, #251b22, #0a1017); border-color: #9d504644; border-top: 2px solid #d97b64; border-radius: 2px 16px 2px 2px; }
+.home-path.tone--intimidating:is(:hover, :focus-visible) { background: radial-gradient(ellipse at 100% 0, #74333960, transparent 70%), linear-gradient(135deg, #30212b, #0a1017); border-color: #d97b6477; box-shadow: 0 28px 45px -20px #000d, 0 0 40px -30px #d97b64; }
+.home-path.tone--intimidating .home-path__symbol { color: #e07b65; }
+.home-path.tone--intimidating .home-path__title { text-transform: uppercase; font-family: var(--mono); letter-spacing: 0.04em; }
+.home-path.tone--humanitarian { background: #e3e7d7; color: #203a30; border-radius: 12px; border-color: #e3e7d7; }
+.home-path.tone--humanitarian .home-path__description, .home-path.tone--humanitarian .home-path__residents { color: #526258; }
+.home-path.tone--humanitarian .home-path__symbol { color: #446649; }
+.home-path.tone--humanitarian { box-shadow: 0 15px 30px -20px #253b3140, inset 0 1px #fff8; }
+.home-path.tone--humanitarian:is(:hover, :focus-visible) { background: linear-gradient(140deg, #f7f4e5, #e4ecd9); border-color: #44664966; box-shadow: 0 24px 44px -24px #344f3880, inset 0 1px #fff; }
+.home-primary:not(:disabled):hover { background: #e5eee8; box-shadow: 0 12px 26px -16px #d7ded977; }
+@media (prefers-reduced-motion: reduce) { .home-path:not(:disabled):is(:hover, :focus-visible), .home-path:is(:hover, :focus-visible) .icon { transform: none; } }
+.home-updates { margin-top: 3rem; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--border); gap: 1rem; }
+.section-heading button { font-size: 0.7rem; }
+.home__hint { font-size: 0.75rem; color: var(--muted); margin-top: 2.5rem; }
+@media (max-width: 1050px) { .hero { gap: 1.5rem; } .home-featured .carousel__item { grid-template-columns: 1fr; } .home-featured .carousel__image { max-height: 140px; aspect-ratio: 16 / 9; } }
+@media (max-width: 700px) { .home { padding: 1rem 5vw 7rem; } .hero { grid-template-columns: 1fr; padding-block: 1.5rem; } .hero__title { font-size: clamp(2.4rem, 10vw, 3.5rem); } .home-featured .carousel__item { grid-template-columns: 0.8fr 1fr; } .home-featured .carousel__image { aspect-ratio: 3 / 4; max-height: 200px; } .home-paths__grid { grid-template-columns: 1fr; } .home-featured .carousel__copy h2 { font-size: 1.6rem; } .hero__navigation { gap: 0.6rem 1rem; } }
+@media (max-width: 460px) {
+  .home-featured .carousel__item { grid-template-columns: 1fr; gap: 1rem; }
+  .home-featured .carousel__image { aspect-ratio: 4 / 3; max-height: 210px; }
+  .home-featured .carousel__image img { padding: .8rem; }
+  .home-featured .carousel__copy h2 { font-size: 1.8rem; }
+  .home-featured .carousel__copy button { width: 100%; display: flex; justify-content: space-between; align-items: center; padding-inline: .8rem; }
+}

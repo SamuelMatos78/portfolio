@@ -1,0 +1,67 @@
+{
+  "id": "secure-login",
+  "identity": {
+    "name": "Secure Login",
+    "subtitle": {
+      "pt": "Autenticação, validação e recuperação de acesso",
+      "en": "Authentication, validation and access recovery"
+    },
+    "status": {
+      "pt": "projeto de autenticação",
+      "en": "authentication project"
+    }
+  },
+  "visual": {
+    "background": "#12161b",
+    "foreground": "#e7eced",
+    "accent": "#e4bf96",
+    "font": "system-ui, sans-serif",
+    "atmosphere": "grid",
+    "vignette": false,
+    "overlay": 0.3,
+    "backgroundOpacity": 0.75,
+    "backgroundSize": "contain",
+    "backgroundPosition": "right top",
+    "tone": "neutral"
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 300
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "title": "Secure Login",
+      "eyebrow": {
+        "pt": "projeto de autenticação",
+        "en": "authentication project"
+      },
+      "description": {
+        "pt": "Autenticação, validação e recuperação de acesso",
+        "en": "Authentication, validation and access recovery"
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Sobre o projeto",
+        "en": "About the project"
+      },
+      "body": {
+        "pt": "Projeto em Java e Spring Boot com cadastro, autenticação, recuperação de senha, validação de entradas e persistência. Inclui estudos com Spring Security, Thymeleaf e integração com serviços de e-mail.",
+        "en": "A Java and Spring Boot project with registration, authentication, password recovery, input validation and persistence. It includes studies with Spring Security, Thymeleaf and email-service integration."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Tecnologias",
+        "en": "Technologies"
+      },
+      "body": {
+        "pt": "Java · Spring Boot · Spring Security · Thymeleaf",
+        "en": "Java · Spring Boot · Spring Security · Thymeleaf"
+      }
+    }
+  ]
+}

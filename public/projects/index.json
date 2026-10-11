@@ -1,0 +1,414 @@
+{
+  "categories": [
+    {
+      "id": "champions",
+      "label": {
+        "pt": "Generais",
+        "en": "Generals"
+      },
+      "description": {
+        "pt": "Meus campeões competitivos comandam estas regiões. Entre por sua conta e risco.",
+        "en": "My competitive champions command these regions. Enter at your own risk."
+      },
+      "visual": {
+        "accent": "#e07b65",
+        "symbol": "01",
+        "tone": "intimidating",
+        "icon": "swords"
+      },
+      "command": "tp champions"
+    },
+    {
+      "id": "initiatives",
+      "label": {
+        "pt": "Causas e iniciativas",
+        "en": "Causes and initiatives"
+      },
+      "description": {
+        "pt": "Um território de cuidado, colaboração e tecnologia a serviço das pessoas.",
+        "en": "A territory of care, collaboration and technology in service of people."
+      },
+      "visual": {
+        "accent": "#446649",
+        "symbol": "02",
+        "tone": "humanitarian",
+        "icon": "heart-handshake"
+      },
+      "command": "tp initiatives"
+    },
+    {
+      "id": "experiments",
+      "label": {
+        "pt": "Experimentos",
+        "en": "Experiments"
+      },
+      "description": {
+        "pt": "Um espaço para protótipos, investigações e resultados inesperados.",
+        "en": "A space for prototypes, investigations and unexpected results."
+      },
+      "visual": {
+        "accent": "#c4afe4",
+        "symbol": "03",
+        "tone": "neutral",
+        "icon": "sparkles"
+      },
+      "command": "tp experiments"
+    },
+    {
+      "id": "other-projects",
+      "label": {
+        "pt": "Outros projetos",
+        "en": "Other Projects"
+      },
+      "description": {
+        "pt": "Mais sistemas e trabalhos além dos halls principais.",
+        "en": "More systems and work beyond the main halls."
+      },
+      "visual": {
+        "accent": "#e4bf96",
+        "symbol": "04",
+        "tone": "neutral",
+        "icon": "layers"
+      },
+      "command": "tp other-projects"
+    }
+  ],
+  "projects": [
+    {
+      "id": "derrisor",
+      "manifest": "derrisor/project.json",
+      "category": "champions",
+      "featured": true,
+      "identity": {
+        "name": "Derrisor",
+        "subtitle": {
+          "pt": "Agente autônomo de Balatro",
+          "en": "Autonomous Balatro Agent"
+        },
+        "status": {
+          "pt": "dormente",
+          "en": "dormant"
+        }
+      },
+      "hall": {
+        "image": "derrisor/assets/portrait.jpeg",
+        "accent": "#a6d8e8",
+        "hoverText": {
+          "pt": "ALVO DETECTADO",
+          "en": "TARGET DETECTED"
+        },
+        "hoverEffect": "scan"
+      },
+      "command": "tp derrisor",
+      "presentation": {
+        "icon": "swords",
+        "secondaryAccent": "#db8268",
+        "imageFit": "contain",
+        "imagePosition": "center"
+      }
+    },
+    {
+      "id": "recolhe",
+      "manifest": "recolhe/project.json",
+      "category": "initiatives",
+      "featured": true,
+      "identity": {
+        "name": "ReColhe",
+        "subtitle": {
+          "pt": "Projeto acadêmico com backend e colaboração em sprints",
+          "en": "Academic project with backend development and sprint collaboration"
+        },
+        "status": {
+          "pt": "projeto acadêmico",
+          "en": "academic project"
+        }
+      },
+      "hall": {
+        "accent": "#446649",
+        "hoverText": {
+          "pt": "CONHEÇA A INICIATIVA",
+          "en": "EXPLORE THE INITIATIVE"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp recolhe",
+      "presentation": {
+        "icon": "heart-handshake",
+        "secondaryAccent": "#a38a52",
+        "imageFit": "contain",
+        "imagePosition": "center"
+      }
+    },
+    {
+      "id": "h-suppression",
+      "manifest": "h-suppression/project.json",
+      "category": "experiments",
+      "featured": true,
+      "identity": {
+        "name": "H-Suppression",
+        "subtitle": {
+          "pt": "Arquitetura experimental de decisão algorítmica",
+          "en": "Experimental algorithmic decision architecture"
+        },
+        "status": {
+          "pt": "pesquisa experimental",
+          "en": "experimental research"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "sparkles"
+      },
+      "hall": {
+        "accent": "#c4afe4",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp h-suppression"
+    },
+    {
+      "id": "3ias-2048",
+      "manifest": "3ias-2048/project.json",
+      "category": "champions",
+      "featured": true,
+      "identity": {
+        "name": "3IAsParaVencer2048",
+        "subtitle": {
+          "pt": "Três agentes, um tabuleiro de 2048",
+          "en": "Three agents, one 2048 board"
+        },
+        "status": {
+          "pt": "projeto educacional",
+          "en": "educational project"
+        }
+      },
+      "presentation": {
+        "tone": "intimidating",
+        "icon": "swords"
+      },
+      "hall": {
+        "accent": "#b9caed",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "scan"
+      },
+      "command": "tp 3ias-2048"
+    },
+    {
+      "id": "existential-prompt-benchmark",
+      "manifest": "existential-prompt-benchmark/project.json",
+      "category": "experiments",
+      "featured": false,
+      "identity": {
+        "name": "Existential Prompt Benchmark",
+        "subtitle": {
+          "pt": "Prompts, robustez e regras de negócio em LLMs",
+          "en": "Prompts, robustness and business rules in LLMs"
+        },
+        "status": {
+          "pt": "estudo publicado",
+          "en": "published study"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "sparkles"
+      },
+      "hall": {
+        "accent": "#c4afe4",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp existential-prompt-benchmark"
+    },
+    {
+      "id": "pdfall",
+      "manifest": "pdfall/project.json",
+      "category": "other-projects",
+      "featured": true,
+      "identity": {
+        "name": "pdfall",
+        "subtitle": {
+          "pt": "Extração híbrida e OCR para documentos PDF",
+          "en": "Hybrid extraction and OCR for PDF documents"
+        },
+        "status": {
+          "pt": "biblioteca pública",
+          "en": "public library"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "scroll-text"
+      },
+      "hall": {
+        "accent": "#e4bf96",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp pdfall"
+    },
+    {
+      "id": "testese",
+      "manifest": "testese/project.json",
+      "category": "experiments",
+      "featured": false,
+      "identity": {
+        "name": "TestesE",
+        "subtitle": {
+          "pt": "Exercícios, desafios e experimentação em Java",
+          "en": "Exercises, challenges and experimentation in Java"
+        },
+        "status": {
+          "pt": "repositório público",
+          "en": "public repository"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "layers"
+      },
+      "hall": {
+        "accent": "#c4afe4",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp testese"
+    },
+    {
+      "id": "celesto",
+      "manifest": "celesto/project.json",
+      "category": "experiments",
+      "featured": false,
+      "identity": {
+        "name": "Projeto Celesto",
+        "subtitle": {
+          "pt": "Automação e computação aplicadas à astronomia",
+          "en": "Automation and computing applied to astronomy"
+        },
+        "status": {
+          "pt": "iniciativa científica",
+          "en": "scientific initiative"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "compass"
+      },
+      "hall": {
+        "accent": "#c4afe4",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp celesto"
+    },
+    {
+      "id": "auramed",
+      "manifest": "auramed/project.json",
+      "category": "other-projects",
+      "featured": false,
+      "identity": {
+        "name": "AuraMed",
+        "subtitle": {
+          "pt": "Aplicação web com Java e Spring Boot",
+          "en": "Web application with Java and Spring Boot"
+        },
+        "status": {
+          "pt": "projeto de aplicação web",
+          "en": "web application project"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "layers"
+      },
+      "hall": {
+        "accent": "#e4bf96",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp auramed"
+    },
+    {
+      "id": "secure-login",
+      "manifest": "secure-login/project.json",
+      "category": "other-projects",
+      "featured": false,
+      "identity": {
+        "name": "Secure Login",
+        "subtitle": {
+          "pt": "Autenticação, validação e recuperação de acesso",
+          "en": "Authentication, validation and access recovery"
+        },
+        "status": {
+          "pt": "projeto de autenticação",
+          "en": "authentication project"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "shield"
+      },
+      "hall": {
+        "accent": "#e4bf96",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp secure-login"
+    },
+    {
+      "id": "portfolio",
+      "manifest": "portfolio/project.json",
+      "category": "other-projects",
+      "featured": false,
+      "identity": {
+        "name": "Portfólio interativo",
+        "subtitle": {
+          "pt": "Um mundo navegável, configurado por dados",
+          "en": "A navigable world configured through data"
+        },
+        "status": {
+          "pt": "neste domínio",
+          "en": "within this domain"
+        }
+      },
+      "presentation": {
+        "tone": "neutral",
+        "icon": "terminal"
+      },
+      "hall": {
+        "accent": "#b7d1c9",
+        "hoverText": {
+          "pt": "EXPLORE ESTE TERRITÓRIO",
+          "en": "EXPLORE THIS TERRITORY"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp portfolio"
+    }
+  ],
+  "updates": []
+}

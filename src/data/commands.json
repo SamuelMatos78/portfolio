@@ -1,0 +1,130 @@
+[
+  {
+    "command": "projects",
+    "target": "tp projects"
+  },
+  {
+    "command": "champions",
+    "target": "tp champions"
+  },
+  {
+    "command": "home",
+    "target": "tp home"
+  },
+  {
+    "command": "curriculum",
+    "target": "tp curriculum"
+  },
+  {
+    "command": "inicio",
+    "target": "tp home"
+  },
+  {
+    "command": "projetos",
+    "target": "tp projects"
+  },
+  {
+    "command": "campeoes",
+    "target": "tp champions"
+  },
+  {
+    "command": "curriculo",
+    "target": "tp curriculum"
+  },
+  {
+    "command": "voltar",
+    "target": "back"
+  },
+  {
+    "command": "ajuda",
+    "target": "help"
+  },
+  {
+    "command": "limpar",
+    "target": "clear"
+  },
+  {
+    "command": "abrir terminal",
+    "target": "open terminal"
+  },
+  {
+    "command": "fechar terminal",
+    "target": "close terminal"
+  },
+  {
+    "command": "ls",
+    "target": "list"
+  },
+  {
+    "command": "listar",
+    "target": "list"
+  },
+  {
+    "command": "regioes",
+    "target": "list"
+  },
+  {
+    "command": "regions",
+    "target": "list"
+  },
+  {
+    "command": "onde",
+    "target": "pwd"
+  },
+  {
+    "command": "sair",
+    "target": "close terminal"
+  },
+  {
+    "command": "exit",
+    "target": "close terminal"
+  },
+  {
+    "command": "updates",
+    "target": "tp updates"
+  },
+  {
+    "command": "novidades",
+    "target": "tp updates"
+  },
+  {
+    "command": "atualizacoes",
+    "target": "tp updates"
+  },
+  {
+    "command": "generais",
+    "target": "tp champions"
+  },
+  {
+    "command": "generals",
+    "target": "tp champions"
+  },
+  {
+    "command": "iniciativas",
+    "target": "tp initiatives"
+  },
+  {
+    "command": "causas",
+    "target": "tp initiatives"
+  },
+  {
+    "command": "causes",
+    "target": "tp initiatives"
+  },
+  {
+    "command": "sobre",
+    "target": "tp about"
+  },
+  {
+    "command": "contato",
+    "target": "tp contact"
+  },
+  {
+    "command": "conquistas",
+    "target": "tp titles"
+  },
+  {
+    "command": "resume",
+    "target": "tp curriculum"
+  }
+]
