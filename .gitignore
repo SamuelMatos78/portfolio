@@ -7,7 +7,7 @@ node_modules/
 # Builds, generated résumé PDFs and tool caches
 /dist/
 /dist-ssr/
-/public/resume/*.pdf
+#/public/resume/*.pdf
 *.tsbuildinfo
 .vite/
 .cache/
