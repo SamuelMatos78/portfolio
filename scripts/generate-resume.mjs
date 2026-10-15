@@ -6,6 +6,7 @@ import { validateProfile } from "../src/profile/validation.ts";
 import { validateInformation } from "../src/runtime/information.ts";
 import { validateResume } from "../src/resume/validation.ts";
 import { validateCatalog } from "../src/projects/validation.ts";
+import { languageShares, validateGitHubStats } from "../src/github/stats.ts";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const readJSON = async (path) => JSON.parse(await readFile(join(root, path), "utf8"));
@@ -13,8 +14,8 @@ const localize = (value, locale) => typeof value === "string" ? value : value?.[
 const fonts = fileURLToPath(new URL("./assets/fonts/", import.meta.url));
 
 export async function generateResume(outputDirectory = join(root, "public/resume")) {
-  const [rawProfile, rawResume, rawInformation, home, rawCatalog] = await Promise.all([
-    readJSON("src/data/profile.json"), readJSON("src/data/resume.json"), readJSON("src/data/information.json"), readJSON("src/data/home.json"), readJSON("public/projects/index.json"),
+  const [rawProfile, rawResume, rawInformation, home, rawCatalog, rawGitHub] = await Promise.all([
+    readJSON("src/data/profile.json"), readJSON("src/data/resume.json"), readJSON("src/data/information.json"), readJSON("src/data/home.json"), readJSON("public/projects/index.json"), readJSON("src/data/github-stats.json"),
   ]);
   const profile = validateProfile(rawProfile);
   const resume = validateResume(rawResume);
@@ -24,6 +25,7 @@ export async function generateResume(outputDirectory = join(root, "public/resume
   const sections = information[resumePages[0].id];
   if (!sections?.length) throw new Error("Resume sections are missing.");
   const catalog = validateCatalog(rawCatalog);
+  const github = validateGitHubStats(rawGitHub);
   const projects = resume.selectedProjects.map((id) => {
     const project = catalog.projects.find((item) => item.id === id);
     if (!project) throw new Error(`Unknown resume project: ${id}.`);
@@ -88,8 +90,17 @@ export async function generateResume(outputDirectory = join(root, "public/resume
       doc.restore();
     }
     for (const contact of contacts) paragraph(`${text(contact.title)}: ${contact.href.replace(/^https?:\/\//, "")}`, { size: 7.5, color: "#294c3b", link: contact.href, gap: 5 });
+    const number = new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en", { maximumFractionDigits: 1 });
+    const snapshotDate = new Intl.DateTimeFormat(locale === "pt" ? "pt-BR" : "en", { dateStyle: "short", timeZone: "America/Sao_Paulo" }).format(new Date(github.fetchedAt));
+    paragraph(locale === "pt" ? `GitHub (${snapshotDate}): ${github.repositories} repositórios públicos${github.excludesForks ? " próprios" : ""} · ${github.stars} estrelas · ${github.followers} seguidores` : `GitHub (${snapshotDate}): ${github.repositories} ${github.excludesForks ? "original " : ""}public repositories · ${github.stars} stars · ${github.followers} followers`, { size: 7.5, gap: 4 });
+    const languageLine = languageShares(github).map((item) => `${item.name} ${number.format(item.percentage)}%`).join(" · ");
+    paragraph(`${locale === "pt" ? "Linguagens por bytes de código" : "Languages by code bytes"}: ${languageLine}`, { size: 7, gap: 4 });
     y += 4;
     for (const section of sections) {
+      // Contact URLs already appear above; keep additional links without duplicates.
+      const canonical = (href) => { const url = new URL(href); return `${url.origin}${url.pathname.replace(/\/$/, "")}`; };
+      const visibleLinks = section.type === "links" ? section.items.filter((item) => !item.href || !contacts.some((contact) => canonical(contact.href) === canonical(item.href))) : [];
+      if (section.type === "links" && !visibleLinks.length) continue;
       heading(text(section.title));
       switch (section.type) {
         case "text": paragraph(text(section.body)); break;
@@ -104,7 +115,7 @@ export async function generateResume(outputDirectory = join(root, "public/resume
           }
           break;
         case "links":
-          for (const item of section.items) paragraph(`${text(item.label)}${item.href ? ` — ${item.href.replace(/^https?:\/\//, "")}` : ""}`, { size: 7.5, color: "#294c3b", link: item.href, gap: 5 });
+          for (const item of visibleLinks) paragraph(`${text(item.label)}${item.href ? ` — ${item.href.replace(/^https?:\/\//, "")}` : ""}`, { size: 7.5, color: "#294c3b", link: item.href, gap: 5 });
           break;
         case "gallery": for (const item of section.items) paragraph(text(item.caption)); break;
       }

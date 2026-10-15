@@ -1,0 +1,46 @@
+{
+  "username": "SamuelMatos78",
+  "fetchedAt": "2026-10-15T20:22:32.658Z",
+  "excludesForks": true,
+  "repositories": 9,
+  "stars": 8,
+  "followers": 8,
+  "languages": [
+    {
+      "name": "Python",
+      "bytes": 143629
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 108175
+    },
+    {
+      "name": "HTML",
+      "bytes": 94493
+    },
+    {
+      "name": "Java",
+      "bytes": 88361
+    },
+    {
+      "name": "CSS",
+      "bytes": 80716
+    },
+    {
+      "name": "C",
+      "bytes": 72258
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 42876
+    },
+    {
+      "name": "CMake",
+      "bytes": 1127
+    },
+    {
+      "name": "Shell",
+      "bytes": 670
+    }
+  ]
+}

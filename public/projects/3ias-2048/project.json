@@ -39,7 +39,8 @@
       "description": {
         "pt": "Três agentes, um tabuleiro de 2048",
         "en": "Three agents, one 2048 board"
-      }
+      },
+      "image": "assets/2048.png"
     },
     {
       "type": "stats",

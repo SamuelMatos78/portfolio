@@ -58,3 +58,6 @@ logs/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Private author context (keep local, never version)
+/docs_autoupdate/author/

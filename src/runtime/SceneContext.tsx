@@ -1,10 +1,13 @@
-import { useCallback, useEffect, useMemo, useReducer, useState } from "react";
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import homeData from "../data/home.json";
 import { loadCatalog, prefetchProject } from "../projects/loader";
 import type { ProjectCatalog } from "../types/project";
 import { commandCompletions, createCommandBus, interpretCommand } from "./commands";
-import { initialSceneState, scenePath, sceneReducer } from "./scenes";
+import type { NavigationMode } from "./commands";
+import { initialSceneState, sceneKey, scenePath, sceneReducer } from "./scenes";
+import type { SceneAction } from "./scenes";
+import { destinationFromURL, sceneURL } from "./links";
 import { SceneContext } from "./context";
 import { baseDestinations, destinationLabels, destinationRegistry, resolveRegisteredDestination } from "./destinations";
 import { useLocale } from "../i18n/useLocale";
@@ -14,7 +17,21 @@ const staticLabels = destinationLabels(null, homeData.information);
 
 export function SceneProvider({ children }: { children: ReactNode }) {
   const { locale } = useLocale();
-  const [state, dispatch] = useReducer(sceneReducer, initialSceneState);
+  const [state, reducerDispatch] = useReducer(sceneReducer, initialSceneState);
+  const stateRef = useRef(initialSceneState);
+  const handledURL = useRef<string | undefined>(undefined);
+  const localeRef = useRef(locale);
+  useEffect(() => { localeRef.current = locale; }, [locale]);
+  const dispatch = useCallback((action: SceneAction, mode: NavigationMode = "push") => {
+    const next = sceneReducer(stateRef.current, action);
+    if (sceneKey(next.currentScene) !== sceneKey(stateRef.current.currentScene) || (action.type === "navigate" && mode === "replace")) {
+      const url = sceneURL(window.location.href, next.currentScene);
+      if (url.href !== window.location.href) window.history[mode === "replace" ? "replaceState" : "pushState"](null, "", url);
+      handledURL.current = window.location.href;
+    }
+    stateRef.current = next;
+    reducerDispatch(action);
+  }, []);
   const path = scenePath(state.currentScene);
   const [catalog, setCatalog] = useState<ProjectCatalog | null>(null);
   const [catalogError, setCatalogError] = useState<string | null>(null);
@@ -45,8 +62,10 @@ export function SceneProvider({ children }: { children: ReactNode }) {
     return () => { active = false; };
   }, []);
 
+  // The factory only stores callbacks; dispatch reads refs later, inside execute().
+  // oxlint-disable-next-line react/refs
   const bus = useMemo(() => createCommandBus({
-    dispatch,
+    dispatch: (action, mode) => dispatch(action, mode),
     resolveDestination: async (id) => {
       const fixed = resolveRegisteredDestination(id, staticDestinations, staticLabels);
       if (fixed) return fixed;
@@ -54,7 +73,20 @@ export function SceneProvider({ children }: { children: ReactNode }) {
       return resolveRegisteredDestination(id, destinationRegistry(catalog, staticDestinations), destinationLabels(catalog, homeData.information));
     },
     listDestinations: async () => [...destinationRegistry(await getCatalog(), staticDestinations).keys()],
-  }), [getCatalog]);
+  }), [getCatalog, dispatch]);
+
+  useEffect(() => {
+    const followURL = () => {
+      if (handledURL.current === window.location.href) return;
+      handledURL.current = window.location.href;
+      const destination = destinationFromURL(window.location);
+      if (destination !== undefined) void bus.execute(`tp ${destination}`, localeRef.current, undefined, { history: "replace" }).then((result) => { if (result.kind === "error") setFeedback(result.message); });
+    };
+    followURL();
+    window.addEventListener("popstate", followURL);
+    window.addEventListener("hashchange", followURL);
+    return () => { window.removeEventListener("popstate", followURL); window.removeEventListener("hashchange", followURL); };
+  }, [bus]);
 
   const executeCommand = useCallback(async (input: string) => {
     const result = await bus.execute(input, locale, path);

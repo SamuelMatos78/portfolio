@@ -15,6 +15,7 @@ import { sceneKey, sceneTransition } from "./scenes";
 import type { SceneLocation } from "./scenes";
 import Icon from "../components/Icon";
 import TerminalInvitation from "../components/TerminalInvitation";
+import CommandLink from "../components/CommandLink";
 
 function Scene({ location }: { location: SceneLocation }) {
   switch (location.id) {
@@ -44,12 +45,12 @@ export default function SceneManager() {
   }, [key, terminalOpen]);
 
   return <>
-    <div className="domain-shell" inert={terminalOpen}>
+    <div className={`domain-shell ${currentScene.id === "home" ? "domain-shell--home" : ""}`} inert={terminalOpen}>
       <header className="domain-header">
-        <CommandButton command="tp home" className="domain-brand" aria-label={t("brandHome")}>Samuel Matos<span>/domain</span></CommandButton>
+        <CommandLink command="tp home" className="domain-brand" aria-label={t("brandHome")}>Samuel Matos<span>/domain</span></CommandLink>
         <span className="domain-header__location">{t(currentScene.id)}</span>
         <nav aria-label={t("sceneControls")}><CommandButton command="back" disabled={!state.history.length}><Icon name="arrow-left" /> {t("back")}</CommandButton>
-          {currentScene.id !== "home" && <CommandButton command="tp projects">{t("projects")}</CommandButton>}
+          {currentScene.id !== "home" && <CommandLink command="tp projects">{t("projects")}</CommandLink>}
         </nav>
         <LanguageSwitch />
       </header>

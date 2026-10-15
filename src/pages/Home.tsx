@@ -9,6 +9,7 @@ import { useLocale } from "../i18n/useLocale";
 import "./Home.css";
 import Profile from "../profile/Profile";
 import Icon from "../components/Icon";
+import CommandLink from "../components/CommandLink";
 
 const data: HomeData = homeData;
 
@@ -26,7 +27,7 @@ export default function Home() {
 
   return <main className="home world-lobby">
     <nav className="hero__navigation" aria-label={t("homeNav")}>
-      {data.navigation.map((item) => <CommandButton key={item.command} command={item.command}>{text(item.label)}</CommandButton>)}
+      {data.navigation.map((item) => <CommandLink key={item.command} command={item.command}>{text(item.label)}</CommandLink>)}
     </nav>
     <section className="hero" aria-labelledby="home-title">
       <div className="hero__copy">
@@ -34,7 +35,7 @@ export default function Home() {
         <h1 id="home-title" className="hero__title">{text(data.intro.title)}</h1>
         <p className="hero__role">{text(data.intro.role)}</p>
         <p className="hero__description">{text(data.intro.description)}</p>
-        <div className="hero__actions"><CommandButton command="tp champions" className="home-primary">{t("champions")} ↗</CommandButton><CommandButton command="tp updates">{t("updates")} →</CommandButton></div>
+        <div className="hero__actions"><CommandLink command="tp champions" className="home-primary">{t("champions")} ↗</CommandLink><CommandLink command="tp updates">{t("updates")} →</CommandLink></div>
       </div>
       <section className="home-featured" aria-label={t("featured")}>
         <p className="eyebrow">{t("quickExplore")}</p><CatalogNotice /><Carousel items={featured} />

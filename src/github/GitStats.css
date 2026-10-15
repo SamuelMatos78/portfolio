@@ -1,0 +1,21 @@
+.git-stats { min-width: 0; padding: 2rem; border: 1px solid #b7d1c926; border-radius: 12px; background: linear-gradient(135deg, #20352a33, #0d1418); color: #dce8df; }
+.git-stats > header { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+.git-stats .eyebrow { color: #b7a274; font-size: .6rem; }
+.git-stats h2 { margin-top: .6rem; font-size: 1.4rem; }
+.git-stats a { color: #bfceb9; font-size: .7rem; text-underline-offset: 4px; }
+.git-stats__metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.6rem 0 2rem; gap: 1rem; }
+.git-stats__metrics > div { padding: 1rem 0; border-block: 1px solid #b7d1c91c; }
+.git-stats dt { color: #a1b4a8; font: .6rem/1.7 var(--mono); }
+.git-stats dd { color: #e3d3aa; margin: .7rem 0 0; font-size: 2.1rem; }
+.git-stats h3 { font-size: .85rem; font-weight: 500; margin: 0 0 1rem; }
+.git-stats__bar { display: flex; gap: 2px; height: 9px; border-radius: 5px; overflow: hidden; }
+.git-stats__bar > span { flex-basis: 0; min-width: 0; }
+.git-stats__languages { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem 1.2rem; }
+.git-stats__languages li { display: flex; align-items: center; justify-content: space-between; gap: .6rem; font-size: .75rem; min-width: 0; }
+.git-stats__languages li > span { display: flex; align-items: center; gap: .5rem; overflow-wrap: anywhere; min-width: 0; }
+.git-stats__languages i { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; }
+.git-stats__languages strong { font: .65rem var(--mono); color: #c6cfbf; white-space: nowrap; }
+.git-stats footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #b7d1c91c; color: #8fa196; font-size: .65rem; line-height: 1.8; }
+.git-stats footer > span { display: block; margin-top: .5rem; }
+.profile-page > .git-stats { margin-top: 2rem; }
+@media (max-width: 700px) { .git-stats { padding: 1.3rem; } .git-stats > header { flex-direction: column; } .git-stats__metrics { gap: .6rem; } .git-stats__languages { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem .9rem; } }

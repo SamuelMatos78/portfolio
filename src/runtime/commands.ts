@@ -45,8 +45,10 @@ export function interpretCommand(input: string, locale: Locale = "en"): Command 
     : translate(locale, "unknownCommand", { value: input.trim() || translate(locale, "empty") }));
 }
 
+export type NavigationMode = "push" | "replace";
+
 interface CommandHandlers {
-  dispatch: (action: SceneAction) => void;
+  dispatch: (action: SceneAction, mode?: NavigationMode) => void;
   resolveDestination: (id: string) => Promise<SceneLocation | undefined>;
   listDestinations: () => Promise<string[]>;
   currentPath?: () => string;
@@ -55,7 +57,7 @@ interface CommandHandlers {
 export function createCommandBus(handlers: CommandHandlers) {
   let navigationIntent = 0;
   return {
-    async execute(input: string, locale: Locale = "en", currentPath?: string): Promise<CommandResult> {
+    async execute(input: string, locale: Locale = "en", currentPath?: string, options?: { history: NavigationMode }): Promise<CommandResult> {
       const t = (key: Parameters<typeof translate>[1], value?: string) => translate(locale, key, value === undefined ? {} : { value });
       try {
         const command = interpretCommand(input, locale);
@@ -65,12 +67,12 @@ export function createCommandBus(handlers: CommandHandlers) {
             const destination = await handlers.resolveDestination(command.destination);
             if (intent !== navigationIntent) return { kind: "success", message: t("newerNavigation") };
             if (!destination) throw new Error(t("unknownDestination", command.destination));
-            handlers.dispatch({ type: "navigate", destination });
+            handlers.dispatch({ type: "navigate", destination }, options?.history);
             return { kind: "success", message: t("destination", command.destination) };
           }
           case "back":
             navigationIntent++;
-            handlers.dispatch({ type: "back" });
+            handlers.dispatch({ type: "back" }, options?.history);
             return { kind: "success", message: t("backRequested") };
           case "terminal":
             handlers.dispatch({ type: "terminal", open: command.open });

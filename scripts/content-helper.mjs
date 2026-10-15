@@ -9,6 +9,7 @@ import palettes from "../src/data/region-themes.json" with { type: "json" };
 import { validateProfile } from "../src/profile/validation.ts";
 import { validateInformation } from "../src/runtime/information.ts";
 import { validateResume } from "../src/resume/validation.ts";
+import { validateGitHubStats } from "../src/github/stats.ts";
 
 const home = JSON.parse(await readFile(new URL("../src/data/home.json", import.meta.url), "utf8"));
 const base = baseDestinations(home.information.map((item) => item.id));
@@ -161,6 +162,7 @@ async function main() {
   } });
   const root = fileURLToPath(new URL("../public/projects", import.meta.url));
   if (positionals[0] === "check") {
+    validateGitHubStats(JSON.parse(await readFile(new URL("../src/data/github-stats.json", import.meta.url), "utf8")));
     const profile = validateProfile(JSON.parse(await readFile(new URL("../src/data/profile.json", import.meta.url), "utf8")));
     if (profile.photo) await access(new URL(`../src/assets/${profile.photo.src}`, import.meta.url));
     validateInformation(JSON.parse(await readFile(new URL("../src/data/information.json", import.meta.url), "utf8")), home.information.map((item) => item.id));

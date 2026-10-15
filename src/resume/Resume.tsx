@@ -6,6 +6,7 @@ import ProfilePortrait from "../profile/ProfilePortrait";
 import CommandButton from "../components/CommandButton";
 import Icon from "../components/Icon";
 import CatalogNotice from "../components/CatalogNotice";
+import GitStats from "../github/GitStats";
 import SectionRenderer from "../projects/SectionRenderer";
 import type { ProjectSection } from "../types/project";
 import type { ProfileCard } from "../profile/types";
@@ -56,6 +57,7 @@ export default function Resume({ title, id }: { title: LocalizedText; id: string
       {profile.photo && <div className="resume-hero__portrait"><ProfilePortrait photo={profile.photo} name={profile.name} /><span className="resume-hero__signature" aria-hidden="true">Samuel Matos<span>/domain</span></span></div>}
     </header>
     <div className="resume-layout"><div className="resume-main">{sections.map((section, index) => <ResumeSection section={section} index={index} key={index} />)}
+      <GitStats />
       {!!resume.selectedProjects.length && <section className="resume-section resume-projects"><header className="resume-section__heading"><Icon name="layers" /><h2>{t("resumeProjects")}</h2></header><p>{t("resumeProjectsDescription")}</p><CatalogNotice /><div className="resume-projects__grid">{projects.map((project) => <CommandButton key={project.id} command={project.command} className="resume-project" aria-label={`${t("resumeExplore")}: ${project.identity.name}`}><span>{project.identity.name}</span><small>{text(project.identity.subtitle)}</small><Icon name="arrow-up-right" /></CommandButton>)}</div></section>}
     </div><aside className="resume-sidebar" aria-label={t("resumeDetails")}><p className="eyebrow">{t("resumeDetails")}</p><dl>{profile.details.map((detail, index) => <div key={index}><dt>{text(detail.label)}</dt><dd>{text(detail.value)}</dd></div>)}</dl><div className="resume-contacts">{contacts.map((contact) => <a href={contact.href} key={contact.id} target="_blank" rel="noopener noreferrer">{text(contact.title)} <Icon name="arrow-up-right" /></a>)}</div><a className="resume-sidebar__download" href={`${import.meta.env.BASE_URL}resume/${filename}`} download={filename}>{t("downloadResume")} <Icon name="scroll-text" /></a></aside></div>
   </main>;

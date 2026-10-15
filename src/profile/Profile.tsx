@@ -5,6 +5,7 @@ import ProfileCards from "./ProfileCards";
 import { readProfile } from "./data";
 import ProfilePortrait from "./ProfilePortrait";
 import SectionRenderer from "../projects/SectionRenderer";
+import GitStats from "../github/GitStats";
 import "../projects/ProjectExperience.css";
 import "./Profile.css";
 
@@ -27,6 +28,7 @@ export default function Profile({ full = false }: { full?: boolean }) {
     </div>
     {full && <div className="profile-story">{profile.full.paragraphs.map((paragraph, index) => <p key={index}>{text(paragraph)}</p>)}{profile.full.note && <p className="notice">{text(profile.full.note)}</p>}</div>}
     {full && profile.full.sections?.length ? <div className="content-sections profile-sections">{profile.full.sections.map((section, index) => <SectionRenderer key={index} section={section} />)}</div> : null}
+    {full && <GitStats />}
     <ProfileCards cards={profile.cards} />
     {full && <CommandButton command="tp home" className="profile-return">{t("returnHome")} ↗</CommandButton>}
   </Container>;

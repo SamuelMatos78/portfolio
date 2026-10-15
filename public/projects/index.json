@@ -190,6 +190,7 @@
         "icon": "swords"
       },
       "hall": {
+        "image":"3ias-2048/assets/2048.png",
         "accent": "#b9caed",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",
@@ -220,6 +221,7 @@
         "icon": "sparkles"
       },
       "hall": {
+        "image":"existential-prompt-benchmark/assets/existencial.jpg",
         "accent": "#c4afe4",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",
@@ -250,6 +252,7 @@
         "icon": "scroll-text"
       },
       "hall": {
+        "image":"pdfall/assets/imgpdfall.svg",
         "accent": "#e4bf96",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",
@@ -310,6 +313,7 @@
         "icon": "compass"
       },
       "hall": {
+        "image":"celesto/assets/celesto.jpg",
         "accent": "#c4afe4",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",

@@ -4,6 +4,8 @@ Objetivo: adicionar um general, projeto, iniciativa ou update com dados, sem cri
 
 ## Contexto mínimo
 
+Para URLs compartilháveis, tema da Home ou estatísticas públicas do GitHub, leia [LINKS_AND_GITHUB.md](LINKS_AND_GITHUB.md).
+
 1. Leia este arquivo e [PERSONALIZATION.md](PERSONALIZATION.md).
 2. Leia `public/projects/index.json` para conhecer IDs ocupados e categorias existentes.
 3. Leia [CONTENT_HELPER.md](CONTENT_HELPER.md) para a operação necessária. Para comandos/caminhos extras, leia [TERMINAL.md](TERMINAL.md); para cards pessoais, [PROFILE.md](PROFILE.md).

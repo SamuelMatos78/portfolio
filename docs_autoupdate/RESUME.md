@@ -10,6 +10,7 @@
 | `src/data/information.json`, chave `curriculum` | Formação, experiências e competências; fonte compartilhada pela página e pelos PDFs |
 | `src/data/resume.json` | Apresentação visual, tecnologias em destaque, IDs dos cards de contato, projetos selecionados e nomes dos PDFs |
 | `src/data/home.json` | Destino com `content: "resume"`; preserve o ID usado em `information.json` |
+| `src/data/github-stats.json` | Estatísticas públicas e distribuição de linguagens por bytes, com data de coleta |
 | `scripts/generate-resume.mjs` | Gerador Node com PDFKit; fontes locais em `scripts/assets/fonts/` |
 
 Continue usando textos PT/EN e fatos fornecidos pelo autor. `contactCards` aponta para cards `link` publicados, com URLs reais no perfil. `selectedProjects` aponta para IDs existentes no catálogo. Para destacar outro projeto, edite somente o array. `focus` aceita strings compartilhadas ou `{ "pt": "...", "en": "..." }`.
@@ -23,6 +24,8 @@ npm run resume:pdf
 ```
 
 Gera `public/resume/samuel-oliveira-matos-pt.pdf` e `public/resume/samuel-oliveira-matos-en.pdf`. Os nomes vêm do JSON. Textos são selecionáveis, acentos e símbolos usam fontes incorporadas, contatos são links e o documento tem paginação. O gerador adiciona páginas conforme o conteúdo cresce, sem truncar as seções.
+
+O build tenta renovar o snapshot do GitHub antes de gerar os PDFs, com fallback para dados locais válidos se a API estiver indisponível. As linguagens declaradas permanecem; as medidas por bytes são informação adicional com data. Veja [LINKS_AND_GITHUB.md](LINKS_AND_GITHUB.md).
 
 `npm run dev` gera os PDFs antes de iniciar o preview. `npm run build` gera os PDFs novamente e o Vite os inclui em `dist/resume/`. Se mudar os dados enquanto o preview está aberto, rode `npm run resume:pdf` para atualizar também os downloads.
 

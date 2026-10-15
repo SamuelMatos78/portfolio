@@ -39,7 +39,8 @@
       "description": {
         "pt": "Automação e computação aplicadas à astronomia",
         "en": "Automation and computing applied to astronomy"
-      }
+      },
+      "image":"assets/celesto.jpg"
     },
     {
       "type": "text",

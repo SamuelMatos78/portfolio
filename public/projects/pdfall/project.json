@@ -39,7 +39,8 @@
       "description": {
         "pt": "Extração híbrida e OCR para documentos PDF",
         "en": "Hybrid extraction and OCR for PDF documents"
-      }
+      },
+      "image": "assets/imgpdfall.svg"
     },
     {
       "type": "text",

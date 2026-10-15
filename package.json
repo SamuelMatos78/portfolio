@@ -6,7 +6,8 @@
   "scripts": {
     "predev": "npm run resume:pdf",
     "dev": "vite",
-    "build": "npm run resume:pdf && tsc -b && vite build",
+    "build": "node scripts/update-github-stats.mjs --optional && npm run resume:pdf && tsc -b && vite build",
+    "github:update": "node scripts/update-github-stats.mjs",
     "resume:pdf": "node scripts/generate-resume.mjs",
     "lint": "oxlint",
     "test": "node --test --test-isolation=none tests/*.test.mjs",
