@@ -374,6 +374,7 @@
         "icon": "shield"
       },
       "hall": {
+        "image": "secure-login/assets/login.png",
         "accent": "#e4bf96",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",

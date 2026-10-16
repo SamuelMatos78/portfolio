@@ -39,7 +39,8 @@
       "description": {
         "pt": "Autenticação, validação e recuperação de acesso",
         "en": "Authentication, validation and access recovery"
-      }
+      },
+      "image": "assets/login.png"
     },
     {
       "type": "text",
