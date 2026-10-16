@@ -1,0 +1,8 @@
+{
+  "recipient": "samuelomatos@hotmail.com",
+  "emailSubject": "Contato pelo portfolio de Samuel Matos",
+  "confirmation": {
+    "pt": "Obrigado por entrar em contato com Samuel Matos. Sua mensagem foi recebida. Esta é uma confirmação automática; Samuel responderá ao email que você informou.",
+    "en": "Thank you for contacting Samuel Matos. Your message has been received. This is an automatic confirmation; Samuel will reply to the email address you provided."
+  }
+}

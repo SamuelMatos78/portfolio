@@ -6,6 +6,8 @@ Objetivo: adicionar um general, projeto, iniciativa ou update com dados, sem cri
 
 Para URLs compartilháveis, tema da Home ou estatísticas públicas do GitHub, leia [LINKS_AND_GITHUB.md](LINKS_AND_GITHUB.md).
 
+Para o formulário de contato, leia [CONTACT.md](CONTACT.md). Protótipos são montados apenas na pasta local ignorada `.prototype/`; somente as imagens exportadas em `prototypes/` devem ser versionadas.
+
 1. Leia este arquivo e [PERSONALIZATION.md](PERSONALIZATION.md).
 2. Leia `public/projects/index.json` para conhecer IDs ocupados e categorias existentes.
 3. Leia [CONTENT_HELPER.md](CONTENT_HELPER.md) para a operação necessária. Para comandos/caminhos extras, leia [TERMINAL.md](TERMINAL.md); para cards pessoais, [PROFILE.md](PROFILE.md).

@@ -21,8 +21,7 @@ node_modules/
 !.env.*.example
 *.local
 .aws/
-.continue/
-.codex/
+
 
 # Tests, browser reports and temporary artifacts
 coverage/
@@ -32,6 +31,8 @@ test-results/
 /.artifacts/
 /.tmp/
 /tmp/
+# Local prototype entry and assembly; only exported images are versioned
+/.prototype/
 /public/projects/.content-lock/
 /public/projects/index.json.tmp-*
 
