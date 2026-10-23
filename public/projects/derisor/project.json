@@ -1,7 +1,7 @@
 {
-  "id": "derrisor",
+  "id": "derisor",
   "identity": {
-    "name": "Derrisor",
+    "name": "Derisor",
     "subtitle": {
       "pt": "Agente autônomo de Balatro",
       "en": "Autonomous Balatro Agent"
@@ -32,7 +32,7 @@
   "sections": [
     {
       "type": "hero",
-      "title": "DERRISOR",
+      "title": "DERISOR",
       "eyebrow": {
         "pt": "CAMPEÃO COMPETITIVO / DORMENTE",
         "en": "COMPETITIVE CHAMPION / DORMANT"
@@ -46,12 +46,23 @@
     {
       "type": "text",
       "title": {
+        "pt": "Próximo sinal · 2 de novembro de 2026",
+        "en": "Next signal · November 2, 2026"
+      },
+      "body": {
+        "pt": "Novas informações sobre Derisor serão divulgadas em 2 de novembro de 2026. Volte nesta data para acompanhar o próximo capítulo do projeto.",
+        "en": "New information about Derisor will be released on November 2, 2026. Return then to follow the project's next chapter."
+      }
+    },
+    {
+      "type": "text",
+      "title": {
         "pt": "Sobre",
         "en": "About"
       },
       "body": {
-        "pt": "Derrisor é um projeto de agente autônomo para Balatro. Investigo como um algoritmo especializado pode tomar decisões complexas a partir das informações disponíveis ao jogador, sem conhecimento privilegiado do futuro. O projeto combina modelagem de estados, cartas e modificadores com avaliação probabilística e heurísticas.",
-        "en": "Derrisor is an autonomous-agent project for Balatro. I investigate how a specialized algorithm can make complex decisions from information available to the player, without privileged knowledge of the future. It combines state, card and modifier modeling with probabilistic evaluation and heuristics."
+        "pt": "Derisor é um projeto de agente autônomo para Balatro. Investigo como um algoritmo especializado pode tomar decisões complexas a partir das informações disponíveis ao jogador, sem conhecimento privilegiado do futuro. O projeto combina modelagem de estados, cartas e modificadores com avaliação probabilística e heurísticas.",
+        "en": "Derisor is an autonomous-agent project for Balatro. I investigate how a specialized algorithm can make complex decisions from information available to the player, without privileged knowledge of the future. It combines state, card and modifier modeling with probabilistic evaluation and heuristics."
       }
     },
     {
@@ -72,8 +83,8 @@
         "en": "Evidence and scope"
       },
       "body": {
-        "pt": "Os resultados publicados em H-Suppression pertencem a cenários sintéticos e às implementações avaliadas naquele experimento. Eles não comprovam desempenho competitivo do Derrisor em partidas reais de Balatro. Campanhas, taxa de vitória e benchmarks específicos de Balatro permanecem pendentes.",
-        "en": "The results published in H-Suppression belong to synthetic scenarios and the implementations evaluated in that experiment. They do not establish competitive performance for Derrisor in real Balatro matches. Campaigns, win rates and Balatro-specific benchmarks remain pending."
+        "pt": "Os resultados publicados em H-Suppression pertencem a cenários sintéticos e às implementações avaliadas naquele experimento. Eles não comprovam desempenho competitivo do Derisor em partidas reais de Balatro. Campanhas, taxa de vitória e benchmarks específicos de Balatro permanecem pendentes.",
+        "en": "The results published in H-Suppression belong to synthetic scenarios and the implementations evaluated in that experiment. They do not establish competitive performance for Derisor in real Balatro matches. Campaigns, win rates and Balatro-specific benchmarks remain pending."
       }
     },
     {
@@ -125,8 +136,8 @@
         {
           "image": "assets/portrait.jpeg",
           "alt": {
-            "pt": "Carta de Joker fornecida como visual inicial de Derrisor",
-            "en": "Joker card supplied as the initial visual for Derrisor"
+            "pt": "Carta de Joker fornecida como visual inicial de Derisor",
+            "en": "Joker card supplied as the initial visual for Derisor"
           },
           "caption": {
             "pt": "Visual inicial fornecido com o portfólio.",
@@ -151,8 +162,8 @@
         },
         {
           "label": {
-            "pt": "Relatório e motivação para Derrisor",
-            "en": "Report and motivation for Derrisor"
+            "pt": "Relatório e motivação para Derisor",
+            "en": "Report and motivation for Derisor"
           },
           "href": "https://github.com/SamuelMatos78/H-supression/blob/main/RELATORIO.md"
         }

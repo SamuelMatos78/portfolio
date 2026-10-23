@@ -59,7 +59,7 @@ Os defaults de cores, fonte e atmosfera ficam em `src/data/region-themes.json`, 
 ## Comunicado/update de um projeto
 
 ```sh
-npm run content -- update --id meu-comunicado --project derrisor --date 2026-10-10 --title-pt "Título real" --title-en "Actual title" --body-pt "Mudança real fornecida pelo autor." --body-en "Actual change supplied by the author."
+npm run content -- update --id meu-comunicado --project derisor --date 2026-10-10 --title-pt "Título real" --title-en "Actual title" --body-pt "Mudança real fornecida pelo autor." --body-en "Actual change supplied by the author."
 ```
 
 Use a **data real do comunicado**. Este exemplo não publica um update por si só. O item aparece na Home, no mural de novidades e na experiência do projeto. Sem `--project`, o comunicado é geral.
@@ -69,7 +69,7 @@ Também aceita arquivo:
 ```json
 {
   "id": "meu-comunicado",
-  "project": "derrisor",
+  "project": "derisor",
   "date": "2026-10-10",
   "title": { "pt": "Título real", "en": "Actual title" },
   "body": { "pt": "Atualização real.", "en": "Actual update." }

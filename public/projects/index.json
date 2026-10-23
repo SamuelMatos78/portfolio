@@ -11,7 +11,7 @@
         "en": "My competitive champions command these regions. Enter at your own risk."
       },
       "visual": {
-        "accent": "#e07b65",
+        "accent": "#7b1c29",
         "symbol": "01",
         "tone": "intimidating",
         "icon": "swords"
@@ -75,12 +75,12 @@
   ],
   "projects": [
     {
-      "id": "derrisor",
-      "manifest": "derrisor/project.json",
+      "id": "derisor",
+      "manifest": "derisor/project.json",
       "category": "champions",
       "featured": true,
       "identity": {
-        "name": "Derrisor",
+        "name": "Derisor",
         "subtitle": {
           "pt": "Agente autônomo de Balatro",
           "en": "Autonomous Balatro Agent"
@@ -91,7 +91,7 @@
         }
       },
       "hall": {
-        "image": "derrisor/assets/portrait.jpeg",
+        "image": "derisor/assets/portrait.jpeg",
         "accent": "#a6d8e8",
         "hoverText": {
           "pt": "ALVO DETECTADO",
@@ -99,7 +99,7 @@
         },
         "hoverEffect": "scan"
       },
-      "command": "tp derrisor",
+      "command": "tp derisor",
       "presentation": {
         "icon": "swords",
         "secondaryAccent": "#db8268",
@@ -415,5 +415,20 @@
       "command": "tp portfolio"
     }
   ],
-  "updates": []
+  "updates": [
+    {
+      "id": "derisor-information-november-2026",
+      "date": "2026-11-02",
+      "projectId": "derisor",
+      "title": {
+        "pt": "Novas informações sobre Derisor · 2 de novembro de 2026",
+        "en": "New information about Derisor · November 2, 2026"
+      },
+      "body": {
+        "pt": "Novas informações sobre o projeto Derisor serão divulgadas em 2 de novembro de 2026. Volte para acompanhar as novidades.",
+        "en": "New information about the Derisor project will be released on November 2, 2026. Check back for the update."
+      },
+      "command": "tp derisor"
+    }
+  ]
 }

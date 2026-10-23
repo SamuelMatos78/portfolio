@@ -59,7 +59,7 @@ Adicionar um botão em `navigation` **não registra o destino**. Primeiro regist
 
 `projects`, `champions`, `home` e `curriculum` também são atalhos. Os IDs e comandos canônicos permanecem iguais nos dois idiomas. O seletor PT/EN muda os textos e as respostas; ambos os conjuntos de atalhos funcionam em qualquer idioma.
 
-Enter executa, Tab completa o primeiro prefixo, ↑/↓ recuperam comandos e Escape fecha. `clear` limpa a saída, mas conserva os comandos para ↑/↓. No início do histórico de navegação, `back` mantém a cena atual. Não digite os sinais `< >`: use, por exemplo, `tp derrisor`.
+Enter executa, Tab completa o primeiro prefixo, ↑/↓ recuperam comandos e Escape fecha. `clear` limpa a saída, mas conserva os comandos para ↑/↓. No início do histórico de navegação, `back` mantém a cena atual. Não digite os sinais `< >`: use, por exemplo, `tp derisor`.
 
 ## Receita 1: adicionar um atalho
 

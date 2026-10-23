@@ -26,7 +26,7 @@ Os testes usam o runner e o suporte nativo a TypeScript do Node 24+. O runtime d
 ```text
 public/projects/
   index.json                       # Categorias e previews; registro de destinos
-  derrisor/
+  derisor/
     project.json                   # Conteúdo inicial de champion
     assets/portrait.jpeg           # Imagem já fornecida no projeto
   recolhe/project.json             # Segunda configuração, conteúdo pendente
@@ -168,7 +168,7 @@ Pendências deliberadas: URLs/deep links, transições de saída e políticas ma
 
 ## Conteúdo pendente
 
-Derrisor usa a imagem já existente e mantém About, Architecture, Combat Record, captura de gameplay e GitHub como placeholders explícitos. Não há benchmarks, resultados ou URLs inventados. ReColhe conserva somente o nome e a descrição existentes; o restante é placeholder. Titles, biografia detalhada e contato também aguardam dados reais. Experiments e Other Projects são halls vazios funcionais.
+Derisor usa a imagem já existente e mantém About, Architecture, Combat Record, captura de gameplay e GitHub como placeholders explícitos. Não há benchmarks, resultados ou URLs inventados. ReColhe conserva somente o nome e a descrição existentes; o restante é placeholder. Titles, biografia detalhada e contato também aguardam dados reais. Experiments e Other Projects são halls vazios funcionais.
 
 ## Validação
 
@@ -178,7 +178,7 @@ Os testes de idioma também verificam preferência, textos PT/EN, atalhos config
 
 Checklist de navegador:
 
-1. Home → Champions → hover/foco em Derrisor (TARGET DETECTED) → Explore.
+1. Home → Champions → hover/foco em Derisor (TARGET DETECTED) → Explore.
 2. Conferir status DORMANT, seções e placeholders da experiência.
 3. Abrir Power Terminal → `tp home` → Escape → reabrir.
 4. `tp champions` → `help` → `clear` → `back` (Home).
@@ -188,7 +188,7 @@ Checklist de navegador:
 
 Validação desta etapa (10/10/2026): o fluxo acima foi exercitado em Chromium com Playwright e as capturas foram inspecionadas. Confirmados: um único documento durante todos os teleportes, uma única busca do manifest entre hover e revisitas, os dois itens do carousel, histórico/Tab/Escape/foco do terminal e ausência de erros de runtime no fluxo principal. Um champion adicional injetado somente no catálogo e manifest apareceu no hall e abriu no engine. Falhas simuladas de catálogo/manifest e assets foram recuperadas; viewport de 390 px não apresentou overflow horizontal e respeitou movimento reduzido. Playwright e Chromium foram usados apenas em `/tmp`, sem adicionar dependências ao projeto.
 
-Validação do mundo e terminal (10/10/2026): 14 testes passaram, content check confirmou 2 projetos e nenhum comunicado fictício, lint sem avisos e build aprovado. No Chromium, conferidos verbos PT/EN com acentos e nomes traduzidos, ls/pwd/cd/back, maximizar e Ctrl+L, fundo do Derrisor em 1920 px, temas das regiões, update por dados na Home/experiência e telas de 320/390/768 px. Nenhum ID de projeto é tratado especialmente no runtime.
+Validação do mundo e terminal (10/10/2026): 14 testes passaram, content check confirmou 2 projetos e nenhum comunicado fictício, lint sem avisos e build aprovado. No Chromium, conferidos verbos PT/EN com acentos e nomes traduzidos, ls/pwd/cd/back, maximizar e Ctrl+L, fundo do Derisor em 1920 px, temas das regiões, update por dados na Home/experiência e telas de 320/390/768 px. Nenhum ID de projeto é tratado especialmente no runtime.
 
 ## Currículo e PDFs
 

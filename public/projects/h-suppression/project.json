@@ -165,8 +165,8 @@
         "en": "Results and limits"
       },
       "body": {
-        "pt": "HS venceu a referência MCTS em 32 de 32 partidas determinísticas em cada regime avaliado. O estudo também preserva derrotas em famílias probabilísticas, empates com controles locais e casos em que algoritmos especializados são mais rápidos. Nove decisões foram analisadas com pequenos oráculos. Os cenários são sintéticos e não comprovam desempenho competitivo em Balatro. A aplicação ao Derrisor é uma hipótese arquitetural em investigação.",
-        "en": "HS defeated the MCTS reference in 32 of 32 deterministic matches in each evaluated regime. The study also preserves losses in probabilistic families, draws against local controls and cases where specialized algorithms are faster. Nine decisions were examined with small oracles. These synthetic scenarios do not establish competitive performance in Balatro. Application to Derrisor remains an architectural hypothesis under investigation."
+        "pt": "HS venceu a referência MCTS em 32 de 32 partidas determinísticas em cada regime avaliado. O estudo também preserva derrotas em famílias probabilísticas, empates com controles locais e casos em que algoritmos especializados são mais rápidos. Nove decisões foram analisadas com pequenos oráculos. Os cenários são sintéticos e não comprovam desempenho competitivo em Balatro. A aplicação ao Derisor é uma hipótese arquitetural em investigação.",
+        "en": "HS defeated the MCTS reference in 32 of 32 deterministic matches in each evaluated regime. The study also preserves losses in probabilistic families, draws against local controls and cases where specialized algorithms are faster. Nine decisions were examined with small oracles. These synthetic scenarios do not establish competitive performance in Balatro. Application to Derisor remains an architectural hypothesis under investigation."
       }
     },
     {

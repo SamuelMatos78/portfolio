@@ -7,7 +7,7 @@ import { baseDestinations, destinationLabels, destinationRegistry, resolveRegist
 import { validateCatalog } from "../src/projects/validation.ts";
 
 test("teleport links encode destinations, preserve base paths and normalize travel aliases", () => {
-  assert.equal(commandHref("tp derrisor"), "#tp=derrisor");
+  assert.equal(commandHref("tp derisor"), "#tp=derisor");
   assert.equal(commandHref("ir currículo"), "#tp=curriculum");
   assert.equal(destinationFromURL({ hash: teleportHref("Sobre mim"), search: "" }), "Sobre mim");
   assert.equal(destinationFromURL({ hash: "", search: "?tp=pdfall" }), "pdfall");

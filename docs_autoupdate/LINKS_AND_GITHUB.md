@@ -5,7 +5,7 @@
 Acrescente `#tp=<id>` ao endereço publicado:
 
 ```text
-https://SEU-DOMINIO/#tp=derrisor
+https://SEU-DOMINIO/#tp=derisor
 https://SEU-DOMINIO/#tp=about
 https://SEU-DOMINIO/#tp=curriculum
 https://SEU-DOMINIO/#tp=initiatives

@@ -4,6 +4,146 @@
   padding: 1rem 6vw 7rem;
 }
 
+.world-lobby {
+  position: relative;
+  isolation: isolate;
+  --region-radius: 0px;
+  transition: --region-radius 2800ms cubic-bezier(.22, .61, .36, 1), --region-glow 1500ms ease;
+}
+
+@property --region-radius {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --region-glow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #a6c4d4;
+}
+
+.world-lobby::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  clip-path: circle(0 at var(--region-x, 50%) var(--region-y, 50%));
+  opacity: 0;
+  background:
+    radial-gradient(circle at var(--region-x, 50%) var(--region-y, 50%),
+      transparent max(0px, calc(var(--region-radius) - 3px)),
+      color-mix(in srgb, var(--region-glow, #a6c4d4) 78%, #f3787f 22%) var(--region-radius),
+      color-mix(in srgb, var(--region-glow, #a6c4d4) 68%, #e84d5a 32%) calc(var(--region-radius) + 2px),
+      color-mix(in srgb, var(--region-glow, #a6c4d4) 38%, transparent) calc(var(--region-radius) + 10px),
+      transparent calc(var(--region-radius) + 30px)),
+    radial-gradient(circle at var(--region-x, 50%) var(--region-y, 50%),
+      color-mix(in srgb, var(--region-glow, #a6c4d4) 23%, transparent) 0,
+      color-mix(in srgb, var(--region-glow, #a6c4d4) 13%, transparent) 28vmax,
+      color-mix(in srgb, var(--region-glow, #a6c4d4) 7%, transparent) 78vmax,
+      transparent 130vmax);
+  transition: clip-path 2800ms cubic-bezier(.22, .61, .36, 1), opacity 1500ms ease;
+  will-change: clip-path;
+}
+
+.world-lobby--atmosphere::before {
+  clip-path: circle(calc(var(--region-radius) + 30px) at var(--region-x, 50%) var(--region-y, 50%));
+  opacity: 1;
+}
+
+.world-lobby--atmosphere {
+  --region-radius: 150vmax;
+}
+
+.world-lobby--intimidating {
+  --region-radius: 175vmax;
+  transition-duration: 3200ms, 1500ms;
+}
+
+.home-fractures {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 420ms ease;
+}
+
+.world-lobby--intimidating .home-fractures {
+  opacity: 1;
+}
+
+.home-fractures__line {
+  fill: none;
+  stroke: #a52a37;
+  stroke-width: 1.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: fracture-arrive 1050ms cubic-bezier(.18, .68, .2, 1) calc(var(--fracture-delay) + 220ms) both;
+}
+
+.home-fractures__line--glow {
+  stroke: #ef5862;
+  stroke-width: 5;
+  stroke-opacity: .24;
+  filter: blur(1.6px);
+}
+
+.home-fractures__line--branch {
+  animation-delay: calc(var(--fracture-delay) + 420ms);
+  stroke-width: 1.1;
+}
+
+.home-fractures__line--branch.home-fractures__line--glow {
+  stroke-width: 3.5;
+}
+
+@keyframes fracture-arrive {
+  to { stroke-dashoffset: 0; }
+}
+
+.world-lobby > *:not(.home-observer):not(.home-fractures) {
+  position: relative;
+  z-index: 1;
+}
+
+.home-observer {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  top: 12vh;
+  right: 0;
+  width: min(42vw, 620px);
+  height: 76vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateX(5vw) scale(.97);
+  transition: opacity 1500ms ease, transform 1900ms cubic-bezier(.22, .61, .36, 1);
+  overflow: hidden;
+}
+
+.home-observer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  filter: grayscale(.35) brightness(.68) saturate(.75) drop-shadow(0 10px 35px #0009);
+  mask-image: linear-gradient(90deg, transparent 0%, #0008 27%, #000 72%);
+}
+
+.world-lobby--observed .home-observer {
+  opacity: .24;
+  transform: translateX(0) scale(1);
+}
+
 .hero__navigation .command-link {
   font: .74rem var(--mono);
   padding: .3rem 0;
@@ -289,20 +429,20 @@
 }
 
 .home-path.tone--intimidating {
-  background: radial-gradient(ellipse at 100% 0, #642b3044, transparent 70%), linear-gradient(135deg, #251b22, #0a1017);
-  border-color: #9d504644;
-  border-top: 2px solid #d97b64;
+  background: radial-gradient(ellipse at 100% 0, #4b182255, transparent 70%), linear-gradient(135deg, #211117, #090d12);
+  border-color: #76283277;
+  border-top: 2px solid #8e2633;
   border-radius: 2px 16px 2px 2px;
 }
 
 .home-path.tone--intimidating:is(:hover, :focus-visible) {
-  background: radial-gradient(ellipse at 100% 0, #74333960, transparent 70%), linear-gradient(135deg, #30212b, #0a1017);
-  border-color: #d97b6477;
-  box-shadow: 0 28px 45px -20px #000d, 0 0 40px -30px #d97b64;
+  background: radial-gradient(ellipse at 100% 0, #771d2b70, transparent 72%), linear-gradient(135deg, #30131c, #0a0b10);
+  border-color: #b43543;
+  box-shadow: 0 28px 45px -20px #000d, 0 0 48px -28px #d74452, inset 0 1px #d85c6540;
 }
 
 .home-path.tone--intimidating .home-path__symbol {
-  color: #e07b65;
+  color: #bd4752;
 }
 
 .home-path.tone--intimidating .home-path__title {
@@ -343,6 +483,22 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+  .world-lobby::before,
+  .home-fractures,
+  .home-observer {
+    transition: none;
+    will-change: auto;
+  }
+
+  .world-lobby {
+    transition: none;
+  }
+
+  .home-fractures__line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 
   .home-path:not(:disabled):is(:hover, :focus-visible),
   .home-path:is(:hover, :focus-visible) .icon {
@@ -391,6 +547,16 @@
 @media (max-width: 700px) {
   .home {
     padding: 1rem 5vw 7rem;
+  }
+
+  .home-observer {
+    top: 18vh;
+    width: 58vw;
+    height: 58vh;
+  }
+
+  .world-lobby--observed .home-observer {
+    opacity: .15;
   }
 
   .hero {

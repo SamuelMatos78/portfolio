@@ -42,14 +42,14 @@ test("Portuguese and English verbs, accented destinations and shell paths use th
   assert.equal(state.currentScene.informationId, "curriculum");
   await bus.execute("cd");
   assert.equal(state.currentScene.id, "home");
-  assert.match((await bus.execute("listar", "pt")).message, /derrisor\//);
+  assert.match((await bus.execute("listar", "pt")).message, /derisor\//);
   assert.ok(commandCompletions([...registry.keys()]).includes("teleportar campeoes"));
 });
 
 test("region personality and visible background are manifest data", async () => {
   assert.equal(catalog.categories.find((item) => item.id === "champions").visual.tone, "intimidating");
   assert.equal(catalog.categories.find((item) => item.id === "initiatives").visual.tone, "humanitarian");
-  const project = catalog.projects.find((item) => item.id === "derrisor");
+  const project = catalog.projects.find((item) => item.id === "derisor");
   const manifest = validateManifest(await readJSON(new URL(`../public/projects/${project.manifest}`, import.meta.url)), project.id);
   assert.ok(manifest.visual.overlay < 0.5);
   assert.equal(manifest.visual.backgroundSize, "contain");
@@ -73,7 +73,7 @@ test("the helper adds a data-only project, copies an asset, registers updates an
   const root = join(temporary, "projects");
   try {
     await cp(new URL("../public/projects/", import.meta.url), root, { recursive: true });
-    await addProject(root, { id: "fixture-general", name: "Fixture General", category: "champions", presentation: { icon: "shield", secondaryAccent: "#db8268", imageFit: "cover" }, image: fileURLToPath(new URL("../public/projects/derrisor/assets/portrait.jpeg", import.meta.url)) });
+    await addProject(root, { id: "fixture-general", name: "Fixture General", category: "champions", presentation: { icon: "shield", secondaryAccent: "#db8268", imageFit: "cover" }, image: fileURLToPath(new URL("../public/projects/derisor/assets/portrait.jpeg", import.meta.url)) });
     const checked = await checkContent(root);
     assert.equal(checked.projects, catalog.projects.length + 1);
     await access(join(root, "fixture-general/assets/portrait.jpeg"));
