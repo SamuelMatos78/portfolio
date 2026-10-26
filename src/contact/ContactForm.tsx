@@ -53,7 +53,7 @@ export default function ContactForm() {
       <textarea id={`${id}-message`} name="message" rows={5} maxLength={CONTACT_LIMITS.message} placeholder={t("contactMessagePlaceholder")} aria-invalid={error === "message" || undefined} aria-describedby={error === "message" ? `${id}-error` : undefined} />
       {error && <p className="contact-form__error" id={`${id}-error`} role="alert">{errorMessages[error]}</p>}
       <p className="contact-form__privacy" id={`${id}-privacy`}>{t("contactPrivacy")}</p>
-      <button type="submit" className="contact-form__submit">{t("contactSend")} <span aria-hidden="true">↗</span></button>
+      <button type="submit" className="contact-form__submit pixel-font">{t("contactSend")} <span aria-hidden="true">↗</span></button>
       <small>{t("contactCaptcha")}</small>
     </form>
   </section>;

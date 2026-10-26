@@ -58,7 +58,7 @@ export default function ProjectExperience({ projectId }: { projectId: string }) 
         <div className="experience__routes"><CommandButton command="tp updates"><Icon name="scroll-text" /> {t("updates")} <Icon name="arrow-up-right" /></CommandButton><CommandButton command="back"><Icon name="arrow-left" /> {t("back")}</CommandButton></div>
       </header>
       <CatalogNotice />
-      {error && <div className="notice" role="alert"><p>{error}</p><button type="button" onClick={() => { setError(null); setAttempt((value) => value + 1); }}>{t("retryExperience")}</button></div>}
+      {error && <div className="notice" role="alert"><p>{error}</p><button className="pixel-font" type="button" onClick={() => { setError(null); setAttempt((value) => value + 1); }}>{t("retryExperience")}</button></div>}
       {!manifest && !error && project && <p className="catalog-status" role="status">{t("arriving")}</p>}
       {manifest && <div ref={sectionsRef} className={`experience__sections scene-entry--${manifest.entrance.transition}`}>
         {manifest.sections.map((section, index) => <div className="experience__section-reveal" data-reveal="" key={index}><SectionRenderer section={section} /></div>)}

@@ -6,7 +6,7 @@ export default function CatalogNotice() {
   const { t } = useLocale();
   if (catalogError) return <div className="notice" role="alert">
     <p>{t("catalogUnavailable")}: {catalogError}</p>
-    <button type="button" onClick={() => void reloadCatalog()}>{t("retryCatalog")}</button>
+    <button className="pixel-font" type="button" onClick={() => void reloadCatalog()}>{t("retryCatalog")}</button>
   </div>;
   if (!catalog) return <p className="catalog-status" role="status">{t("discovering")}</p>;
   return null;

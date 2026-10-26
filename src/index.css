@@ -10,6 +10,12 @@
   --muted: #9ba8b0;
   --border: #ffffff1c;
   --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --font-pixel: "Silkscreen", var(--mono);
+}
+
+.pixel-font {
+  font-family: var(--font-pixel);
+  letter-spacing: .03em;
 }
 
 .command-link { display: inline-block; text-decoration: none; color: inherit; font: inherit; border: 1px solid var(--border); border-radius: 3px; padding: .8rem 1.2rem; background: #ffffff03; transition: color 200ms, border-color 200ms, background 200ms, box-shadow 250ms; }

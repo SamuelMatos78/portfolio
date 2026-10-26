@@ -49,7 +49,7 @@ export default function Carousel({ items }: { items: FeaturedItem[] }) {
     </article>
     <button className="carousel__arrow" type="button" onClick={() => setIndex((index) => (index + 1) % items.length)} disabled={items.length < 2} aria-label={t("nextFeatured")}><Icon name="arrow-right" /></button>
     {items.length > 1 && <div className="carousel__controls"><span>{t(running ? "carouselAuto" : "carouselPaused")}</span>
-      <button type="button" onClick={() => setPaused((paused) => !paused)} aria-controls={contentId} aria-label={t(paused ? "resumeCarousel" : "pauseCarousel")}>
+      <button className="pixel-font" type="button" onClick={() => setPaused((paused) => !paused)} aria-controls={contentId} aria-label={t(paused ? "resumeCarousel" : "pauseCarousel")}>
         <Icon name={paused ? "play" : "pause"} /> {t(paused ? "resumeCarousel" : "pauseCarousel")}
       </button>
     </div>}

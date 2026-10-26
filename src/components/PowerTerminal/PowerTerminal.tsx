@@ -102,7 +102,7 @@ export default function PowerTerminal() {
                     <button className="power-terminal__close" type="button" onClick={() => void executeCommand("close terminal")} aria-label={t("closeTerminal")} title={t("closeTerminal")}>×</button>
                 </div>
             </header>
-            <div className="power-terminal__toolbar"><p id="terminal-hint">{t("shellNavigation")}</p><button type="button" disabled={busy} onClick={() => void run(locale === "pt" ? "ajuda" : "help")}>{locale === "pt" ? "ajuda" : "help"}</button><button type="button" disabled={busy} onClick={() => void run("ls")}>ls</button></div>
+            <div className="power-terminal__toolbar"><p id="terminal-hint">{t("shellNavigation")}</p><button className="pixel-font" type="button" disabled={busy} onClick={() => void run(locale === "pt" ? "ajuda" : "help")}>{locale === "pt" ? "ajuda" : "help"}</button><button className="pixel-font" type="button" disabled={busy} onClick={() => void run("ls")}>ls</button></div>
             <div className="power-terminal__log" ref={logRef} role="log" aria-live="polite" aria-relevant="additions" aria-label={t("commandHistory")}>
                 {welcomeVisible && <p className="terminal-welcome">{t("terminalWelcome")}</p>}
                 {entries.map((entry, index) => <div key={index} className={entry.error ? "terminal-entry terminal-entry--error" : "terminal-entry"}>
@@ -113,7 +113,7 @@ export default function PowerTerminal() {
                 <label htmlFor="terminal-input" className="sr-only">{t("command")}</label><span aria-hidden="true"><Prompt path={path} /></span>
                 <input ref={inputRef} id="terminal-input" value={input} onChange={(event) => { setInput(event.target.value); setHistoryIndex(null); }} onKeyDown={handleInputKey}
                     autoComplete="off" autoCapitalize="none" spellCheck={false} placeholder={t("commandPlaceholder")} aria-describedby="terminal-completions" readOnly={busy} />
-                <button type="submit" disabled={busy || !input.trim()}>{busy ? t("running") : t("enter")}</button>
+                <button className="pixel-font" type="submit" disabled={busy || !input.trim()}>{busy ? t("running") : t("enter")}</button>
             </form>
             <div id="terminal-completions" className="power-terminal__completions">{matches.slice(0, 4).join(" · ") || t("waiting")}</div>
         </div>

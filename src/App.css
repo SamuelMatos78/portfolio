@@ -432,3 +432,63 @@
     justify-self: end;
   }
 }
+
+/* Ações em estilo flat 3D inspirado nas abas do Header.css */
+.domain-shell--home {
+  --pixel-theme-accent: #d5ae56;
+}
+
+.power-terminal {
+  --pixel-theme-accent: #8ae234;
+}
+
+:root :is(button, a).pixel-font {
+  --pixel-accent: var(--card-accent, var(--surface-accent, var(--experience-accent, var(--pixel-theme-accent, var(--accent)))));
+  --pixel-depth: color-mix(in srgb, var(--pixel-accent) 55%, #080b0e);
+  font-family: var(--font-pixel);
+  letter-spacing: .03em;
+  color: var(--pixel-ink, var(--pixel-accent));
+  border: 1px solid color-mix(in srgb, var(--pixel-accent) 64%, #080b0e);
+  border-radius: 8px;
+  box-shadow: 0 4px 0 var(--pixel-depth), 0 8px 18px -14px var(--pixel-accent);
+  transition: transform 180ms cubic-bezier(.3, 1.6, .5, 1), color 200ms, border-color 200ms, background 200ms, box-shadow 200ms;
+}
+
+:root :is(button, a).pixel-font:not(:disabled):is(:hover, :focus-visible) {
+  border-color: var(--pixel-accent);
+  box-shadow: 0 6px 0 var(--pixel-depth), 0 12px 22px -14px var(--pixel-accent);
+  transform: translateY(-2px);
+}
+
+:root :is(button, a).pixel-font:active {
+  box-shadow: 0 1px 0 var(--pixel-depth);
+  transform: translateY(2px);
+  transition-duration: 50ms;
+}
+
+:root .pixel-font.contact-form__submit,
+:root .pixel-font.home-primary,
+:root .pixel-font.resume-download,
+:root .tone--humanitarian .pixel-font {
+  --pixel-ink: #203a30;
+  --pixel-accent: #446649;
+  --pixel-depth: #28452f;
+}
+
+:root .pixel-font.contact-form__submit {
+  --pixel-ink: #17170f;
+  --pixel-accent: #b69348;
+  --pixel-depth: #765b26;
+}
+
+:root .pixel-font.home-primary {
+  --pixel-ink: #241a0a;
+  --pixel-accent: #d5ae56;
+  --pixel-depth: #5a4219;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root :is(button, a).pixel-font:is(:hover, :active, :focus-visible) {
+    transform: none;
+  }
+}

@@ -12,6 +12,7 @@ import "./Home.css";
 import Profile from "../profile/Profile";
 import Icon from "../components/Icon";
 import CommandLink from "../components/CommandLink";
+import NeonTerritoryCard from "../components/NeonTerritoryCard";
 import type { ProjectSummary } from "../types/project";
 
 const data: HomeData = homeData;
@@ -58,7 +59,7 @@ function buildFractures(origin: Point, width: number, height: number) {
 }
 
 export default function Home() {
-  const { catalog } = useScenes();
+  const { catalog, executeCommand, prefetchCommand } = useScenes();
   const { t, text } = useLocale();
   const [activeRegion, setActiveRegion] = useState<HomeData["paths"][number] | null>(null);
   const [regionOrigin, setRegionOrigin] = useState({ x: 0, y: 0 });
@@ -124,14 +125,15 @@ export default function Home() {
     </section>
     <section className="home-paths" aria-labelledby="paths-title">
       <div className="home-section-intro"><h2 id="paths-title">{t("worldRegions")}</h2><p>{t("worldRegionsDescription")}</p></div>
-      <div className="home-paths__grid">{data.paths.map((path) => {
+      <div className="home-paths__grid">{data.paths.map((path, index) => {
         const residents = catalog?.projects.filter((project) => !path.category || project.category === path.category) ?? [];
-        return <CommandButton key={path.command} command={path.command} className={`home-path tone--${path.tone ?? "neutral"}`} aria-label={text(path.label)}
-          onPointerEnter={(event) => activateRegion(path, event.currentTarget)} onPointerLeave={() => setActiveRegion(null)}
-          onFocus={(event) => activateRegion(path, event.currentTarget)} onBlur={() => setActiveRegion(null)}>
-          <span className="home-path__symbol" aria-hidden="true">{path.icon ? <Icon name={path.icon} /> : path.symbol}</span><span className="home-path__title">{text(path.label)}</span><span className="home-path__description">{text(path.description)}</span>
-          <span className="home-path__residents">{residents.map((item) => item.identity.name).join(" · ") || "—"}</span><Icon name="arrow-up-right" className="home-path__arrow" />
-        </CommandButton>;
+        const variant = path.category === "champions" ? "generals" : path.tone === "humanitarian" ? "initiatives" : "projects";
+        return <NeonTerritoryCard key={path.command} variant={variant} command={path.command} onSelect={() => void executeCommand(path.command)} onWarm={() => prefetchCommand(path.command)}
+          icon={path.icon ? <Icon name={path.icon} /> : undefined} actionIcon={<Icon name="arrow-up-right" />}
+          sectorLabel={`${t("territorySector")} / ${String(index + 1).padStart(2, "0")}`}
+          statusLabel={t("territoryOnline")} enterLabel={t("enterHall")} label={text(path.label)} description={text(path.description)}
+          symbol={path.symbol} residents={residents.map((item) => item.identity.name)} index={index}
+          onActivate={(element) => activateRegion(path, element)} onDeactivate={() => setActiveRegion(null)} />;
       })}</div>
     </section>
     <Profile />
