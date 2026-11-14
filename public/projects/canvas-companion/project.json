@@ -1,0 +1,183 @@
+{
+  "id": "canvas-companion",
+  "identity": {
+    "name": "Canvas Companion",
+    "subtitle": {
+      "pt": "Apoio local para organizar estudos no Canvas",
+      "en": "Local support for organizing Canvas study work"
+    },
+    "status": {
+      "pt": "código aberto · contribuição em andamento",
+      "en": "open source · ongoing contribution"
+    }
+  },
+  "visual": {
+    "background": "#f0eee2",
+    "foreground": "#213b31",
+    "backgroundImage": "assets/canvas_logo.png",
+    "accent": "#446649",
+    "font": "system-ui, sans-serif",
+    "overlay": 0,
+    "vignette": false,
+    "atmosphere": "none",
+    "backgroundSize": "cover",
+    "backgroundPosition": "center",
+    "backgroundOpacity": 1
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 260
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": {
+        "pt": "INICIATIVAS · EDUCAÇÃO",
+        "en": "INITIATIVES · EDUCATION"
+      },
+      "title": {
+        "pt": "Mais tempo para aprender, com o estudo no seu controle.",
+        "en": "More time to learn, with your study work in your hands."
+      },
+      "description": {
+        "pt": "Canvas Companion reúne materiais, atividades e ferramentas de estudo em um app local para Windows e Linux. Estou contribuindo com estudos e melhorias para este projeto de código aberto voltado a apoiar alunos.",
+        "en": "Canvas Companion brings course materials, assignments and study tools together in a local app for Windows and Linux. I am contributing research and improvements to this open-source project built to support students."
+      },
+      "image":"assets/canvas_logo.png"
+    },
+    {
+      "type": "text",
+      "title": {
+        "pt": "Do conteúdo da disciplina a uma área de prática.",
+        "en": "From course material to a place to practice."
+      },
+      "body": {
+        "pt": "O app sincroniza materiais e atividades do Canvas, ajuda a encontrar o que você precisa e organiza uma área limpa para praticar. Se o aluno configurar um serviço de IA compatível, uma sugestão de resposta pode ser criada à parte para revisão. O app não envia respostas nem altera atividades no Canvas.",
+        "en": "The app syncs Canvas materials and assignments, helps students find what they need and organizes a clean workspace for practice. If a compatible AI service is configured, it can prepare a separate answer suggestion for review. The app does not submit answers or change Canvas assignments."
+      }
+    },
+    {
+      "type": "stats",
+      "title": {
+        "pt": "Feito para estudar com autonomia.",
+        "en": "Built for independent study."
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Versões para desktop",
+            "en": "Desktop builds"
+          },
+          "value": "Windows · Linux"
+        },
+        {
+          "label": {
+            "pt": "Área de prática",
+            "en": "Practice workspace"
+          },
+          "value": {
+            "pt": "Local e organizada",
+            "en": "Local and organized"
+          }
+        },
+        {
+          "label": {
+            "pt": "Envio de respostas",
+            "en": "Answer submission"
+          },
+          "value": {
+            "pt": "Não automatizado",
+            "en": "Never automated"
+          },
+          "note": {
+            "pt": "O estudante revisa e decide o que fazer no Canvas.",
+            "en": "Students review and decide what to do in Canvas."
+          }
+        }
+      ]
+    },
+    {
+      "type": "downloads",
+      "title": {
+        "pt": "Baixe o Canvas Companion.",
+        "en": "Download Canvas Companion."
+      },
+      "body": {
+        "pt": "Escolha a versão para o seu sistema. Os arquivos foram gerados a partir do app disponível no repositório; consulte o README para instruções de instalação e detalhes do projeto.",
+        "en": "Choose the build for your system. These files were generated from the app in the repository; see the README for installation steps and project details."
+      },
+      "repository": "SamuelMatos78/canvas-companion",
+      "repositoryUrl": "https://github.com/SamuelMatos78/canvas-companion",
+      "items": [
+        {
+          "platform": "windows",
+          "fileName": "Canvas-Companion-win.exe",
+          "fallbackUrl": "/downloads/canvas-companion/Canvas-Companion-win.exe",
+          "label": {
+            "pt": "Baixar para Windows (.exe)",
+            "en": "Download for Windows (.exe)"
+          },
+          "note": {
+            "pt": "Executável · aproximadamente 23 MB",
+            "en": "Executable · about 23 MB"
+          }
+        },
+        {
+          "platform": "linux",
+          "fileName": "Canvas-Companion-Linux",
+          "fallbackUrl": "/downloads/canvas-companion/Canvas-Companion-Linux",
+          "label": {
+            "pt": "Baixar para Linux",
+            "en": "Download for Linux"
+          },
+          "note": {
+            "pt": "Executável · aproximadamente 42 MB",
+            "en": "Executable · about 42 MB"
+          }
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": {
+        "pt": "Explore e contribua.",
+        "en": "Explore and contribute."
+      },
+      "items": [
+        {
+          "label": {
+            "pt": "Repositório e código-fonte",
+            "en": "Repository and source code"
+          },
+          "href": "https://github.com/SamuelMatos78/canvas-companion",
+          "note": {
+            "pt": "Código, histórico e espaço para acompanhar o projeto.",
+            "en": "Code, history and a place to follow the project."
+          }
+        },
+        {
+          "label": {
+            "pt": "README e guia de instalação",
+            "en": "README and installation guide"
+          },
+          "href": "https://github.com/SamuelMatos78/canvas-companion/blob/main/README.md",
+          "note": {
+            "pt": "Configuração, uso e documentação das ferramentas.",
+            "en": "Setup, usage and tool documentation."
+          }
+        },
+        {
+          "label": {
+            "pt": "Relatar um bug",
+            "en": "Report a bug"
+          },
+          "command": "tp contact",
+          "note": {
+            "pt": "Conte o que aconteceu e o que você esperava que acontecesse.",
+            "en": "Describe what happened and what you expected to happen."
+          }
+        }
+      ]
+    }
+  ]
+}

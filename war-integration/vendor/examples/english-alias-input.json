@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "body": [
+    {
+      "op": "repeat_forever",
+      "body": [
+        {
+          "op": "IF",
+          "condition": { "op": "enemy_visible" },
+          "then": [
+            { "op": "select_nearest_enemy" },
+            { "op": "attack_target" }
+          ],
+          "else": [
+            { "op": "wait", "seconds": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

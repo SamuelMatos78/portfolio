@@ -1,0 +1,2899 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:darwin-vs-humanidade:schema:program-import:v1",
+  "title": "Darwin vs Humanidade Program Import v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "body"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1,
+      "description": "Version of this program document format."
+    },
+    "body": {
+      "description": "Instructions executed by each unit, in order.",
+      "type": "array",
+      "maxItems": 2000,
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    }
+  },
+  "$defs": {
+    "node": {
+      "oneOf": [
+        {
+          "title": "Collect Wood (ID 10)",
+          "description": "Portuguese symbol: COLETAR_MADEIRA. English alias: collect_wood. Category: economy.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 10
+                },
+                {
+                  "enum": [
+                    "COLETAR_MADEIRA",
+                    "collect_wood",
+                    "Collect Wood"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Collect Ore (ID 11)",
+          "description": "Portuguese symbol: COLETAR_MINERIO. English alias: collect_ore. Category: economy.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 11
+                },
+                {
+                  "enum": [
+                    "COLETAR_MINERIO",
+                    "collect_ore",
+                    "Collect Ore"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Build Armory (ID 12)",
+          "description": "Portuguese symbol: CONSTRUIR_ARMARIA. English alias: build_armory. Category: economy.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 12
+                },
+                {
+                  "enum": [
+                    "CONSTRUIR_ARMARIA",
+                    "build_armory",
+                    "Build Armory"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Build Hospital (ID 13)",
+          "description": "Portuguese symbol: CONSTRUIR_ENFERMARIA. English alias: build_hospital. Category: economy.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 13
+                },
+                {
+                  "enum": [
+                    "CONSTRUIR_ENFERMARIA",
+                    "build_hospital",
+                    "Build Hospital"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Equip Sword (ID 20)",
+          "description": "Portuguese symbol: EQUIPAR_ESPADA. English alias: equip_sword. Category: equipment.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 20
+                },
+                {
+                  "enum": [
+                    "EQUIPAR_ESPADA",
+                    "equip_sword",
+                    "Equip Sword"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Equip Spear (ID 21)",
+          "description": "Portuguese symbol: EQUIPAR_LANCA. English alias: equip_spear. Category: equipment.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 21
+                },
+                {
+                  "enum": [
+                    "EQUIPAR_LANCA",
+                    "equip_spear",
+                    "Equip Spear"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Equip Axe (ID 22)",
+          "description": "Portuguese symbol: EQUIPAR_MACHADO. English alias: equip_axe. Category: equipment.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 22
+                },
+                {
+                  "enum": [
+                    "EQUIPAR_MACHADO",
+                    "equip_axe",
+                    "Equip Axe"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Change Equipment (ID 23)",
+          "description": "Portuguese symbol: TROCAR_EQUIPAMENTO. English alias: change_equipment. Category: equipment.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "weapon"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 23
+                },
+                {
+                  "enum": [
+                    "TROCAR_EQUIPAMENTO",
+                    "change_equipment",
+                    "Change Equipment"
+                  ]
+                }
+              ]
+            },
+            "weapon": {
+              "enum": [
+                "sword",
+                "spear",
+                "axe"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Attack Target (ID 30)",
+          "description": "Portuguese symbol: ATACAR_ALVO. English alias: attack_target. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 30
+                },
+                {
+                  "enum": [
+                    "ATACAR_ALVO",
+                    "attack_target",
+                    "Attack Target"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Approach and Attack Weapon Type (ID 31)",
+          "description": "Portuguese symbol: IR_ATACAR_TIPO. English alias: approach_and_attack_weapon_type. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "weapon"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 31
+                },
+                {
+                  "enum": [
+                    "IR_ATACAR_TIPO",
+                    "approach_and_attack_weapon_type",
+                    "Approach and Attack Weapon Type"
+                  ]
+                }
+              ]
+            },
+            "weapon": {
+              "enum": [
+                "sword",
+                "spear",
+                "axe"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hold Position (ID 32)",
+          "description": "Portuguese symbol: MANTER_POSICAO. English alias: hold_position. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 32
+                },
+                {
+                  "enum": [
+                    "MANTER_POSICAO",
+                    "hold_position",
+                    "Hold Position"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Protect Ally (ID 33)",
+          "description": "Portuguese symbol: PROTEGER_ALIADO. English alias: protect_ally. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 33
+                },
+                {
+                  "enum": [
+                    "PROTEGER_ALIADO",
+                    "protect_ally",
+                    "Protect Ally"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Protect Building (ID 34)",
+          "description": "Portuguese symbol: PROTEGER_CONSTRUCAO. English alias: protect_building. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 34
+                },
+                {
+                  "enum": [
+                    "PROTEGER_CONSTRUCAO",
+                    "protect_building",
+                    "Protect Building"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Retreat (ID 35)",
+          "description": "Portuguese symbol: RECUAR. English alias: retreat. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 35
+                },
+                {
+                  "enum": [
+                    "RECUAR",
+                    "retreat",
+                    "Retreat"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Attack Building (ID 36)",
+          "description": "Portuguese symbol: ATACAR_CONSTRUCAO. English alias: attack_building. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 36
+                },
+                {
+                  "enum": [
+                    "ATACAR_CONSTRUCAO",
+                    "attack_building",
+                    "Attack Building"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go Destroy Building (ID 37)",
+          "description": "Portuguese symbol: IR_DESTRUIR_CONSTRUCAO. English alias: go_destroy_building. Category: combat.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 37
+                },
+                {
+                  "enum": [
+                    "IR_DESTRUIR_CONSTRUCAO",
+                    "go_destroy_building",
+                    "Go Destroy Building"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Pick Up Downed Soldier (ID 40)",
+          "description": "Portuguese symbol: CAPTURAR_CAIDO. English alias: pick_up_downed. Category: transport.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 40
+                },
+                {
+                  "enum": [
+                    "CAPTURAR_CAIDO",
+                    "pick_up_downed",
+                    "Pick Up Downed Soldier"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Drop Downed Soldier (ID 41)",
+          "description": "Portuguese symbol: SOLTAR_INCAPACITADO. English alias: drop_downed. Category: transport.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 41
+                },
+                {
+                  "enum": [
+                    "SOLTAR_INCAPACITADO",
+                    "drop_downed",
+                    "Drop Downed Soldier"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Treat Ally (ID 42)",
+          "description": "Portuguese symbol: TRATAR_ALIADO. English alias: treat_ally. Category: transport.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 42
+                },
+                {
+                  "enum": [
+                    "TRATAR_ALIADO",
+                    "treat_ally",
+                    "Treat Ally"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go Rescue Ally (ID 43)",
+          "description": "Portuguese symbol: IR_RESGATAR_ALIADO. English alias: go_rescue_ally. Category: transport.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 43
+                },
+                {
+                  "enum": [
+                    "IR_RESGATAR_ALIADO",
+                    "go_rescue_ally",
+                    "Go Rescue Ally"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go Pick Up Downed Enemy (ID 44)",
+          "description": "Portuguese symbol: IR_CAPTURAR_INIMIGO. English alias: go_pick_up_downed_enemy. Category: transport.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 44
+                },
+                {
+                  "enum": [
+                    "IR_CAPTURAR_INIMIGO",
+                    "go_pick_up_downed_enemy",
+                    "Go Pick Up Downed Enemy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go Pick Up Nearest Downed Soldier (ID 45)",
+          "description": "Portuguese symbol: IR_CAPTURAR_CAIDO. English alias: go_pick_up_nearest_downed. Category: transport.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 45
+                },
+                {
+                  "enum": [
+                    "IR_CAPTURAR_CAIDO",
+                    "go_pick_up_nearest_downed",
+                    "Go Pick Up Nearest Downed Soldier"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Enemy Visible (ID 50)",
+          "description": "Portuguese symbol: EXISTE_INIMIGO_VISIVEL. English alias: enemy_visible. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 50
+                },
+                {
+                  "enum": [
+                    "EXISTE_INIMIGO_VISIVEL",
+                    "enemy_visible",
+                    "Enemy Visible"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Downed Ally Exists (ID 51)",
+          "description": "Portuguese symbol: EXISTE_ALIADO_INCAPACITADO. English alias: downed_ally_exists. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 51
+                },
+                {
+                  "enum": [
+                    "EXISTE_ALIADO_INCAPACITADO",
+                    "downed_ally_exists",
+                    "Downed Ally Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Is Unarmed (ID 52)",
+          "description": "Portuguese symbol: ESTOU_DESARMADO. English alias: is_unarmed. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 52
+                },
+                {
+                  "enum": [
+                    "ESTOU_DESARMADO",
+                    "is_unarmed",
+                    "Is Unarmed"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "My Weapon Is Sword (ID 53)",
+          "description": "Portuguese symbol: MINHA_ARMA_ESPADA. English alias: my_weapon_is_sword. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 53
+                },
+                {
+                  "enum": [
+                    "MINHA_ARMA_ESPADA",
+                    "my_weapon_is_sword",
+                    "My Weapon Is Sword"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "My Weapon Is Spear (ID 54)",
+          "description": "Portuguese symbol: MINHA_ARMA_LANCA. English alias: my_weapon_is_spear. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 54
+                },
+                {
+                  "enum": [
+                    "MINHA_ARMA_LANCA",
+                    "my_weapon_is_spear",
+                    "My Weapon Is Spear"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "My Weapon Is Axe (ID 55)",
+          "description": "Portuguese symbol: MINHA_ARMA_MACHADO. English alias: my_weapon_is_axe. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 55
+                },
+                {
+                  "enum": [
+                    "MINHA_ARMA_MACHADO",
+                    "my_weapon_is_axe",
+                    "My Weapon Is Axe"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Armory Exists (ID 56)",
+          "description": "Portuguese symbol: ARMARIA_EXISTE. English alias: armory_exists. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 56
+                },
+                {
+                  "enum": [
+                    "ARMARIA_EXISTE",
+                    "armory_exists",
+                    "Armory Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hospital Exists (ID 57)",
+          "description": "Portuguese symbol: ENFERMARIA_EXISTE. English alias: hospital_exists. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 57
+                },
+                {
+                  "enum": [
+                    "ENFERMARIA_EXISTE",
+                    "hospital_exists",
+                    "Hospital Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Resources Sufficient (ID 58)",
+          "description": "Portuguese symbol: RECURSOS_SUFICIENTES. English alias: resources_sufficient. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 58
+                },
+                {
+                  "enum": [
+                    "RECURSOS_SUFICIENTES",
+                    "resources_sufficient",
+                    "Resources Sufficient"
+                  ]
+                }
+              ]
+            },
+            "item": {
+              "enum": [
+                "sword",
+                "spear",
+                "axe",
+                "armory",
+                "hospital"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Ally Count (ID 59)",
+          "description": "Portuguese symbol: NUMERO_ALIADOS. English alias: ally_count. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 59
+                },
+                {
+                  "enum": [
+                    "NUMERO_ALIADOS",
+                    "ally_count",
+                    "Ally Count"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Enemy Count (ID 60)",
+          "description": "Portuguese symbol: NUMERO_INIMIGOS. English alias: enemy_count. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 60
+                },
+                {
+                  "enum": [
+                    "NUMERO_INIMIGOS",
+                    "enemy_count",
+                    "Enemy Count"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Unarmed (ID 61)",
+          "description": "Portuguese symbol: ALVO_DESARMADO. English alias: target_is_unarmed. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 61
+                },
+                {
+                  "enum": [
+                    "ALVO_DESARMADO",
+                    "target_is_unarmed",
+                    "Target Is Unarmed"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Weapon Has One Use Left (ID 62)",
+          "description": "Portuguese symbol: ARMA_UM_USO. English alias: weapon_has_one_use_left. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 62
+                },
+                {
+                  "enum": [
+                    "ARMA_UM_USO",
+                    "weapon_has_one_use_left",
+                    "Weapon Has One Use Left"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Near Armory (ID 63)",
+          "description": "Portuguese symbol: PERTO_ARMARIA. English alias: near_armory. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 63
+                },
+                {
+                  "enum": [
+                    "PERTO_ARMARIA",
+                    "near_armory",
+                    "Near Armory"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Carrying Someone (ID 64)",
+          "description": "Portuguese symbol: CARREGANDO_ALGUEM. English alias: carrying_someone. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 64
+                },
+                {
+                  "enum": [
+                    "CARREGANDO_ALGUEM",
+                    "carrying_someone",
+                    "Carrying Someone"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Has Sword (ID 65)",
+          "description": "Portuguese symbol: ALVO_ESPADA. English alias: target_has_sword. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 65
+                },
+                {
+                  "enum": [
+                    "ALVO_ESPADA",
+                    "target_has_sword",
+                    "Target Has Sword"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Has Spear (ID 66)",
+          "description": "Portuguese symbol: ALVO_LANCA. English alias: target_has_spear. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 66
+                },
+                {
+                  "enum": [
+                    "ALVO_LANCA",
+                    "target_has_spear",
+                    "Target Has Spear"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Has Axe (ID 67)",
+          "description": "Portuguese symbol: ALVO_MACHADO. English alias: target_has_axe. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 67
+                },
+                {
+                  "enum": [
+                    "ALVO_MACHADO",
+                    "target_has_axe",
+                    "Target Has Axe"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Visible Ally Has Weapon (ID 68)",
+          "description": "Portuguese symbol: ALIADO_VISIVEL_USA_ARMA. English alias: visible_ally_has_weapon. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 68
+                },
+                {
+                  "enum": [
+                    "ALIADO_VISIVEL_USA_ARMA",
+                    "visible_ally_has_weapon",
+                    "Visible Ally Has Weapon"
+                  ]
+                }
+              ]
+            },
+            "weapon": {
+              "enum": [
+                "sword",
+                "spear",
+                "axe"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Near Target (ID 69)",
+          "description": "Portuguese symbol: PERTO_ALVO. English alias: near_target. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 69
+                },
+                {
+                  "enum": [
+                    "PERTO_ALVO",
+                    "near_target",
+                    "Near Target"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "If (ID 70)",
+          "description": "Portuguese symbol: IF. English alias: if. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "condition",
+            "then"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 70
+                },
+                {
+                  "enum": [
+                    "IF",
+                    "if",
+                    "If"
+                  ]
+                }
+              ]
+            },
+            "condition": {
+              "$ref": "#/$defs/condition"
+            },
+            "then": {
+              "type": "array",
+              "maxItems": 2000,
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            },
+            "else": {
+              "type": "array",
+              "maxItems": 2000,
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            }
+          }
+        },
+        {
+          "title": "Else (ID 71)",
+          "description": "Portuguese symbol: ELSE. English alias: else. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "body"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 71
+                },
+                {
+                  "enum": [
+                    "ELSE",
+                    "else",
+                    "Else"
+                  ]
+                }
+              ]
+            },
+            "body": {
+              "type": "array",
+              "maxItems": 2000,
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            }
+          }
+        },
+        {
+          "title": "Repeat Forever (ID 72)",
+          "description": "Portuguese symbol: REPEAT_FOREVER. English alias: repeat_forever. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "body"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 72
+                },
+                {
+                  "enum": [
+                    "REPEAT_FOREVER",
+                    "repeat_forever",
+                    "Repeat Forever"
+                  ]
+                }
+              ]
+            },
+            "body": {
+              "type": "array",
+              "maxItems": 2000,
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            }
+          }
+        },
+        {
+          "title": "Repeat Until (ID 73)",
+          "description": "Portuguese symbol: REPEAT_UNTIL. English alias: repeat_until. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "condition",
+            "body"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 73
+                },
+                {
+                  "enum": [
+                    "REPEAT_UNTIL",
+                    "repeat_until",
+                    "Repeat Until"
+                  ]
+                }
+              ]
+            },
+            "condition": {
+              "$ref": "#/$defs/condition"
+            },
+            "body": {
+              "type": "array",
+              "maxItems": 2000,
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            }
+          }
+        },
+        {
+          "title": "While (ID 74)",
+          "description": "Portuguese symbol: WHILE. English alias: while. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "condition",
+            "body"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 74
+                },
+                {
+                  "enum": [
+                    "WHILE",
+                    "while",
+                    "While"
+                  ]
+                }
+              ]
+            },
+            "condition": {
+              "$ref": "#/$defs/condition"
+            },
+            "body": {
+              "type": "array",
+              "maxItems": 2000,
+              "items": {
+                "$ref": "#/$defs/node"
+              }
+            }
+          }
+        },
+        {
+          "title": "Break Loop (ID 75)",
+          "description": "Portuguese symbol: BREAK. English alias: break_loop. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 75
+                },
+                {
+                  "enum": [
+                    "BREAK",
+                    "break_loop",
+                    "Break Loop"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Continue Loop (ID 76)",
+          "description": "Portuguese symbol: CONTINUE. English alias: continue_loop. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 76
+                },
+                {
+                  "enum": [
+                    "CONTINUE",
+                    "continue_loop",
+                    "Continue Loop"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Wait (ID 77)",
+          "description": "Portuguese symbol: WAIT. English alias: wait. Category: control.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "seconds"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 77
+                },
+                {
+                  "enum": [
+                    "WAIT",
+                    "wait",
+                    "Wait"
+                  ]
+                }
+              ]
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 180
+            }
+          }
+        },
+        {
+          "title": "Move Up (ID 80)",
+          "description": "Portuguese symbol: MOVE_UP. English alias: move_up. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 80
+                },
+                {
+                  "enum": [
+                    "MOVE_UP",
+                    "move_up",
+                    "Move Up"
+                  ]
+                }
+              ]
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "title": "Move Down (ID 81)",
+          "description": "Portuguese symbol: MOVE_DOWN. English alias: move_down. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 81
+                },
+                {
+                  "enum": [
+                    "MOVE_DOWN",
+                    "move_down",
+                    "Move Down"
+                  ]
+                }
+              ]
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "title": "Move Left (ID 82)",
+          "description": "Portuguese symbol: MOVE_LEFT. English alias: move_left. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 82
+                },
+                {
+                  "enum": [
+                    "MOVE_LEFT",
+                    "move_left",
+                    "Move Left"
+                  ]
+                }
+              ]
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "title": "Move Right (ID 83)",
+          "description": "Portuguese symbol: MOVE_RIGHT. English alias: move_right. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 83
+                },
+                {
+                  "enum": [
+                    "MOVE_RIGHT",
+                    "move_right",
+                    "Move Right"
+                  ]
+                }
+              ]
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "title": "Move Toward Target (ID 84)",
+          "description": "Portuguese symbol: MOVE_TOWARD_TARGET. English alias: move_toward_target. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 84
+                },
+                {
+                  "enum": [
+                    "MOVE_TOWARD_TARGET",
+                    "move_toward_target",
+                    "Move Toward Target"
+                  ]
+                }
+              ]
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "title": "Go to Armory (ID 85)",
+          "description": "Portuguese symbol: GO_ARMORY. English alias: go_to_armory. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 85
+                },
+                {
+                  "enum": [
+                    "GO_ARMORY",
+                    "go_to_armory",
+                    "Go to Armory"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go to Hospital (ID 86)",
+          "description": "Portuguese symbol: GO_HOSPITAL. English alias: go_to_hospital. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 86
+                },
+                {
+                  "enum": [
+                    "GO_HOSPITAL",
+                    "go_to_hospital",
+                    "Go to Hospital"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go to Forest (ID 87)",
+          "description": "Portuguese symbol: GO_FOREST. English alias: go_to_forest. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 87
+                },
+                {
+                  "enum": [
+                    "GO_FOREST",
+                    "go_to_forest",
+                    "Go to Forest"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go to Mine (ID 88)",
+          "description": "Portuguese symbol: GO_MINE. English alias: go_to_mine. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 88
+                },
+                {
+                  "enum": [
+                    "GO_MINE",
+                    "go_to_mine",
+                    "Go to Mine"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go to Ally (ID 89)",
+          "description": "Portuguese symbol: GO_ALLY. English alias: go_to_ally. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 89
+                },
+                {
+                  "enum": [
+                    "GO_ALLY",
+                    "go_to_ally",
+                    "Go to Ally"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go to Enemy (ID 90)",
+          "description": "Portuguese symbol: GO_ENEMY. English alias: go_to_enemy. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 90
+                },
+                {
+                  "enum": [
+                    "GO_ENEMY",
+                    "go_to_enemy",
+                    "Go to Enemy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go to Downed Soldier (ID 91)",
+          "description": "Portuguese symbol: GO_DOWNED. English alias: go_to_downed. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 91
+                },
+                {
+                  "enum": [
+                    "GO_DOWNED",
+                    "go_to_downed",
+                    "Go to Downed Soldier"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Go to Enemy Building (ID 92)",
+          "description": "Portuguese symbol: GO_ENEMY_BUILDING. English alias: go_to_enemy_building. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 92
+                },
+                {
+                  "enum": [
+                    "GO_ENEMY_BUILDING",
+                    "go_to_enemy_building",
+                    "Go to Enemy Building"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Stop Movement (ID 93)",
+          "description": "Portuguese symbol: STOP_MOVEMENT. English alias: stop_movement. Category: movement.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 93
+                },
+                {
+                  "enum": [
+                    "STOP_MOVEMENT",
+                    "stop_movement",
+                    "Stop Movement"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Select Nearest Enemy (ID 100)",
+          "description": "Portuguese symbol: SELECT_NEAREST_ENEMY. English alias: select_nearest_enemy. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 100
+                },
+                {
+                  "enum": [
+                    "SELECT_NEAREST_ENEMY",
+                    "select_nearest_enemy",
+                    "Select Nearest Enemy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Select Nearest Ally (ID 101)",
+          "description": "Portuguese symbol: SELECT_NEAREST_ALLY. English alias: select_nearest_ally. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 101
+                },
+                {
+                  "enum": [
+                    "SELECT_NEAREST_ALLY",
+                    "select_nearest_ally",
+                    "Select Nearest Ally"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Select Nearest Downed Soldier (ID 102)",
+          "description": "Portuguese symbol: SELECT_NEAREST_DOWNED. English alias: select_nearest_downed. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 102
+                },
+                {
+                  "enum": [
+                    "SELECT_NEAREST_DOWNED",
+                    "select_nearest_downed",
+                    "Select Nearest Downed Soldier"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Ally (ID 103)",
+          "description": "Portuguese symbol: TARGET_IS_ALLY. English alias: target_is_ally. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 103
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_ALLY",
+                    "target_is_ally",
+                    "Target Is Ally"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Enemy (ID 104)",
+          "description": "Portuguese symbol: TARGET_IS_ENEMY. English alias: target_is_enemy. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 104
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_ENEMY",
+                    "target_is_enemy",
+                    "Target Is Enemy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Downed (ID 105)",
+          "description": "Portuguese symbol: TARGET_IS_DOWNED. English alias: target_is_downed. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 105
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_DOWNED",
+                    "target_is_downed",
+                    "Target Is Downed"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Compare Ally Count (ID 106)",
+          "description": "Portuguese symbol: ALLY_COUNT_COMPARE. English alias: compare_ally_count. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "comparator",
+            "value"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 106
+                },
+                {
+                  "enum": [
+                    "ALLY_COUNT_COMPARE",
+                    "compare_ally_count",
+                    "Compare Ally Count"
+                  ]
+                }
+              ]
+            },
+            "comparator": {
+              "enum": [
+                "eq",
+                "neq",
+                "gt",
+                "gte",
+                "lt",
+                "lte"
+              ]
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                {
+                  "$ref": "#/$defs/countExpression"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Compare Enemy Count (ID 107)",
+          "description": "Portuguese symbol: ENEMY_COUNT_COMPARE. English alias: compare_enemy_count. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "comparator",
+            "value"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 107
+                },
+                {
+                  "enum": [
+                    "ENEMY_COUNT_COMPARE",
+                    "compare_enemy_count",
+                    "Compare Enemy Count"
+                  ]
+                }
+              ]
+            },
+            "comparator": {
+              "enum": [
+                "eq",
+                "neq",
+                "gt",
+                "gte",
+                "lt",
+                "lte"
+              ]
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                {
+                  "$ref": "#/$defs/countExpression"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Building (ID 108)",
+          "description": "Portuguese symbol: TARGET_IS_BUILDING. English alias: target_is_building. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 108
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_BUILDING",
+                    "target_is_building",
+                    "Target Is Building"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Downed Enemy Exists (ID 109)",
+          "description": "Portuguese symbol: ENEMY_DOWNED_EXISTS. English alias: downed_enemy_exists. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 109
+                },
+                {
+                  "enum": [
+                    "ENEMY_DOWNED_EXISTS",
+                    "downed_enemy_exists",
+                    "Downed Enemy Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "oneOf": [
+        {
+          "title": "Enemy Visible (ID 50)",
+          "description": "Portuguese symbol: EXISTE_INIMIGO_VISIVEL. English alias: enemy_visible. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 50
+                },
+                {
+                  "enum": [
+                    "EXISTE_INIMIGO_VISIVEL",
+                    "enemy_visible",
+                    "Enemy Visible"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Downed Ally Exists (ID 51)",
+          "description": "Portuguese symbol: EXISTE_ALIADO_INCAPACITADO. English alias: downed_ally_exists. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 51
+                },
+                {
+                  "enum": [
+                    "EXISTE_ALIADO_INCAPACITADO",
+                    "downed_ally_exists",
+                    "Downed Ally Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Is Unarmed (ID 52)",
+          "description": "Portuguese symbol: ESTOU_DESARMADO. English alias: is_unarmed. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 52
+                },
+                {
+                  "enum": [
+                    "ESTOU_DESARMADO",
+                    "is_unarmed",
+                    "Is Unarmed"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "My Weapon Is Sword (ID 53)",
+          "description": "Portuguese symbol: MINHA_ARMA_ESPADA. English alias: my_weapon_is_sword. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 53
+                },
+                {
+                  "enum": [
+                    "MINHA_ARMA_ESPADA",
+                    "my_weapon_is_sword",
+                    "My Weapon Is Sword"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "My Weapon Is Spear (ID 54)",
+          "description": "Portuguese symbol: MINHA_ARMA_LANCA. English alias: my_weapon_is_spear. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 54
+                },
+                {
+                  "enum": [
+                    "MINHA_ARMA_LANCA",
+                    "my_weapon_is_spear",
+                    "My Weapon Is Spear"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "My Weapon Is Axe (ID 55)",
+          "description": "Portuguese symbol: MINHA_ARMA_MACHADO. English alias: my_weapon_is_axe. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 55
+                },
+                {
+                  "enum": [
+                    "MINHA_ARMA_MACHADO",
+                    "my_weapon_is_axe",
+                    "My Weapon Is Axe"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Armory Exists (ID 56)",
+          "description": "Portuguese symbol: ARMARIA_EXISTE. English alias: armory_exists. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 56
+                },
+                {
+                  "enum": [
+                    "ARMARIA_EXISTE",
+                    "armory_exists",
+                    "Armory Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Hospital Exists (ID 57)",
+          "description": "Portuguese symbol: ENFERMARIA_EXISTE. English alias: hospital_exists. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 57
+                },
+                {
+                  "enum": [
+                    "ENFERMARIA_EXISTE",
+                    "hospital_exists",
+                    "Hospital Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Resources Sufficient (ID 58)",
+          "description": "Portuguese symbol: RECURSOS_SUFICIENTES. English alias: resources_sufficient. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 58
+                },
+                {
+                  "enum": [
+                    "RECURSOS_SUFICIENTES",
+                    "resources_sufficient",
+                    "Resources Sufficient"
+                  ]
+                }
+              ]
+            },
+            "item": {
+              "enum": [
+                "sword",
+                "spear",
+                "axe",
+                "armory",
+                "hospital"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Unarmed (ID 61)",
+          "description": "Portuguese symbol: ALVO_DESARMADO. English alias: target_is_unarmed. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 61
+                },
+                {
+                  "enum": [
+                    "ALVO_DESARMADO",
+                    "target_is_unarmed",
+                    "Target Is Unarmed"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Weapon Has One Use Left (ID 62)",
+          "description": "Portuguese symbol: ARMA_UM_USO. English alias: weapon_has_one_use_left. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 62
+                },
+                {
+                  "enum": [
+                    "ARMA_UM_USO",
+                    "weapon_has_one_use_left",
+                    "Weapon Has One Use Left"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Near Armory (ID 63)",
+          "description": "Portuguese symbol: PERTO_ARMARIA. English alias: near_armory. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 63
+                },
+                {
+                  "enum": [
+                    "PERTO_ARMARIA",
+                    "near_armory",
+                    "Near Armory"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Carrying Someone (ID 64)",
+          "description": "Portuguese symbol: CARREGANDO_ALGUEM. English alias: carrying_someone. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 64
+                },
+                {
+                  "enum": [
+                    "CARREGANDO_ALGUEM",
+                    "carrying_someone",
+                    "Carrying Someone"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Has Sword (ID 65)",
+          "description": "Portuguese symbol: ALVO_ESPADA. English alias: target_has_sword. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 65
+                },
+                {
+                  "enum": [
+                    "ALVO_ESPADA",
+                    "target_has_sword",
+                    "Target Has Sword"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Has Spear (ID 66)",
+          "description": "Portuguese symbol: ALVO_LANCA. English alias: target_has_spear. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 66
+                },
+                {
+                  "enum": [
+                    "ALVO_LANCA",
+                    "target_has_spear",
+                    "Target Has Spear"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Has Axe (ID 67)",
+          "description": "Portuguese symbol: ALVO_MACHADO. English alias: target_has_axe. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 67
+                },
+                {
+                  "enum": [
+                    "ALVO_MACHADO",
+                    "target_has_axe",
+                    "Target Has Axe"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Visible Ally Has Weapon (ID 68)",
+          "description": "Portuguese symbol: ALIADO_VISIVEL_USA_ARMA. English alias: visible_ally_has_weapon. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 68
+                },
+                {
+                  "enum": [
+                    "ALIADO_VISIVEL_USA_ARMA",
+                    "visible_ally_has_weapon",
+                    "Visible Ally Has Weapon"
+                  ]
+                }
+              ]
+            },
+            "weapon": {
+              "enum": [
+                "sword",
+                "spear",
+                "axe"
+              ]
+            }
+          }
+        },
+        {
+          "title": "Near Target (ID 69)",
+          "description": "Portuguese symbol: PERTO_ALVO. English alias: near_target. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 69
+                },
+                {
+                  "enum": [
+                    "PERTO_ALVO",
+                    "near_target",
+                    "Near Target"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Ally (ID 103)",
+          "description": "Portuguese symbol: TARGET_IS_ALLY. English alias: target_is_ally. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 103
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_ALLY",
+                    "target_is_ally",
+                    "Target Is Ally"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Enemy (ID 104)",
+          "description": "Portuguese symbol: TARGET_IS_ENEMY. English alias: target_is_enemy. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 104
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_ENEMY",
+                    "target_is_enemy",
+                    "Target Is Enemy"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Downed (ID 105)",
+          "description": "Portuguese symbol: TARGET_IS_DOWNED. English alias: target_is_downed. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 105
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_DOWNED",
+                    "target_is_downed",
+                    "Target Is Downed"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Compare Ally Count (ID 106)",
+          "description": "Portuguese symbol: ALLY_COUNT_COMPARE. English alias: compare_ally_count. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "comparator",
+            "value"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 106
+                },
+                {
+                  "enum": [
+                    "ALLY_COUNT_COMPARE",
+                    "compare_ally_count",
+                    "Compare Ally Count"
+                  ]
+                }
+              ]
+            },
+            "comparator": {
+              "enum": [
+                "eq",
+                "neq",
+                "gt",
+                "gte",
+                "lt",
+                "lte"
+              ]
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                {
+                  "$ref": "#/$defs/countExpression"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Compare Enemy Count (ID 107)",
+          "description": "Portuguese symbol: ENEMY_COUNT_COMPARE. English alias: compare_enemy_count. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "comparator",
+            "value"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 107
+                },
+                {
+                  "enum": [
+                    "ENEMY_COUNT_COMPARE",
+                    "compare_enemy_count",
+                    "Compare Enemy Count"
+                  ]
+                }
+              ]
+            },
+            "comparator": {
+              "enum": [
+                "eq",
+                "neq",
+                "gt",
+                "gte",
+                "lt",
+                "lte"
+              ]
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                {
+                  "$ref": "#/$defs/countExpression"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target Is Building (ID 108)",
+          "description": "Portuguese symbol: TARGET_IS_BUILDING. English alias: target_is_building. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 108
+                },
+                {
+                  "enum": [
+                    "TARGET_IS_BUILDING",
+                    "target_is_building",
+                    "Target Is Building"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Downed Enemy Exists (ID 109)",
+          "description": "Portuguese symbol: ENEMY_DOWNED_EXISTS. English alias: downed_enemy_exists. Category: selection.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 109
+                },
+                {
+                  "enum": [
+                    "ENEMY_DOWNED_EXISTS",
+                    "downed_enemy_exists",
+                    "Downed Enemy Exists"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "countExpression": {
+      "oneOf": [
+        {
+          "title": "Ally Count (ID 59)",
+          "description": "Portuguese symbol: NUMERO_ALIADOS. English alias: ally_count. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 59
+                },
+                {
+                  "enum": [
+                    "NUMERO_ALIADOS",
+                    "ally_count",
+                    "Ally Count"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Enemy Count (ID 60)",
+          "description": "Portuguese symbol: NUMERO_INIMIGOS. English alias: enemy_count. Category: conditions.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op"
+          ],
+          "properties": {
+            "op": {
+              "description": "Block ID, Portuguese symbol, English alias, or English name.",
+              "anyOf": [
+                {
+                  "const": 60
+                },
+                {
+                  "enum": [
+                    "NUMERO_INIMIGOS",
+                    "enemy_count",
+                    "Enemy Count"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

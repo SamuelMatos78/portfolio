@@ -1,0 +1,9 @@
+{
+  "id": "pending-owner-decision",
+  "status": "pending",
+  "capPerSide": 3,
+  "humanThresholds": null,
+  "machineThresholds": null,
+  "acceptance": {"wins":1,"losses":4,"humanity":1,"machines":2},
+  "reason": "Não existe política de placar do evento no projeto original. A fórmula depende de decisão do proprietário. Resultados reais são auditados; pontos permanecem pendentes."
+}

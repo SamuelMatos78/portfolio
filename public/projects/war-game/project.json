@@ -1,0 +1,32 @@
+{
+  "id": "war-game",
+  "identity": {
+    "name": "War Game / Code Arena",
+    "subtitle": "O campo de batalha dos programas e generais",
+    "status": "integração local"
+  },
+  "visual": {
+    "background": "#0d1312",
+    "foreground": "#e9eee5",
+    "accent": "#b1ccc0",
+    "font": "system-ui, sans-serif",
+    "overlay": 0.3,
+    "vignette": false,
+    "atmosphere": "grid",
+    "tone": "intimidating",
+    "backgroundSize": "cover",
+    "backgroundPosition": "center",
+    "backgroundOpacity": 1
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 260
+  },
+  "sections": [
+    {
+      "type": "text",
+      "title": "War Game / Code Arena",
+      "body": "O campo de batalha dos programas e generais — Experiência interativa integrada ao motor original."
+    }
+  ]
+}

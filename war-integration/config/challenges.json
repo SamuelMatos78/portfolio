@@ -1,0 +1,25 @@
+[
+  {
+    "id": "easy",
+    "name": "Save AraMoney",
+    "objective": "AraMoney saiu para comprar um carro para sua amada. Enquanto ele se distraía escolhendo o presente, seu modelo enlouqueceu: Claude Sonnet tomou o comando e o sequestrou. Derrote Sonnet e traga AraMoney de volta. O carro pode esperar; o resgate, não.",
+    "programFile": null,
+    "image": "/projects/war-game/AraMoney.png",
+    "opponentId": "claude"
+  },
+  {
+    "id": "medium",
+    "name": "Save Gabs",
+    "objective": "Darwin mandou GPT capturar Gabs, sua futura designer, para poder escolher o próprio visual. O general decidiu que até a direção de arte precisava de uma operação militar. Derrote GPT / Astra e liberte Gabs antes que ele aprove o uniforme sozinho.",
+    "programFile": null,
+    "image": "/projects/war-game/gabs.jpeg",
+    "opponentId": "astra"
+  },
+  {
+    "id": "hard",
+    "name": "Beat Evil Darwin",
+    "objective": "Enfrente a versão reduzida do general. A submissão oficial será fornecida pelo Dono do Domínio.",
+    "programFile": null,
+    "image": null
+  }
+]

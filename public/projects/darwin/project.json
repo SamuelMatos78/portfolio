@@ -1,0 +1,32 @@
+{
+  "id": "darwin",
+  "identity": {
+    "name": "Darwin",
+    "subtitle": "General artificial de programação genética",
+    "status": "integração local"
+  },
+  "visual": {
+    "background": "#0d1312",
+    "foreground": "#e9eee5",
+    "accent": "#b7dc83",
+    "font": "system-ui, sans-serif",
+    "overlay": 0.3,
+    "vignette": false,
+    "atmosphere": "grid",
+    "tone": "intimidating",
+    "backgroundSize": "cover",
+    "backgroundPosition": "center",
+    "backgroundOpacity": 1
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 260
+  },
+  "sections": [
+    {
+      "type": "text",
+      "title": "Darwin",
+      "body": "General artificial de programação genética — Experiência interativa integrada ao motor original."
+    }
+  ]
+}

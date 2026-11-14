@@ -1,6 +1,7 @@
 import { useLocale } from "../i18n/useLocale";
 import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
+import WarExperience from "../war/WarExperience";
 import Home from "../pages/Home";
 import Projects from "../pages/Projects";
 import Champions from "../pages/Champions";
@@ -23,7 +24,7 @@ function Scene({ location }: { location: SceneLocation }) {
     case "projects": return <Projects />;
     case "champions": return <Champions />;
     case "updates": return <Updates />;
-    case "project-experience": return <ProjectExperience projectId={location.projectId} />;
+    case "project-experience": return ["darwin", "code-event", "war-game"].includes(location.projectId) ? <WarExperience projectId={location.projectId} /> : <ProjectExperience projectId={location.projectId} />;
     case "category": return <Champions categoryId={location.categoryId} />;
     case "information": return <Information id={location.informationId} />;
   }

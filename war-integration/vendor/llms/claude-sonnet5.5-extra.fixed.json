@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 1,
+  "body": [
+    {
+      "op": 72,
+      "body": [
+        {
+          "op": 70,
+          "condition": {
+            "op": 64
+          },
+          "then": [
+            {
+              "op": 70,
+              "condition": {
+                "op": 57
+              },
+              "then": [
+                {
+                  "op": 86
+                },
+                {
+                  "op": 42
+                },
+                {
+                  "op": 70,
+                  "condition": {
+                    "op": 64
+                  },
+                  "then": [
+                    {
+                      "op": 41
+                    },
+                    {
+                      "op": 42
+                    }
+                  ]
+                }
+              ],
+              "else": [
+                {
+                  "op": 41
+                }
+              ]
+            }
+          ],
+          "else": [
+            {
+              "op": 70,
+              "condition": {
+                "op": 52
+              },
+              "then": [
+                {
+                  "op": 70,
+                  "condition": {
+                    "op": 56
+                  },
+                  "then": [
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 58,
+                        "item": "sword"
+                      },
+                      "then": [
+                        {
+                          "op": 85
+                        }
+                      ],
+                      "else": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 58,
+                            "item": "spear"
+                          },
+                          "then": [
+                            {
+                              "op": 85
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 58,
+                        "item": "axe"
+                      },
+                      "then": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 68,
+                            "weapon": "axe"
+                          },
+                          "then": [],
+                          "else": [
+                            {
+                              "op": 22
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 52
+                      },
+                      "then": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 58,
+                            "item": "sword"
+                          },
+                          "then": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 68,
+                                "weapon": "sword"
+                              },
+                              "then": [],
+                              "else": [
+                                {
+                                  "op": 20
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 52
+                      },
+                      "then": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 58,
+                            "item": "spear"
+                          },
+                          "then": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 68,
+                                "weapon": "spear"
+                              },
+                              "then": [],
+                              "else": [
+                                {
+                                  "op": 21
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 52
+                      },
+                      "then": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 58,
+                            "item": "axe"
+                          },
+                          "then": [
+                            {
+                              "op": 22
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 58,
+                                "item": "sword"
+                              },
+                              "then": [
+                                {
+                                  "op": 20
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 58,
+                                    "item": "spear"
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 21
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 52
+                      },
+                      "then": [
+                        {
+                          "op": 87
+                        },
+                        {
+                          "op": 10
+                        },
+                        {
+                          "op": 88
+                        },
+                        {
+                          "op": 11
+                        },
+                        {
+                          "op": 11
+                        }
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 58,
+                        "item": "armory"
+                      },
+                      "then": [
+                        {
+                          "op": 85
+                        },
+                        {
+                          "op": 12
+                        }
+                      ],
+                      "else": [
+                        {
+                          "op": 87
+                        },
+                        {
+                          "op": 10
+                        },
+                        {
+                          "op": 88
+                        },
+                        {
+                          "op": 11
+                        },
+                        {
+                          "op": 11
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else": [
+                {
+                  "op": 70,
+                  "condition": {
+                    "op": 50
+                  },
+                  "then": [
+                    {
+                      "op": 100
+                    },
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 53
+                      },
+                      "then": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 61
+                          },
+                          "then": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 69
+                              },
+                              "then": [
+                                {
+                                  "op": 30
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": 84,
+                                  "steps": 2
+                                }
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 66
+                              },
+                              "then": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 69
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 30
+                                    }
+                                  ],
+                                  "else": [
+                                    {
+                                      "op": 84,
+                                      "steps": 2
+                                    }
+                                  ]
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 65
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 70,
+                                      "condition": {
+                                        "op": 106,
+                                        "comparator": "gte",
+                                        "value": {
+                                          "op": 60
+                                        }
+                                      },
+                                      "then": [
+                                        {
+                                          "op": 70,
+                                          "condition": {
+                                            "op": 69
+                                          },
+                                          "then": [
+                                            {
+                                              "op": 30
+                                            }
+                                          ],
+                                          "else": [
+                                            {
+                                              "op": 84,
+                                              "steps": 2
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "else": [
+                                        {
+                                          "op": 31,
+                                          "weapon": "spear"
+                                        },
+                                        {
+                                          "op": 37
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "else": [
+                                    {
+                                      "op": 70,
+                                      "condition": {
+                                        "op": 68,
+                                        "weapon": "spear"
+                                      },
+                                      "then": [
+                                        {
+                                          "op": 70,
+                                          "condition": {
+                                            "op": 69
+                                          },
+                                          "then": [
+                                            {
+                                              "op": 30
+                                            }
+                                          ],
+                                          "else": [
+                                            {
+                                              "op": 84,
+                                              "steps": 2
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "else": [
+                                        {
+                                          "op": 31,
+                                          "weapon": "spear"
+                                        },
+                                        {
+                                          "op": 37
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "else": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 54
+                          },
+                          "then": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 61
+                              },
+                              "then": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 69
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 30
+                                    }
+                                  ],
+                                  "else": [
+                                    {
+                                      "op": 84,
+                                      "steps": 2
+                                    }
+                                  ]
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 67
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 70,
+                                      "condition": {
+                                        "op": 69
+                                      },
+                                      "then": [
+                                        {
+                                          "op": 30
+                                        }
+                                      ],
+                                      "else": [
+                                        {
+                                          "op": 84,
+                                          "steps": 2
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "else": [
+                                    {
+                                      "op": 70,
+                                      "condition": {
+                                        "op": 66
+                                      },
+                                      "then": [
+                                        {
+                                          "op": 70,
+                                          "condition": {
+                                            "op": 106,
+                                            "comparator": "gte",
+                                            "value": {
+                                              "op": 60
+                                            }
+                                          },
+                                          "then": [
+                                            {
+                                              "op": 70,
+                                              "condition": {
+                                                "op": 69
+                                              },
+                                              "then": [
+                                                {
+                                                  "op": 30
+                                                }
+                                              ],
+                                              "else": [
+                                                {
+                                                  "op": 84,
+                                                  "steps": 2
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "else": [
+                                            {
+                                              "op": 31,
+                                              "weapon": "axe"
+                                            },
+                                            {
+                                              "op": 37
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "else": [
+                                        {
+                                          "op": 70,
+                                          "condition": {
+                                            "op": 68,
+                                            "weapon": "axe"
+                                          },
+                                          "then": [
+                                            {
+                                              "op": 70,
+                                              "condition": {
+                                                "op": 69
+                                              },
+                                              "then": [
+                                                {
+                                                  "op": 30
+                                                }
+                                              ],
+                                              "else": [
+                                                {
+                                                  "op": 84,
+                                                  "steps": 2
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "else": [
+                                            {
+                                              "op": 31,
+                                              "weapon": "axe"
+                                            },
+                                            {
+                                              "op": 37
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 61
+                              },
+                              "then": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 69
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 30
+                                    }
+                                  ],
+                                  "else": [
+                                    {
+                                      "op": 84,
+                                      "steps": 2
+                                    }
+                                  ]
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 65
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 70,
+                                      "condition": {
+                                        "op": 69
+                                      },
+                                      "then": [
+                                        {
+                                          "op": 30
+                                        }
+                                      ],
+                                      "else": [
+                                        {
+                                          "op": 84,
+                                          "steps": 2
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "else": [
+                                    {
+                                      "op": 70,
+                                      "condition": {
+                                        "op": 67
+                                      },
+                                      "then": [
+                                        {
+                                          "op": 70,
+                                          "condition": {
+                                            "op": 106,
+                                            "comparator": "gte",
+                                            "value": {
+                                              "op": 60
+                                            }
+                                          },
+                                          "then": [
+                                            {
+                                              "op": 70,
+                                              "condition": {
+                                                "op": 69
+                                              },
+                                              "then": [
+                                                {
+                                                  "op": 30
+                                                }
+                                              ],
+                                              "else": [
+                                                {
+                                                  "op": 84,
+                                                  "steps": 2
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "else": [
+                                            {
+                                              "op": 31,
+                                              "weapon": "sword"
+                                            },
+                                            {
+                                              "op": 37
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "else": [
+                                        {
+                                          "op": 70,
+                                          "condition": {
+                                            "op": 68,
+                                            "weapon": "sword"
+                                          },
+                                          "then": [
+                                            {
+                                              "op": 70,
+                                              "condition": {
+                                                "op": 69
+                                              },
+                                              "then": [
+                                                {
+                                                  "op": 30
+                                                }
+                                              ],
+                                              "else": [
+                                                {
+                                                  "op": 84,
+                                                  "steps": 2
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "else": [
+                                            {
+                                              "op": 31,
+                                              "weapon": "sword"
+                                            },
+                                            {
+                                              "op": 37
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": 70,
+                      "condition": {
+                        "op": 51
+                      },
+                      "then": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 57
+                          },
+                          "then": [
+                            {
+                              "op": 43
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 57
+                              },
+                              "then": [],
+                              "else": [
+                                {
+                                  "op": 70,
+                                  "condition": {
+                                    "op": 58,
+                                    "item": "hospital"
+                                  },
+                                  "then": [
+                                    {
+                                      "op": 86
+                                    },
+                                    {
+                                      "op": 13
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 106,
+                                "comparator": "gte",
+                                "value": 2
+                              },
+                              "then": [
+                                {
+                                  "op": 37
+                                },
+                                {
+                                  "op": 90
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": 85
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "else": [
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 57
+                          },
+                          "then": [],
+                          "else": [
+                            {
+                              "op": 70,
+                              "condition": {
+                                "op": 58,
+                                "item": "hospital"
+                              },
+                              "then": [
+                                {
+                                  "op": 86
+                                },
+                                {
+                                  "op": 13
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": 70,
+                          "condition": {
+                            "op": 106,
+                            "comparator": "gte",
+                            "value": 2
+                          },
+                          "then": [
+                            {
+                              "op": 37
+                            },
+                            {
+                              "op": 90
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": 85
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": 77,
+          "seconds": 0.2857142857142857
+        }
+      ]
+    }
+  ]
+}

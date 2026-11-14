@@ -361,14 +361,15 @@
 }
 
 .category-card.tone--humanitarian {
-  background: linear-gradient(130deg, #f1f1e6, #e0e9d6);
+  background: linear-gradient(130deg, #e5f4d0, #ccebb0);
   color: #213b31;
   --muted: #526258;
+  border-color: #8ac45b;
   border-radius: 20px;
 }
 
 .category-card.tone--humanitarian:is(:hover, :focus-visible) {
-  background: linear-gradient(130deg, #faf8ed, #e5eedb);
+  background: linear-gradient(130deg, #f1ffda, #d5f0b5);
   box-shadow: 0 24px 42px -22px #29493666;
 }
 
@@ -468,11 +469,23 @@
 
 :root .pixel-font.contact-form__submit,
 :root .pixel-font.home-primary,
-:root .pixel-font.resume-download,
-:root .tone--humanitarian .pixel-font {
+:root .pixel-font.resume-download {
   --pixel-ink: #203a30;
   --pixel-accent: #446649;
   --pixel-depth: #28452f;
+}
+
+:root .tone--humanitarian .pixel-font {
+  --pixel-ink: #17351f;
+  --pixel-accent: #9edb52;
+  --pixel-depth: #4e7f29;
+  background-color: #b7e477;
+}
+
+:root .tone--humanitarian .pixel-font:not(:disabled):is(:hover, :focus-visible) {
+  --pixel-accent: #78b936;
+  --pixel-depth: #3d6824;
+  background-color: #a5d95e;
 }
 
 :root .pixel-font.contact-form__submit {

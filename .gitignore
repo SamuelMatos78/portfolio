@@ -62,3 +62,6 @@ Desktop.ini
 
 # Private author context (keep local, never version)
 /docs_autoupdate/author/
+
+# Persistent local event database
+/war-integration/data/

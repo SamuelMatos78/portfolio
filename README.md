@@ -21,6 +21,12 @@ npm run build
 
 Os testes usam o runner e o suporte nativo a TypeScript do Node 24+. O runtime do site roda no navegador. `npm run preview` serve o build localmente; esta etapa não publica o site.
 
+`npm run dev` inicia o Vite e o backend da Code Arena juntos. Abra
+`http://localhost:5173/#tp=code-event`. O backend escolhe uma porta local livre, acessada automaticamente pelo
+proxy do Vite. Ctrl+C encerra os dois processos. Para iniciar apenas a interface,
+use `npm run dev:frontend`; nesse caso a arena requer `npm run arena` em outro
+terminal. Veja a [documentação da integração](war-integration/README.md).
+
 ## Estrutura
 
 ```text

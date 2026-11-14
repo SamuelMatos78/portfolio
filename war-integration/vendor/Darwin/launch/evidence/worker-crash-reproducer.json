@@ -1,0 +1,104 @@
+{
+  "candidate": 41,
+  "opponent": 1,
+  "side": "A",
+  "program": {
+    "schemaVersion": 1,
+    "body": [
+      {
+        "op": 87
+      },
+      {
+        "op": 10
+      },
+      {
+        "op": 88
+      },
+      {
+        "op": 11
+      },
+      {
+        "op": 85
+      },
+      {
+        "op": 12
+      },
+      {
+        "op": 20
+      },
+      {
+        "op": 81,
+        "steps": 1
+      },
+      {
+        "op": 89
+      },
+      {
+        "op": 83,
+        "steps": 100
+      },
+      {
+        "op": 82,
+        "steps": 100
+      },
+      {
+        "op": 87
+      },
+      {
+        "op": 90
+      },
+      {
+        "op": 31,
+        "weapon": "sword"
+      },
+      {
+        "op": 30
+      }
+    ]
+  },
+  "other": {
+    "schemaVersion": 1,
+    "body": [
+      {
+        "op": 87
+      },
+      {
+        "op": 10
+      },
+      {
+        "op": 88
+      },
+      {
+        "op": 11
+      },
+      {
+        "op": 85
+      },
+      {
+        "op": 12
+      },
+      {
+        "op": 20
+      },
+      {
+        "op": 81,
+        "steps": 1
+      },
+      {
+        "op": 83,
+        "steps": 100
+      },
+      {
+        "op": 82,
+        "steps": 100
+      },
+      {
+        "op": 90
+      },
+      {
+        "op": 30
+      }
+    ]
+  },
+  "error": "TypeError: Cannot read properties of null (reading 'path')"
+}

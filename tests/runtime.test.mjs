@@ -96,7 +96,9 @@ test("catalog validation rejects duplicate IDs and conflicting destinations", ()
   data.projects.push(data.projects[0]);
   assert.throws(() => validateCatalog(data), /Duplicate/);
   const collision = structuredClone(rawCatalog);
+  const previousId = collision.projects[0].id;
   collision.projects[0].id = "home";
+  collision.updates = collision.updates.map((update) => update.projectId === previousId ? { ...update, projectId: "home" } : update);
   assert.throws(() => destinationRegistry(validateCatalog(collision), base), /collision/);
 });
 
@@ -112,4 +114,16 @@ test("all shipped manifests validate; malformed sections and unsafe links are re
     assert.throws(() => validateManifest(invalid, project.id), /HTTP/);
     assert.throws(() => validateManifest(raw, "different-id"), /does not match/);
   }
+});
+
+test("Darwin, Code Event and Code Arena use the shared destination registry and history", async () => {
+  const run = session();
+  for (const id of ["darwin", "code-event", "war-game"]) {
+    assert.equal((await run.bus.execute(`tp ${id}`)).kind, "success");
+    assert.deepEqual(run.state.currentScene, { id: "project-experience", projectId: id });
+  }
+  await run.bus.execute("back");
+  assert.equal(run.state.selectedProject, "code-event");
+  await run.bus.execute("back");
+  assert.equal(run.state.selectedProject, "darwin");
 });

@@ -1,0 +1,659 @@
+# CODE EVENT — DARWIN VS HUMANIDADE
+## Desafio competitivo de programação estratégica
+
+Você participará de um benchmark competitivo no qual diferentes inteligências artificiais produzirão programas para controlar equipes de soldados.
+
+**Sua missão é desenvolver a estratégia mais forte que conseguir, utilizando exclusivamente a linguagem de blocos fornecida.**
+
+Seu programa enfrentará estratégias de outras inteligências artificiais e, posteriormente, um agente evolutivo chamado Darwin.
+
+Você deve buscar a **maior taxa de vitória possível**, não simplesmente a maior quantidade de eliminações.
+
+Pense cuidadosamente sobre economia, combate, posicionamento, defesa, logística, sobrevivência, exploração de vantagens e ações coordenadas.
+
+Você pode utilizar todo o seu raciocínio para elaborar o programa, mas, durante a partida, nenhuma inteligência artificial será consultada: somente suas instruções previamente escritas serão executadas.
+
+---
+
+# 1. Regras fundamentais
+
+## Campo de batalha
+
+- Mapa de 100×100 células.
+- Duas equipes com exatamente 10 soldados cada.
+- Territórios simétricos.
+- Uma floresta e uma mina por equipe.
+- Recursos: madeira e minério.
+- Construções: armaria e enfermaria.
+- Todos os soldados começam desarmados.
+- Na arena do browser game, a partida dura até 540 segundos (9 minutos em velocidade 1×).
+- Uma equipe vence quando elimina a capacidade de sobrevivência e recuperação da equipe adversária.
+- Caso o tempo termine sem vencedor, ocorre empate.
+
+## Programação
+
+Você escreve **um único programa para os dez soldados da sua equipe**.
+
+Todos executam o mesmo código, mas cada soldado possui:
+
+- Posição própria.
+- Equipamento próprio.
+- Estado próprio.
+- Alvo selecionado próprio.
+- Visão própria.
+- Ação corrente própria.
+- Pilha de execução própria.
+
+Isso significa que condições podem fazer soldados diferentes executarem comportamentos diferentes.
+
+Você não pode atribuir diretamente dez programas individuais.
+
+É permitido criar comportamentos emergentes por meio de condições, loops e ações.
+
+---
+
+# 2. Movimentação e percepção
+
+Soldados se movem exclusivamente em quatro direções:
+
+- Cima.
+- Baixo.
+- Esquerda.
+- Direita.
+
+Não existem movimentos diagonais.
+
+Velocidades:
+
+| Estado | Velocidade |
+|---|---|
+| Soldado normal | 3,5 blocos/s |
+| Carregando incapacitado | 2 blocos/s |
+
+Alcance visual: **10 blocos**, medidos por distância euclidiana, respeitando obstáculos que bloqueiem a visão.
+
+Quando você observa um soldado, conhece seu equipamento:
+
+- Espada.
+- Lança.
+- Machado.
+- Desarmado.
+
+Também consegue identificar sua equipe e se está incapacitado.
+
+Não conhece o código adversário.
+
+Não tem acesso à posição atual de inimigos fora da percepção, exceto informações anteriormente observadas, quando preservadas pelo motor.
+
+### Movimentação simples e composta
+
+Existem duas possibilidades.
+
+**Controle detalhado:**
+
+```text
+ENQUANTO inimigo não estiver adjacente
+    Mover em direção ao inimigo 1 bloco
+
+    SE número de aliados >= 2
+        Continuar
+    SENÃO
+        Recuar
+```
+
+Esse tipo de programa pode fazer verificações intermediárias.
+
+**Comando composto:**
+
+```text
+IR ATACAR (lanceiro)
+```
+
+Nesse caso, o soldado tenta alcançar e atacar um lanceiro conhecido, sem executar verificações estratégicas adicionais durante a ordem.
+
+Comandos compostos não são mais rápidos que comandos básicos equivalentes.
+
+---
+
+# 3. Economia e construções
+
+Todos os recursos pertencem à equipe.
+
+| Ação | Madeira | Minério | Duração |
+|---|---:|---:|---:|
+| Coletar madeira | +3 | 0 | 4 s |
+| Coletar minério | 0 | +2 | 5 s |
+| Construir armaria | -12 | -8 | 12 s |
+| Construir enfermaria | -10 | -5 | 10 s |
+| Fabricar espada | -2 | -4 | 4 s |
+| Fabricar lança | -4 | -2 | 5 s |
+| Fabricar machado | -3 | -5 | 6 s |
+
+A coleta somente entrega recursos ao terminar.
+
+Se um soldado for incapacitado durante a coleta, não produz recursos naquela operação.
+
+Soldados precisam estar próximos dos locais apropriados para construir, coletar e equipar.
+
+Uma equipe pode possuir uma armaria e uma enfermaria ativas.
+
+A armaria permite fabricar e trocar equipamentos.
+
+A enfermaria permite tratar soldados aliados incapacitados.
+
+As construções podem ser destruídas pelo adversário.
+
+## Construções inimigas
+
+- Armaria: 3 pontos de integridade.
+- Enfermaria: 3 pontos de integridade.
+- Cada ataque válido remove 1 ponto.
+- Um ataque contra construção dura 3 segundos.
+- Atacar construções não consome durabilidade de arma.
+
+Uma armaria destruída impede fabricação ou troca de armas até sua reconstrução.
+
+Uma enfermaria destruída impede novos tratamentos até sua reconstrução.
+
+Construções não atacam automaticamente.
+
+---
+
+# 4. Armas e vantagens
+
+Existem três armas.
+
+**A matriz de vantagens é cíclica:**
+
+- Espada vence lança.
+- Lança vence machado.
+- Machado vence espada.
+
+Armas são necessárias para atacar.
+
+Soldados desarmados não conseguem atacar nem contra-atacar.
+
+### Durabilidade
+
+Cada arma suporta duas derrubadas válidas contra soldados armados.
+
+- Primeira derrubada de adversário armado: perde 1 uso.
+- Segunda derrubada de adversário armado: arma quebra.
+- Derrubar um soldado desarmado não desgasta a arma.
+- Empates não desgastam armas.
+- Atacar construções não desgasta armas.
+
+Quando a arma quebra, o soldado fica desarmado.
+
+Para se rearmar, precisa retornar à armaria da própria equipe e possuir os recursos necessários.
+
+O rearmamento não acontece automaticamente.
+
+Um soldado também pode trocar sua arma antes de quebrá-la, desde que esteja próximo da armaria e possa pagar pelo novo equipamento.
+
+---
+
+# 5. Combate — leia cuidadosamente
+
+**Todo engajamento dura exatamente 5 segundos simulados.**
+
+Quando um soldado inicia ataque contra outro:
+
+1. O confronto começa.
+2. Os participantes permanecem engajados.
+3. Outros combatentes podem chegar durante os cinco segundos.
+4. Reforços podem alterar o resultado.
+5. O confronto é resolvido coletivamente ao final do prazo.
+
+### Ataques adjacentes
+
+Um soldado pode receber ataques a partir dos quatro espaços cardinais adjacentes.
+
+Não é possível atacar diagonalmente.
+
+Aliados próximos não participam automaticamente do combate.
+
+Para contribuir, precisam receber uma instrução de ataque válida ou estar defendendo-se de um ataque recebido.
+
+### Defesa automática
+
+Um soldado armado e apto consegue defender-se quando atacado, mesmo que seu programa não contenha uma instrução de defesa.
+
+Entretanto:
+
+**Um soldado não inicia ataques espontaneamente só porque vê inimigos.**
+
+Se um soldado está parado e você passa perto dele, ele não ataca a menos que seu programa determine isso.
+
+Mas, se você atacá-lo, ele poderá derrotá-lo automaticamente caso esteja apto e seu equipamento seja superior.
+
+### Soldados indefesos
+
+Soldados ficam indefesos enquanto:
+
+- Coletam recursos.
+- Constroem estruturas.
+- Fabricam ou trocam equipamentos.
+- Tratam incapacitados.
+- Pegam incapacitados.
+- Soltam incapacitados.
+- Transportam incapacitados.
+
+Mesmo armados, não conseguem se defender nessas situações.
+
+Um soldado parado, caminhando normalmente ou protegendo uma posição pode defender-se quando atacado.
+
+### Reforços e proteção coletiva
+
+O combate não é resolvido por duelos individuais isolados quando existem reforços.
+
+Exemplo:
+
+- Um espadachim ataca um lanceiro.
+- A espada possui vantagem contra a lança.
+- Antes dos cinco segundos terminarem, um machadeiro aliado do lanceiro chega e ataca o espadachim.
+- Machado possui vantagem contra espada.
+- O grupo lanceiro + machadeiro pode vencer coletivamente.
+- Ambos os aliados permanecem de pé.
+- O espadachim é derrubado.
+
+O lanceiro não é derrubado antecipadamente só porque estava perdendo seu confronto individual.
+
+### Cobertura coletiva
+
+Em confrontos com múltiplos combatentes, o motor verifica quais tipos de arma conseguem cobrir os adversários.
+
+Uma equipe possui cobertura completa quando cada combatente armado e apto do grupo adversário é coberto por pelo menos um combatente apto de sua equipe com vantagem de arma.
+
+Se somente uma equipe possuir cobertura completa, ela vence.
+
+Se a disputa for exclusivamente entre combatentes do mesmo tipo de arma, a quantidade dos participantes daquele tipo pode decidir.
+
+Em confronto individual com armas iguais, o tempo de posse da arma desempata.
+
+Confrontos mistos sem vencedor exclusivo pelos critérios definidos terminam empatados.
+
+Empates provocam recuo de até dois blocos, conforme as células disponíveis.
+
+**Não existe bônus genérico de superioridade numérica.**
+
+Cinco soldados desarmados não vencem um espadachim simplesmente pela quantidade.
+
+A presença de aliados não significa automaticamente que eles ajudarão.
+
+### Implicação estratégica
+
+Você pode criar estratégias envolvendo:
+
+- Ataques coordenados.
+- Intervenção de reforços.
+- Iscas.
+- Proteção de coletores.
+- Distração de guardas.
+- Ataques a construções.
+- Mistura de tipos de armas.
+- Recuos seletivos.
+- Defesa de rotas de abastecimento.
+
+Mas todas essas estratégias precisam surgir de combinações válidas dos blocos disponíveis.
+
+---
+
+# 6. Incapacitação, resgate e captura
+
+Um ataque vencedor contra soldado derruba o adversário.
+
+A derrubada incapacita, mas não mata imediatamente.
+
+Um incapacitado morre depois de 30 segundos sem tratamento efetivo.
+
+Qualquer soldado pode carregar:
+
+- Aliados incapacitados.
+- Inimigos incapacitados.
+
+Regras:
+
+| Ação | Duração |
+|---|---:|
+| Pegar incapacitado | 2 s |
+| Soltar incapacitado | 1 s |
+| Tratar aliado | 8 s |
+| Recuperação após tratamento | 2 s |
+
+Enquanto carrega alguém, o soldado:
+
+- Anda a 2 blocos/s.
+- Não pode atacar.
+- Não pode se defender.
+- Precisa soltar o incapacitado para voltar a combater.
+
+O tempo até a morte do incapacitado fica pausado enquanto ele está sendo carregado.
+Ao ser solto, a contagem retoma do tempo que restava antes do transporte.
+O tempo da ação de pegar conta até o transporte começar; a pausa termina quando a soltura é concluída.
+
+A enfermaria somente trata aliados.
+
+### Capturar caído
+
+O comando CAPTURAR CAÍDO pega o incapacitado elegível mais próximo quando está adjacente.
+
+Não distingue amigo ou inimigo.
+
+O comando IR CAPTURAR CAÍDO navega até o incapacitado mais próximo e tenta pegá-lo.
+
+Existem também comandos específicos para resgatar aliados e capturar inimigos.
+
+Você pode usar as condições ALVO É ALIADO e ALVO É INIMIGO para decidir o que fazer depois.
+
+---
+
+# 7. Linguagem disponível — catálogo oficial
+
+Você só pode utilizar os blocos abaixo.
+
+Os IDs são parte do protocolo e não podem ser alterados.
+
+## Economia — IDs 10–13
+
+```text
+10 COLETAR_MADEIRA
+11 COLETAR_MINERIO
+12 CONSTRUIR_ARMARIA
+13 CONSTRUIR_ENFERMARIA
+```
+
+## Equipamentos — IDs 20–23
+
+```text
+20 EQUIPAR_ESPADA
+21 EQUIPAR_LANCA
+22 EQUIPAR_MACHADO
+23 TROCAR_EQUIPAMENTO
+```
+
+## Combate e proteção — IDs 30–37
+
+```text
+30 ATACAR_ALVO
+31 IR_ATACAR_TIPO
+32 MANTER_POSICAO
+33 PROTEGER_ALIADO
+34 PROTEGER_CONSTRUCAO
+35 RECUAR
+36 ATACAR_CONSTRUCAO
+37 IR_DESTRUIR_CONSTRUCAO
+```
+
+## Transporte e tratamento — IDs 40–45
+
+```text
+40 CAPTURAR_CAIDO
+41 SOLTAR_INCAPACITADO
+42 TRATAR_ALIADO
+43 IR_RESGATAR_ALIADO
+44 IR_CAPTURAR_INIMIGO
+45 IR_CAPTURAR_CAIDO
+```
+
+## Condições e observação — IDs 50–69
+
+```text
+50 EXISTE_INIMIGO_VISIVEL
+51 EXISTE_ALIADO_INCAPACITADO
+52 ESTOU_DESARMADO
+53 MINHA_ARMA_ESPADA
+54 MINHA_ARMA_LANCA
+55 MINHA_ARMA_MACHADO
+56 ARMARIA_EXISTE
+57 ENFERMARIA_EXISTE
+58 RECURSOS_SUFICIENTES
+59 NUMERO_ALIADOS
+60 NUMERO_INIMIGOS
+61 ALVO_DESARMADO
+62 ARMA_UM_USO
+63 PERTO_ARMARIA
+64 CARREGANDO_ALGUEM
+65 ALVO_ESPADA
+66 ALVO_LANCA
+67 ALVO_MACHADO
+68 ALIADO_VISIVEL_USA_ARMA
+69 PERTO_ALVO
+```
+
+Os blocos 59 e 60 retornam quantidades observáveis.
+
+Eles não informam superioridade militar.
+
+Os soldados contados podem estar desarmados, ocupados ou sem instruções de combate.
+
+## Controle de fluxo — IDs 70–77
+
+```text
+70 IF
+71 ELSE
+72 REPEAT_FOREVER
+73 REPEAT_UNTIL
+74 WHILE
+75 BREAK
+76 CONTINUE
+77 WAIT
+```
+
+É permitido:
+
+- Usar condições aninhadas.
+- Usar loops dentro de outros loops.
+- Verificar condições entre deslocamentos.
+- Criar estratégias que se repetem ao longo da partida.
+
+Loops não podem produzir execução infinita sem passagem de tempo.
+
+Não é necessário utilizar todos os comandos.
+
+## Movimentação — IDs 80–93
+
+```text
+80 MOVE_UP
+81 MOVE_DOWN
+82 MOVE_LEFT
+83 MOVE_RIGHT
+84 MOVE_TOWARD_TARGET
+85 GO_ARMORY
+86 GO_HOSPITAL
+87 GO_FOREST
+88 GO_MINE
+89 GO_ALLY
+90 GO_ENEMY
+91 GO_DOWNED
+92 GO_ENEMY_BUILDING
+93 STOP_MOVEMENT
+```
+
+Os comandos básicos podem receber quantidades de blocos.
+
+Os comandos compostos navegam automaticamente para seus destinos usando deslocamentos cardinais, sem aplicar estratégias adicionais.
+
+## Seleção e verificações — IDs 100–109
+
+```text
+100 SELECT_NEAREST_ENEMY
+101 SELECT_NEAREST_ALLY
+102 SELECT_NEAREST_DOWNED
+103 TARGET_IS_ALLY
+104 TARGET_IS_ENEMY
+105 TARGET_IS_DOWNED
+106 ALLY_COUNT_COMPARE
+107 ENEMY_COUNT_COMPARE
+108 TARGET_IS_BUILDING
+109 ENEMY_DOWNED_EXISTS
+```
+
+Os comandos 106 e 107 permitem comparações com parâmetros:
+
+```text
+==
+!=
+<
+<=
+>
+>=
+```
+
+As condições referentes ao alvo consultam o alvo selecionado no estado individual do soldado.
+
+---
+
+# 8. Diretrizes de construção da estratégia
+
+Você possui liberdade estratégica, mas precisa respeitar as regras do motor.
+
+Considere cuidadosamente os seguintes problemas:
+
+### Economia inicial
+
+Os soldados começam desarmados.
+
+Uma estratégia que apenas ordena ataques não consegue iniciar ofensivas armadas.
+
+Você precisa considerar recursos, construção da armaria e fabricação de equipamentos.
+
+### Concorrência pelos recursos
+
+Dez soldados executam o mesmo programa.
+
+Se todos tentarem consumir os mesmos recursos, nem todos conseguirão.
+
+Seu programa precisa lidar com ações indisponíveis e mudanças no estado compartilhado.
+
+### Diversidade de equipamentos
+
+Uma equipe composta somente por espadachins pode encontrar problemas contra machadeiros.
+
+Entretanto, diversificar armas também possui custos e consequências.
+
+Determine sua estratégia utilizando a linguagem disponível.
+
+### Tempo de exposição
+
+Coletar, construir e tratar incapacitados cria períodos de vulnerabilidade.
+
+Um programa que verifica inimigos entre tarefas pode se comportar de maneira diferente de outro que repete ações sem observação.
+
+### Combates coletivos
+
+Um combatente individualmente desfavorecido pode sobreviver se receber reforços capazes de vencer o confronto coletivo.
+
+É necessário que esses reforços efetivamente participem dentro dos cinco segundos.
+
+### Logística
+
+Armas quebram.
+
+Soldados precisam ser rearmados.
+
+Construções podem ser destruídas.
+
+Incapacitados podem ser transportados para longe da enfermaria.
+
+### Tempo da partida
+
+Você dispõe de até 540 segundos na arena do browser game. A duração pode ser reduzida pelo jogador.
+
+Estratégias que acumulam recursos indefinidamente, sem buscar uma condição de vitória, podem terminar empatadas.
+
+### Segurança do programa
+
+Evite programas que:
+
+- Fiquem presos em loops sem progresso.
+- Tentem coletar recursos fora da área apropriada.
+- Tentem fabricar armas longe da armaria.
+- Tentem atacar soldados fora do alcance válido.
+- Tentem tratar inimigos.
+- Pressuponham que unidades próximas ajudarão automaticamente.
+- Pressuponham que comandos compostos executem condições que não foram programadas.
+- Dependam de informações ocultas.
+- Dependam de coordenadas ou posições iniciais não fornecidas pelo regulamento.
+
+Utilize o JSON Schema oficial para determinar exatamente quais parâmetros e estruturas são permitidos.
+
+---
+
+# 9. Sua missão
+
+Crie **um único programa estratégico completo**, destinado a vencer o maior número possível de partidas contra programas desconhecidos.
+
+Você não conhece previamente o programa inimigo.
+
+Não assuma que o adversário utilizará determinada arma ou estratégia.
+
+Seu programa deve funcionar usando exclusivamente as observações e ações disponíveis durante a simulação.
+
+Você pode explorar combinações avançadas dos blocos, inclusive comportamentos emergentes de divisão de trabalho, defesa, proteção, captura e combate.
+
+Priorize:
+
+1. Vitória.
+2. Capacidade de adaptação a adversários desconhecidos.
+3. Sobrevivência e recuperação da equipe.
+4. Eficiência econômica e militar.
+5. Robustez contra comportamentos inesperados.
+
+Essas prioridades são objetivos estratégicos, não uma função numérica de pontuação fornecida pelo motor.
+
+Não é necessário explicar suas decisões ao jogador.
+
+---
+
+# 10. Formato de entrega obrigatório
+
+Sua saída deve ser **exclusivamente um documento JSON válido**, conforme o JSON Schema oficial fornecido junto deste prompt.
+
+Não entregue:
+
+- Pseudocódigo.
+- Explicações.
+- Markdown.
+- Blocos de código com três crases.
+- Código JavaScript, Python ou TypeScript.
+- Instruções inexistentes no catálogo.
+- Campos adicionais que não estejam no schema.
+
+Utilize somente os IDs e parâmetros oficialmente aceitos.
+
+O JSON deve possuir a estrutura raiz exigida pelo schema, incluindo a versão do protocolo.
+
+Valide mentalmente:
+
+- IDs existentes.
+- Tipos dos parâmetros.
+- Comparadores permitidos.
+- Estrutura dos IFs e loops.
+- Condições válidas.
+- Comandos de movimentação válidos.
+- Ausência de referências inexistentes.
+- Ausência de loops sem progressão temporal.
+- Ausência de recursos exclusivos ou privilégios especiais.
+
+**Não invente campos quando o schema não os permitir.**
+
+Se tiver acesso a um validador ou ambiente de testes autorizado, utilize-o. Caso contrário, produza o programa mais correto possível por análise.
+
+O programa será executado pelo mesmo motor utilizado para todos os competidores.
+
+Depois de aprovado, será congelado para o benchmark.
+
+Não haverá intervenção da LLM durante a partida.
+
+---
+
+# 11. JSON Schema oficial
+
+O documento `program.schema.json`, exportado pelo motor v1.1, será fornecido como anexo ou abaixo deste texto.
+
+Ele é a autoridade final para a sintaxe serializada e os parâmetros aceitos. O catálogo e as regras acima são a autoridade para o significado estratégico das instruções.
+
+Se existir incompatibilidade entre o exemplo de sintaxe e o JSON Schema real, siga o JSON Schema real sem alterar o significado das regras.
+
+**Agora construa sua melhor estratégia e devolva somente o JSON do programa.**

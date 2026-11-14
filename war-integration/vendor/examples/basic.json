@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "body": [
+    {
+      "op": 72,
+      "body": [
+        {
+          "op": 70,
+          "condition": { "op": 50 },
+          "then": [
+            { "op": 100 },
+            { "op": 31, "weapon": "spear" }
+          ],
+          "else": [
+            { "op": 87 },
+            { "op": 10 }
+          ]
+        }
+      ]
+    }
+  ]
+}

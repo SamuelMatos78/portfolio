@@ -1,0 +1,32 @@
+{
+  "id": "code-event",
+  "identity": {
+    "name": "Evil DARWIN vs HUMANIDADE",
+    "subtitle": "Programe seu exército. Desafie as máquinas.",
+    "status": "integração local"
+  },
+  "visual": {
+    "background": "#0d1312",
+    "foreground": "#e9eee5",
+    "accent": "#e9ac7b",
+    "font": "system-ui, sans-serif",
+    "overlay": 0.3,
+    "vignette": false,
+    "atmosphere": "grid",
+    "tone": "intimidating",
+    "backgroundSize": "cover",
+    "backgroundPosition": "center",
+    "backgroundOpacity": 1
+  },
+  "entrance": {
+    "transition": "rise",
+    "durationMs": 260
+  },
+  "sections": [
+    {
+      "type": "text",
+      "title": "Evil DARWIN vs HUMANIDADE",
+      "body": "Programe seu exército. Desafie as máquinas. — Experiência interativa integrada ao motor original."
+    }
+  ]
+}

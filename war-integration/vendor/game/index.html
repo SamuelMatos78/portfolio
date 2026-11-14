@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121916">
+  <meta name="description" content="Programe a tropa dos humanos e enfrente estratégias congeladas em uma arena de código.">
+  <title>Code War — A última defesa</title>
+  <link rel="stylesheet" href="/game.css">
+  <link rel="stylesheet" href="/ide.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Code War, início"><span class="brand-mark">⟨/⟩</span><span>CODE<span class="brand-light">WAR</span><small>HUMANIDADE × MÁQUINAS</small></span></a>
+    <nav aria-label="Navegação"><a class="active" href="#arena">Arena</a><a href="#workshop">IDE</a><a href="#commandLibrary">Comandos</a><a href="/api-docs" target="_blank" rel="noopener">API ↗</a></nav>
+    <span class="connection"><i></i> ARENA LOCAL</span>
+  </header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">CAMPO DE BATALHA / TEMPORADA 01</p><h1>A última defesa<span>.</span></h1><p>Dez humanos. Um programa. A estratégia é sua.</p></div><div class="match-tag"><span id="phaseBadge">PREPARAÇÃO</span><small>Códigos congelados durante o confronto</small></div></div>
+    <div class="game-layout">
+      <div class="arena-column">
+        <section id="arena" class="arena-card" aria-label="Arena de batalha">
+          <div class="match-hud">
+            <div class="team-heading"><div class="portrait human"></div><div><span class="eyebrow human-text">SEU EXÉRCITO</span><h2>Humanidade</h2><div><b id="humanAlive">10</b><span> / 10 soldados ativos</span></div></div></div>
+            <div class="clock-heading"><span id="clock">00:00</span><small id="clockLimit">DE 12:00</small><span class="versus">VS</span></div>
+            <div class="team-heading enemy-heading"><div><span class="eyebrow enemy-text">CÓDIGO CONGELADO</span><h2 id="enemyName">Evil Darwin</h2><div><b id="enemyAlive">10</b><span> / 10 soldados ativos</span></div></div><div class="portrait enemy"></div></div>
+          </div>
+          <div class="battlefield-wrap">
+            <canvas id="battlefield" width="1200" height="800" aria-label="Campo de batalha com tropas, florestas, minas e construções" tabindex="0"></canvas>
+            <div class="map-location"><i></i> VALE DOS ANCESTRAIS <span>100 × 100</span></div>
+            <div class="map-tools"><button id="gridToggle" title="Mostrar grade" aria-label="Mostrar grade" aria-pressed="false">▦</button><button id="zoomOut" title="Diminuir zoom" aria-label="Diminuir zoom">−</button><button id="zoomIn" title="Aumentar zoom" aria-label="Aumentar zoom">+</button><button id="centerMap" title="Centralizar mapa" aria-label="Centralizar mapa">⌖</button></div>
+            <div class="map-ready" id="readyOverlay"><span class="ready-icon">⚔</span><h3>O próximo movimento<br>começa no seu código.</h3><p>Escolha um adversário e prepare sua estratégia.</p><span class="ready-tip">FLORESTAS · MINAS · ARMARIAS · ENFERMARIAS</span></div>
+            <div class="preparing-overlay" id="preparingOverlay" hidden><span class="spinner"></span><h3>Preparando o confronto</h3><p>Congelando estratégias e montando a arena…</p></div>
+            <div class="result-overlay" id="resultOverlay" hidden><span class="eyebrow" id="resultEyebrow">CONFRONTO ENCERRADO</span><h3 id="resultTitle">Fim de partida</h3><p id="resultSummary"></p><div class="result-metrics" id="resultMetrics"></div><div><button id="replayButton" class="secondary">Rever batalha</button><button id="resultNew" class="primary">Nova estratégia →</button></div></div>
+            <div id="unitInspector" class="unit-inspector" hidden></div>
+          </div>
+          <div class="battle-controls"><div class="transport"><button id="pauseButton" disabled>Ⅱ Pausar</button><button id="newMatch" disabled title="Encerrar e voltar à preparação">↺ Reiniciar</button></div><div class="speed-control" role="group" aria-label="Velocidade do confronto"><span>VELOCIDADE</span><button data-speed="1" class="selected" aria-pressed="true">1×</button><button data-speed="2" aria-pressed="false">2×</button><button data-speed="3" aria-pressed="false">3×</button><button data-speed="4" aria-pressed="false">4×</button></div><span class="live-status" id="liveStatus"><i></i> Aguardando estratégia</span></div>
+          <div class="battle-progress" role="progressbar" aria-label="Tempo de confronto" aria-valuemin="0" aria-valuemax="720" aria-valuenow="0"><i id="battleProgress"></i></div>
+          <div class="resource-bar"><span class="resource-team human-text">HUMANOS</span><span>♧ <b id="humanWood">0</b> madeira</span><span>◆ <b id="humanOre">0</b> minério</span><span>⚔ <b id="humanArmed">0</b> armados</span><i></i><span class="resource-team enemy-text" id="enemyResourceName">VILÃO</span><span>♧ <b id="enemyWood">0</b></span><span>◆ <b id="enemyOre">0</b></span><span>⚔ <b id="enemyArmed">0</b></span></div>
+        </section>
+
+        <section class="opponents-section" aria-labelledby="opponentsTitle"><div class="section-line"><div><p class="eyebrow">ESCOLHA QUEM ENFRENTAR</p><h2 id="opponentsTitle">Conheça seu adversário</h2></div><span class="pill">⌁ BUILDS CONGELADAS</span></div><div id="villainCards" class="villain-cards" role="group" aria-label="Adversários"></div><details class="frozen-details"><summary>Ver o código congelado do adversário <span id="villainHash"></span></summary><p id="villainDescription"></p><pre id="villainCode"></pre></details></section>
+        <section class="field-notes"><div><span class="eyebrow">SUA TROPA</span><span class="subtle">Clique em um soldado para inspecionar.</span></div><div id="troopRoster" class="troop-roster"></div><div class="battle-log"><span class="eyebrow">DIÁRIO DE BATALHA</span><ol id="battleLog"><li>A arena está pronta. Sua estratégia decide o que acontece a seguir.</li></ol></div></section>
+      </div>
+
+      <section id="workshop" class="workshop" aria-label="IDE de estratégias">
+        <div class="workshop-title"><div><span class="eyebrow human-text">CENTRAL DE ESTRATÉGIAS</span><h2>Seu próximo movimento começa aqui.</h2><p>Escreva os nomes dos comandos ou monte blocos visuais. Os dois modos controlam a mesma tropa de dez humanos.</p></div><span class="editor-state" id="editorState">● EDITÁVEL</span></div>
+        <div class="editor-toolbar">
+          <div class="editor-tabs" role="tablist" aria-label="Modo de programação"><button id="codeMode" role="tab" aria-selected="true" aria-controls="codePanel" class="selected">{ } Código</button><button id="blocksMode" role="tab" aria-selected="false" aria-controls="blockPanel">▦ Blocos visuais</button></div>
+          <div class="editor-tools"><label class="file-button" for="importCode">↑ Importar código</label><input id="importCode" type="file" accept=".cw,.txt,.json,application/json,text/plain" hidden><button id="exportCode" title="Baixar seu código">↓ Baixar código</button><button id="formatCode" title="Formatar código (Ctrl + Shift + F)">Formatar</button><label class="font-control" for="editorFontSize">Fonte <select id="editorFontSize"><option value="14">14 px</option><option value="16" selected>16 px</option><option value="18">18 px</option><option value="20">20 px</option></select></label><button id="expandIDE" aria-pressed="false">⛶ Ampliar IDE</button></div>
+        </div>
+        <div class="ide-content">
+          <div class="ide-main">
+            <div class="editor-filebar"><span id="editorModeName">estrategia.cw</span><span>Ctrl + Enter: validar · Ctrl + S: salvar</span></div>
+            <div id="codePanel" role="tabpanel" aria-labelledby="codeMode">
+              <div class="code-editor"><pre id="lineNumbers" aria-hidden="true">1</pre><div class="code-surface"><pre id="syntaxHighlight" class="syntax-highlight" aria-hidden="true"></pre><textarea id="humanCode" aria-label="Código da estratégia da humanidade" spellcheck="false" wrap="off" autocapitalize="off" autocomplete="off" placeholder="Carregando sua estratégia…"></textarea></div></div>
+            </div>
+            <div id="blockPanel" role="tabpanel" aria-labelledby="blocksMode" hidden>
+              <div class="block-toolbar"><span id="blockCount">0 blocos</span><div><button id="blocksUndo" disabled>↶ Desfazer</button><button id="blocksRedo" disabled>↷ Refazer</button><button id="blocksEmpty">Limpar blocos</button></div></div>
+              <p class="blocks-hint">Escolha um comando no menu ou na biblioteca. Use ↑ ↓ para ordenar; arraste pelo símbolo ⠿ para mover entre grupos.</p><div id="blockCanvas" class="block-canvas"></div>
+            </div>
+            <div class="editor-footer"><span id="codeInfo">LINGUAGEM DA ARENA</span><button id="validateCode">✓ Validar estratégia</button></div>
+            <div id="editorMessage" class="editor-message" role="status" aria-live="polite">Carregando a arena…</div><div id="testResult" class="test-result" hidden></div>
+          </div>
+          <aside id="commandLibrary" class="command-dock" aria-label="Biblioteca de comandos"><div class="command-dock-heading"><span class="eyebrow">MANUAL DO COMANDANTE</span><h3>Biblioteca de comandos</h3><p>Consulte os nomes disponíveis e escreva-os no editor. Também é possível adicionar blocos prontos.</p></div><div class="command-filters"><input id="commandSearch" type="search" placeholder="Buscar por nome, ID ou ação…" aria-label="Buscar comando"><select id="commandCategory" aria-label="Categoria de comandos"><option value="">Todas as categorias</option></select></div><div class="command-result-line"><span id="commandResults">74 comandos</span><a href="/schema.json" target="_blank" rel="noopener">API técnica ↗</a></div><div id="commandList" class="command-list"></div></aside>
+        </div>
+        <div class="ide-launch"><div class="start-panel"><div><div class="duration-row"><label for="matchDuration">Duração do confronto<small>Até 12 min em 1×</small></label><div><input id="matchDuration" type="number" min="1" max="720" step="1" value="720" aria-describedby="durationHint"><span>seg</span></div></div><small id="durationHint">12:00 em 1× · 06:00 em 2× · 03:00 em 4×</small></div><button id="testCode" class="secondary wide">▷ Testar código <span>ENSAIO DE 30 S</span></button><button id="startBattle" class="primary wide">⚔ Iniciar confronto <span>→</span></button><p>Ao iniciar, sua estratégia fica congelada até o fim da partida.</p></div><div class="strategy-tip"><b>✦ Da ideia à batalha.</b><p>Colete recursos, construa a armaria e equipe os soldados. Um incapacitado carregado tem a contagem de morte pausada até ser solto.</p><button id="restoreStarter" class="text-button">↺ Carregar estratégia inicial</button></div></div>
+      </section>
+    </div>
+    <footer class="site-footer"><span>CODE WAR <span class="subtle">/ Humanidade × Máquinas</span></span><span>Espada vence lança · lança vence machado · machado vence espada</span><a href="/debug">Visualizador técnico ↗</a></footer>
+  </main>
+  <script type="module" src="/game.js"></script>
+</body>
+</html>

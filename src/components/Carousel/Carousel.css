@@ -22,7 +22,8 @@
 .carousel__item.tone--humanitarian .carousel__image { background: radial-gradient(ellipse at 50% 25%, #f6f1df, #dce6d4); border-color: #44664944; border-radius: 16px; }
 .carousel__item.tone--humanitarian .visual__fallback { background: none; }
 .carousel__item.tone--humanitarian .visual__fallback small { color: #526258; text-align: center; padding-inline: .5rem; letter-spacing: .08em; font-size: .5rem; }
-.carousel__item.tone--humanitarian .carousel__copy :is(.eyebrow, button .icon) { color: #abcba1; }
+.carousel__item.tone--humanitarian .carousel__copy .eyebrow { color: #b6dc90; }
+.carousel__item.tone--humanitarian .carousel__copy button .icon { color: #17351f; }
 .carousel__arrow { display: flex; align-items: center; justify-content: center; border-radius: 50%; }
 .carousel__copy button .icon { transition: transform 250ms; }
 .carousel__copy button:hover .icon { transform: translate(3px, -3px); }

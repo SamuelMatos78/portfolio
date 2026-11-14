@@ -1,6 +1,8 @@
 import { useLocale } from "../i18n/useLocale";
 import type { ProjectSection } from "../types/project";
 import Visual from "../components/Visual";
+import DownloadSection from "./DownloadSection";
+import CommandButton from "../components/CommandButton";
 
 export default function SectionRenderer({ section }: { section: ProjectSection }) {
   const { text } = useLocale();
@@ -18,9 +20,12 @@ export default function SectionRenderer({ section }: { section: ProjectSection }
     </div></section>;
     case "links": return <section className="experience-section"><h2>{text(section.title)}</h2><ul className="experience-links">
       {section.items.map((item, index) => <li key={index}>
-        {item.href ? <a href={item.href} target="_blank" rel="noopener noreferrer">{text(item.label)} ↗</a> : <span className="link-placeholder">{text(item.label)}</span>}
+        {item.command ? <CommandButton className="experience-links__action" command={item.command}>{text(item.label)} ↗</CommandButton>
+          : item.href ? <a href={item.href} target="_blank" rel="noopener noreferrer">{text(item.label)} ↗</a>
+            : <span className="link-placeholder">{text(item.label)}</span>}
         {item.note && <p>{text(item.note)}</p>}
       </li>)}
     </ul></section>;
+    case "downloads": return <DownloadSection section={section} />;
   }
 }

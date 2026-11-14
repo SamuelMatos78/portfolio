@@ -1,0 +1,33 @@
+{
+  "name": "darwin-humanity-simulation-engine",
+  "version": "1.3.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types debug/server.ts",
+    "start": "node --experimental-strip-types debug/server.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts test/*.test.js",
+    "test:darwin": "python3 -m unittest Darwin.test_darwin Darwin.test_viability Darwin.test_seeded -v",
+    "test:darwin:viability": "python3 -m unittest Darwin.test_viability -v",
+    "darwin:verify-viability": "python3 -m Darwin.verify_viability",
+    "darwin:military-validate": "python3 -m Darwin.military validate",
+    "darwin:military-benchmark": "python3 -m Darwin.military benchmark",
+    "darwin": "python3 Darwin/Darwin.py",
+    "bench": "node --experimental-strip-types bench/index.ts",
+    "debug": "node --experimental-strip-types debug/server.ts",
+    "schema:export": "node --experimental-strip-types scripts/export-schema.ts",
+    "battle:api": "node --experimental-strip-types scripts/battle-api.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3"
+  }
+}

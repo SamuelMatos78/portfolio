@@ -17,6 +17,7 @@ import type { ProjectSummary } from "../types/project";
 
 const data: HomeData = homeData;
 const regionColors = { intimidating: "#6f1420", neutral: "#a6c4d4", humanitarian: "#a6bc86" } as const;
+const featuredPriority = ["code-event", "canvas-companion", "darwin"];
 
 type Point = { x: number; y: number };
 
@@ -65,7 +66,12 @@ export default function Home() {
   const [regionOrigin, setRegionOrigin] = useState({ x: 0, y: 0 });
   const [observer, setObserver] = useState<ProjectSummary | null>(null);
   const observerIndex = useRef(0);
-  const featured = catalog?.projects.filter((project) => project.featured).map((project) => ({
+  const featured = catalog?.projects.filter((project) => project.featured)
+    .sort((a, b) => {
+      const first = featuredPriority.indexOf(a.id);
+      const second = featuredPriority.indexOf(b.id);
+      return (first < 0 ? featuredPriority.length : first) - (second < 0 ? featuredPriority.length : second);
+    }).map((project) => ({
     id: project.id, name: project.identity.name,
     type: text(catalog.categories.find((category) => category.id === project.category)?.label) || project.category,
     description: text(project.identity.subtitle), image: project.hall.image,

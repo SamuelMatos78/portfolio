@@ -7,13 +7,13 @@
       "en": "Autonomous Balatro Agent"
     },
     "status": {
-      "pt": "dormente",
-      "en": "dormant"
+      "pt": "early alpha",
+      "en": "early alpha"
     }
   },
   "visual": {
     "background": "#080e13",
-    "backgroundImage": "assets/portrait.jpeg",
+    "backgroundImage": "assets/Derisor.png",
     "foreground": "#e7f1f5",
     "accent": "#a6d8e8",
     "font": "ui-monospace, SFMono-Regular, Consolas, monospace",
@@ -41,12 +41,12 @@
         "pt": "AGENTE AUTÔNOMO DE BALATRO",
         "en": "AUTONOMOUS BALATRO AGENT"
       },
-      "image": "assets/portrait.jpeg"
+      "image": "assets/Derisor.png"
     },
     {
       "type": "text",
       "title": {
-        "pt": "Próximo sinal · 2 de novembro de 2026",
+        "pt": "Próximo sinal · 6 de novembro de 2026",
         "en": "Next signal · November 2, 2026"
       },
       "body": {
@@ -134,7 +134,7 @@
       },
       "items": [
         {
-          "image": "assets/portrait.jpeg",
+          "image": "assets/Derisor.png",
           "alt": {
             "pt": "Carta de Joker fornecida como visual inicial de Derisor",
             "en": "Joker card supplied as the initial visual for Derisor"

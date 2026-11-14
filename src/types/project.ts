@@ -59,7 +59,8 @@ export type ProjectSection =
   | { type: "text"; title: LocalizedText; body: LocalizedText }
   | { type: "stats"; title: LocalizedText; items: { label: LocalizedText; value: LocalizedText; note?: LocalizedText }[] }
   | { type: "gallery"; title: LocalizedText; items: { caption: LocalizedText; image?: string; alt: LocalizedText }[] }
-  | { type: "links"; title: LocalizedText; items: { label: LocalizedText; href?: string; note?: LocalizedText }[] };
+  | { type: "links"; title: LocalizedText; items: { label: LocalizedText; href?: string; command?: string; note?: LocalizedText }[] }
+  | { type: "downloads"; title: LocalizedText; body: LocalizedText; repository: string; repositoryUrl: string; items: { platform: "windows" | "linux"; fileName: string; fallbackUrl: string; label: LocalizedText; note?: LocalizedText }[] };
 
 export interface ProjectManifest {
   id: string;

@@ -29,7 +29,7 @@
         "en": "A territory of care, collaboration and technology in service of people."
       },
       "visual": {
-        "accent": "#446649",
+        "accent": "#287d46",
         "symbol": "02",
         "tone": "humanitarian",
         "icon": "heart-handshake"
@@ -91,7 +91,7 @@
         }
       },
       "hall": {
-        "image": "derisor/assets/portrait.jpeg",
+        "image": "derisor/assets/Derisor.png",
         "accent": "#a6d8e8",
         "hoverText": {
           "pt": "ALVO DETECTADO",
@@ -138,6 +138,39 @@
         "imageFit": "contain",
         "imagePosition": "center"
       }
+    },
+    {
+      "id": "canvas-companion",
+      "manifest": "canvas-companion/project.json",
+      "category": "initiatives",
+      "featured": true,
+      "identity": {
+        "name": "Canvas Companion",
+        "subtitle": {
+          "pt": "Apoio local para organizar estudos no Canvas",
+          "en": "Local support for organizing Canvas study work"
+        },
+        "status": {
+          "pt": "código aberto · contribuição em andamento",
+          "en": "open source · ongoing contribution"
+        }
+      },
+      "presentation": {
+        "tone": "humanitarian",
+        "icon": "heart-handshake",
+        "secondaryAccent": "#a38a52",
+        "imageFit": "contain"
+      },
+      "hall": {
+        "image": "canvas-companion/assets/canvas_logo.png",
+        "accent": "#64866d",
+        "hoverText": {
+          "pt": "ORGANIZE SEUS ESTUDOS",
+          "en": "ORGANIZE YOUR STUDIES"
+        },
+        "hoverEffect": "lift"
+      },
+      "command": "tp canvas-companion"
     },
     {
       "id": "h-suppression",
@@ -190,7 +223,7 @@
         "icon": "swords"
       },
       "hall": {
-        "image":"3ias-2048/assets/2048.png",
+        "image": "3ias-2048/assets/2048.png",
         "accent": "#b9caed",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",
@@ -221,7 +254,7 @@
         "icon": "sparkles"
       },
       "hall": {
-        "image":"existential-prompt-benchmark/assets/existencial.jpg",
+        "image": "existential-prompt-benchmark/assets/existencial.jpg",
         "accent": "#c4afe4",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",
@@ -252,7 +285,7 @@
         "icon": "scroll-text"
       },
       "hall": {
-        "image":"pdfall/assets/imgpdfall.svg",
+        "image": "pdfall/assets/imgpdfall.svg",
         "accent": "#e4bf96",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",
@@ -313,7 +346,7 @@
         "icon": "compass"
       },
       "hall": {
-        "image":"celesto/assets/celesto.jpg",
+        "image": "celesto/assets/celesto.jpg",
         "accent": "#c4afe4",
         "hoverText": {
           "pt": "EXPLORE ESTE TERRITÓRIO",
@@ -413,22 +446,94 @@
         "hoverEffect": "lift"
       },
       "command": "tp portfolio"
+    },
+    {
+      "id": "darwin",
+      "manifest": "darwin/project.json",
+      "category": "champions",
+      "featured": true,
+      "identity": {
+        "name": "Darwin",
+        "subtitle": "General artificial de programação genética",
+        "status": "integração local"
+      },
+      "hall": {
+        "image": "darwin/assets/portrait.svg",
+        "accent": "#b7dc83",
+        "hoverText": "EVOLUÇÃO EM CAMPO",
+        "hoverEffect": "scan"
+      },
+      "command": "tp darwin",
+      "presentation": {
+        "tone": "intimidating",
+        "icon": "swords",
+        "secondaryAccent": "#e2aa7b",
+        "imageFit": "contain"
+      }
+    },
+    {
+      "id": "code-event",
+      "manifest": "code-event/project.json",
+      "category": "champions",
+      "featured": true,
+      "identity": {
+        "name": "Evil DARWIN vs HUMANIDADE",
+        "subtitle": "Programe seu exército. Desafie as máquinas.",
+        "status": "integração local"
+      },
+      "hall": {
+        "image": "war-game/battlefield.png",
+        "accent": "#e9ac7b",
+        "hoverText": "ENTRAR NA ARENA",
+        "hoverEffect": "scan"
+      },
+      "command": "tp code-event",
+      "presentation": {
+        "tone": "intimidating",
+        "icon": "swords",
+        "secondaryAccent": "#e2aa7b",
+        "imageFit": "cover"
+      }
+    },
+    {
+      "id": "war-game",
+      "manifest": "war-game/project.json",
+      "category": "experiments",
+      "featured": true,
+      "identity": {
+        "name": "War Game / Code Arena",
+        "subtitle": "O campo de batalha dos programas e generais",
+        "status": "integração local"
+      },
+      "hall": {
+        "image": "war-game/battlefield.png",
+        "accent": "#b1ccc0",
+        "hoverText": "ENTRAR NA ARENA",
+        "hoverEffect": "scan"
+      },
+      "command": "tp war-game",
+      "presentation": {
+        "tone": "intimidating",
+        "icon": "swords",
+        "secondaryAccent": "#e2aa7b",
+        "imageFit": "cover"
+      }
     }
   ],
   "updates": [
     {
-      "id": "derisor-information-november-2026",
-      "date": "2026-11-02",
-      "projectId": "derisor",
+      "id": "evil-darwin-arrival-november-2026",
+      "date": "2026-11-13",
+      "projectId": "code-event",
       "title": {
-        "pt": "Novas informações sobre Derisor · 2 de novembro de 2026",
-        "en": "New information about Derisor · November 2, 2026"
+        "pt": "Evil Darwin chega em 16 de novembro de 2026",
+        "en": "Evil Darwin arrives on November 16, 2026"
       },
       "body": {
-        "pt": "Novas informações sobre o projeto Derisor serão divulgadas em 2 de novembro de 2026. Volte para acompanhar as novidades.",
-        "en": "New information about the Derisor project will be released on November 2, 2026. Check back for the update."
+        "pt": "O general chega ao domínio em 16 de novembro. Prepare sua estratégia e acompanhe o confronto entre humanos e máquinas na Code Event.",
+        "en": "The general arrives in the domain on November 16. Prepare your strategy and follow the showdown between humans and machines at the Code Event."
       },
-      "command": "tp derisor"
+      "command": "tp code-event"
     }
   ]
 }

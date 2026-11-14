@@ -140,10 +140,31 @@ function section(value: unknown): ProjectSection {
       type: "links", title, items: list(item.items, "links.items").map((value) => {
         const link = record(value, "link");
         const href = optionalString(link.href, "link.href");
+        const command = optionalString(link.command, "link.command");
         if (href && !/^https?:\/\/[^\s]+$/i.test(href)) throw new Error("Link href must be an absolute HTTP(S) URL.");
-        return { label: text(link.label, "link.label"), href, note: optionalText(link.note, "link.note") };
+        if (href && command) throw new Error("A link cannot have both href and command.");
+        if (command && !/^tp [a-z0-9]+(?:-[a-z0-9]+)*$/i.test(command)) throw new Error("Link command must be a travel command such as tp contact.");
+        return { label: text(link.label, "link.label"), href, command, note: optionalText(link.note, "link.note") };
       }),
     };
+    case "downloads": {
+      const repository = string(item.repository, "downloads.repository");
+      if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository)) throw new Error("downloads.repository must be owner/repository.");
+      const repositoryUrl = string(item.repositoryUrl, "downloads.repositoryUrl");
+      if (!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/?$/i.test(repositoryUrl)) throw new Error("downloads.repositoryUrl must link to GitHub.");
+      const items = list(item.items, "downloads.items").map((value) => {
+        const asset = record(value, "download");
+        const platform = option(asset.platform, ["windows", "linux"] as const, "download.platform");
+        const fileName = string(asset.fileName, "download.fileName");
+        if (!/^[A-Za-z0-9._-]+$/.test(fileName)) throw new Error("download.fileName must be a simple filename.");
+        const fallbackUrl = string(asset.fallbackUrl, "download.fallbackUrl");
+        if (!/^\/downloads\/[A-Za-z0-9._/-]+$/.test(fallbackUrl) || fallbackUrl.includes("..")) throw new Error("download.fallbackUrl must point to a local download asset.");
+        return { platform, fileName, fallbackUrl, label: text(asset.label, "download.label"), note: optionalText(asset.note, "download.note") };
+      });
+      unique(items.map((asset) => asset.platform), "download platform");
+      unique(items.map((asset) => asset.fileName), "download filename");
+      return { type: "downloads", title, body: text(item.body, "downloads.body"), repository, repositoryUrl, items };
+    }
     default: throw new Error(`Unsupported section type: ${String(item.type)}.`);
   }
 }
