@@ -65,3 +65,7 @@ Desktop.ini
 
 # Persistent local event database
 /war-integration/data/
+
+# Generated static browser Arena entry and assets
+/arena/
+/public/arena/

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "predev": "npm run resume:pdf",
-    "dev": "node scripts/dev-local.mjs",
+    "dev": "vite",
     "dev:frontend": "vite",
     "build": "node scripts/update-github-stats.mjs --optional && npm run resume:pdf && tsc -b && vite build",
     "github:update": "node scripts/update-github-stats.mjs",
@@ -15,10 +15,12 @@
     "content": "node scripts/content-helper.mjs",
     "preview": "vite preview",
     "arena": "node war-integration/server.ts",
+    "start": "vite preview --host 0.0.0.0",
     "test:arena": "node --test --test-isolation=none war-integration/test/*.test.ts",
+    "test:browser-arena": "vite build && node --test --test-isolation=none tests/browser-arena.test.mjs",
     "check:arena": "tsc -p war-integration/tsconfig.json",
     "test:engine": "node --test --test-isolation=none war-integration/vendor/test/*.test.ts war-integration/vendor/test/*.test.js",
-    "dev:local": "node scripts/dev-local.mjs"
+    "dev:local": "vite"
   },
   "dependencies": {
     "react": "^19.2.8",

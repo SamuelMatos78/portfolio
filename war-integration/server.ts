@@ -51,6 +51,7 @@ export async function createArena(database = process.env.EVENT_DB ?? resolve(roo
         res.writeHead(200,{'Content-Type':entry.type+'; charset=utf-8'}).end(entry.type === 'image/png' ? data : adaptArena(data.toString(),entry.file.split('/').pop()!)); return;
       }
       if(req.method === 'GET' && path === '/api/event/session') {const identity=store.identity(req.headers.cookie);if(identity.cookie)res.setHeader('Set-Cookie',identity.cookie);json(200,{anonymous:true});return;}
+      if(req.method === 'GET' && path === '/api/event/health') {json(200,{status:'ok',engineVersion:ENGINE_VERSION});return;}
       if(req.method === 'GET' && path === '/api/event/scoreboard') {json(200,store.scoreboard());return;}
       if(req.method === 'GET' && path === '/api/event/progress') {const identity=store.identity(req.headers.cookie);if(identity.cookie)res.setHeader('Set-Cookie',identity.cookie);const clearedChallengeIds=challenges.filter(c=>{const opponent=challengeOpponent(c);return !!opponent&&store.hasWonAgainst(identity.id,opponent.id);}).map(c=>c.id);const unlockedChallengeIds=challenges.filter((c,index)=>index===0||clearedChallengeIds.includes(challenges[index-1].id)).map(c=>c.id);json(200,{clearedChallengeIds,unlockedChallengeIds});return;}
       if(req.method === 'GET' && path === '/api/event/config') {json(200,{agents:[...agents.values()].map(publicAgent),challenges:challenges.map(c=>({...c,programFile:undefined,opponentId:challengeOpponent(c)?.id ?? null,opponentName:challengeOpponent(c)?.name ?? null,available:!!challengeOpponent(c)})),engineVersion:ENGINE_VERSION,rulesetVersion:RULESET_VERSION,seedSupported:false,scoring:policy});return;}
@@ -123,7 +124,8 @@ async function body(req:IncomingMessage) {
 }
 if(process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const {server}=await createArena();
-  const port=Number(process.env.ARENA_PORT ?? 4173);
-  server.listen(port,'127.0.0.1',()=>console.log(`Code Arena backend: http://127.0.0.1:${port}`));
+  const port=Number(process.env.PORT ?? process.env.ARENA_PORT ?? 4173);
+  const host=process.env.ARENA_HOST ?? (process.env.PORT ? '0.0.0.0' : '127.0.0.1');
+  server.listen(port,host,()=>console.log(`Code Arena backend: http://${host}:${port}`));
   for(const signal of ['SIGTERM','SIGINT'] as const)process.on(signal,()=>server.close(()=>process.exit()));
 }

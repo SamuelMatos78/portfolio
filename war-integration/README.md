@@ -1,3 +1,7 @@
+> **Modo atual:** a Arena publicada executa no navegador, em Web Workers, sem backend.
+> Consulte [BROWSER.md](BROWSER.md) para executar, publicar e entender o histórico local.
+> As instruções de servidor abaixo documentam a integração anterior, mantida como referência opcional.
+
 # Darwin × Humanidade — integração local
 
 Implementação local de 11/11/2026, com campanha atualizada em 12/11/2026. Não houve commit, push, PR, deploy ou publicação.
@@ -20,7 +24,7 @@ Também funcionam no Power Terminal: `tp darwin`, `tp code-event`, `tp war-game`
 continua disponível como alternativa equivalente, sem a etapa predev dos PDFs.
 Separadamente: `npm run arena` inicia o backend em 127.0.0.1:4173;
 `npm run dev:frontend` inicia somente o Vite. O proxy mantém os dois sob a mesma origem.
-`npm run preview` também possui proxy para o backend local.
+`npm run preview` inicia o backend e a prévia do build juntos, com o proxy configurado para a porta escolhida automaticamente. No desenvolvimento, `npm run dev` observa os módulos do backend e reinicia os processos quando eles mudam.
 O processo combinado escolhe uma porta livre para o backend e passa essa porta
 ao proxy do Vite, evitando conflito com o War Game original na porta 4173.
 `ARENA_PORT` permite fixar uma porta se necessário. Ctrl+C encerra a arena e o Vite.
@@ -186,6 +190,30 @@ escala horizontal será necessário coordenar jobs/limites e migrar a persistên
 Nunca apague o banco para reiniciar testes; os testes usam arquivos novos em `/tmp`.
 
 ## Limites e futura hospedagem
+
+### Publicação com o frontend na Vercel
+
+O domínio `samuelmatos.dev` serve o frontend estático na Vercel. Os proxies de
+`vite.config.ts` só funcionam em desenvolvimento e preview; eles não criam
+rotas de API no site publicado. O backend precisa de uma hospedagem Node 24+
+com disco persistente. Não use o SQLite em um sistema de arquivos temporário.
+
+Na hospedagem do backend, use a pasta `portfolio` como diretório de trabalho
+e `npm start` como comando de inicialização. Configure:
+
+- `PORT`: porta fornecida pela hospedagem; quando definida, o servidor escuta em `0.0.0.0`.
+- `EVENT_DB`: caminho do banco no volume persistente, por exemplo `/var/data/event.sqlite`.
+- `PUBLIC_ORIGIN=https://samuelmatos.dev`.
+- `COOKIE_SECURE=1` para o acesso público via HTTPS.
+
+A rota `/api/event/health` responde sem criar participantes e pode ser usada
+como verificação de disponibilidade.
+
+Depois de obter a URL HTTPS do backend, configure na Vercel um proxy externo
+para cada prefixo: `/api/event`, `/api/game` e `/arena`, preservando o
+caminho completo. Assim, o navegador continua acessando tudo por
+`samuelmatos.dev`, inclusive cookies, assets, partidas e placar.
+Esse proxy ainda não está configurado: falta a URL da hospedagem do backend.
 
 Corpo de até 1 MB; validador original com 2.000 nós, 32 níveis e 256 operações
 por decisão; máximo de três workers compartilhados, 512 MB por worker e timeout
