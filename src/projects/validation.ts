@@ -152,18 +152,19 @@ function section(value: unknown): ProjectSection {
       if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository)) throw new Error("downloads.repository must be owner/repository.");
       const repositoryUrl = string(item.repositoryUrl, "downloads.repositoryUrl");
       if (!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/?$/i.test(repositoryUrl)) throw new Error("downloads.repositoryUrl must link to GitHub.");
+      const releaseUrl = string(item.releaseUrl, "downloads.releaseUrl");
+      if (!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/releases(?:\/tag\/[A-Za-z0-9._-]+)?(?:#[A-Za-z0-9._-]+)?$/i.test(releaseUrl)
+        || !releaseUrl.startsWith(`${repositoryUrl.replace(/\/$/, "")}/releases`)) throw new Error("downloads.releaseUrl must link to this repository's Releases page.");
       const items = list(item.items, "downloads.items").map((value) => {
         const asset = record(value, "download");
         const platform = option(asset.platform, ["windows", "linux"] as const, "download.platform");
         const fileName = string(asset.fileName, "download.fileName");
         if (!/^[A-Za-z0-9._-]+$/.test(fileName)) throw new Error("download.fileName must be a simple filename.");
-        const fallbackUrl = string(asset.fallbackUrl, "download.fallbackUrl");
-        if (!/^\/downloads\/[A-Za-z0-9._/-]+$/.test(fallbackUrl) || fallbackUrl.includes("..")) throw new Error("download.fallbackUrl must point to a local download asset.");
-        return { platform, fileName, fallbackUrl, label: text(asset.label, "download.label"), note: optionalText(asset.note, "download.note") };
+        return { platform, fileName, label: text(asset.label, "download.label"), note: optionalText(asset.note, "download.note") };
       });
       unique(items.map((asset) => asset.platform), "download platform");
       unique(items.map((asset) => asset.fileName), "download filename");
-      return { type: "downloads", title, body: text(item.body, "downloads.body"), repository, repositoryUrl, items };
+      return { type: "downloads", title, body: text(item.body, "downloads.body"), repository, repositoryUrl, releaseUrl, items };
     }
     default: throw new Error(`Unsupported section type: ${String(item.type)}.`);
   }

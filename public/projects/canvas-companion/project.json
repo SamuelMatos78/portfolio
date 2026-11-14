@@ -103,36 +103,35 @@
         "en": "Download Canvas Companion."
       },
       "body": {
-        "pt": "Escolha a versão para o seu sistema. Os arquivos foram gerados a partir do app disponível no repositório; consulte o README para instruções de instalação e detalhes do projeto.",
-        "en": "Choose the build for your system. These files were generated from the app in the repository; see the README for installation steps and project details."
+        "pt": "Escolha seu sistema para abrir a release no GitHub e baixe o arquivo correspondente por lá. Consulte o README para instruções de instalação.",
+        "en": "Choose your system to open the GitHub release and download the matching file there. See the README for installation steps."
       },
       "repository": "SamuelMatos78/canvas-companion",
       "repositoryUrl": "https://github.com/SamuelMatos78/canvas-companion",
+      "releaseUrl": "https://github.com/SamuelMatos78/canvas-companion/releases#release-untagged-a198f9b7539f955ed556",
       "items": [
         {
           "platform": "windows",
-          "fileName": "Canvas-Companion-win.exe",
-          "fallbackUrl": "/downloads/canvas-companion/Canvas-Companion-win.exe",
+          "fileName": "Canvas-Companion-v0.5.0-windows-x86_64.exe",
           "label": {
-            "pt": "Baixar para Windows (.exe)",
-            "en": "Download for Windows (.exe)"
+            "pt": "Ver versão Windows no GitHub",
+            "en": "View the Windows build on GitHub"
           },
           "note": {
-            "pt": "Executável · aproximadamente 23 MB",
-            "en": "Executable · about 23 MB"
+            "pt": "Na release, selecione o .exe · aprox. 23 MB",
+            "en": "Select the .exe on the release · about 23 MB"
           }
         },
         {
           "platform": "linux",
-          "fileName": "Canvas-Companion-Linux",
-          "fallbackUrl": "/downloads/canvas-companion/Canvas-Companion-Linux",
+          "fileName": "Canvas-Companion-v0.5.0-linux-x86_64",
           "label": {
-            "pt": "Baixar para Linux",
-            "en": "Download for Linux"
+            "pt": "Ver versão Linux no GitHub",
+            "en": "View the Linux build on GitHub"
           },
           "note": {
-            "pt": "Executável · aproximadamente 42 MB",
-            "en": "Executable · about 42 MB"
+            "pt": "Na release, selecione o binário · aprox. 42 MB",
+            "en": "Select the binary on the release · about 42 MB"
           }
         }
       ]
