@@ -52,9 +52,51 @@
         "en": "From course material to a place to practice."
       },
       "body": {
-        "pt": "O app sincroniza materiais e atividades do Canvas, ajuda a encontrar o que você precisa e organiza uma área limpa para praticar. Se o aluno configurar um serviço de IA compatível, uma sugestão de resposta pode ser criada à parte para revisão. O app não envia respostas nem altera atividades no Canvas.",
-        "en": "The app syncs Canvas materials and assignments, helps students find what they need and organizes a clean workspace for practice. If a compatible AI service is configured, it can prepare a separate answer suggestion for review. The app does not submit answers or change Canvas assignments."
+        "pt": "O app sincroniza cursos, atividades, módulos e arquivos do Canvas. Depois, você pode localizar materiais e prazos sem percorrer cada curso, preparar uma área local para praticar e consultar o conteúdo sincronizado pelo assistente. Se configurar um serviço de IA compatível, ele também pode criar rascunhos separados para revisão. O app não envia respostas nem altera atividades no Canvas.",
+        "en": "The app syncs Canvas courses, assignments, modules and files. You can then find materials and deadlines without opening every course, prepare a local practice area and ask the assistant about synced content. With a compatible AI service configured, it can also create separate drafts for review. The app does not submit answers or change Canvas assignments."
       }
+    },
+    {
+      "type": "gallery",
+      "title": {
+        "pt": "Veja como usar na sua rotina de estudos.",
+        "en": "See how it fits into your study routine."
+      },
+      "items": [
+        {
+          "image": "assets/inicio_rapido.png",
+          "alt": {
+            "pt": "Tela de configuração da conexão com o Canvas e escolha de um modelo de IA",
+            "en": "Canvas connection setup and AI model selection screen"
+          },
+          "caption": {
+            "pt": "Conecte o endereço do Canvas da sua instituição e seu token pessoal; depois escolha o provedor de IA que pretende usar. O token e as chaves ficam no perfil deste computador e não são criptografados, então proteja o acesso ao dispositivo.",
+            "en": "Connect your institution's Canvas address and personal token, then choose the AI provider you want to use. The token and keys are stored in this computer's profile without encryption, so protect access to the device."
+          }
+        },
+        {
+          "image": "assets/copiloto.png",
+          "alt": {
+            "pt": "Assistente de estudos que pesquisa arquivos, itens do Canvas e prazos sincronizados",
+            "en": "Study assistant searching files, Canvas items and synced deadlines"
+          },
+          "caption": {
+            "pt": "Pergunte onde encontrar um PDF, quais atividades estão em um módulo ou quais prazos apareceram na última sincronização. A busca usa os dados locais; ao consultar o modelo escolhido, a pergunta e os trechos encontrados são enviados ao provedor. O assistente não altera o Canvas.",
+            "en": "Ask where to find a PDF, which assignments are in a module or which deadlines appeared in the latest sync. Search uses local data; when you consult the selected model, your question and matching excerpts are sent to that provider. The assistant does not change Canvas."
+          }
+        },
+        {
+          "image": "assets/automacoes.png",
+          "alt": {
+            "pt": "Painel de automações para sincronizar cursos, atualizar prazos e preparar exercícios",
+            "en": "Automation panel for syncing courses, updating deadlines and preparing exercises"
+          },
+          "caption": {
+            "pt": "Sincronize cursos, atividades, módulos e arquivos; atualize prazos sem baixar toda a biblioteca; ou prepare um espaço local para praticar. Também dá para resumir materiais e gerar rascunhos com IA para revisar. As ações ficam para você acompanhar e nenhuma resposta é enviada automaticamente ao Canvas.",
+            "en": "Sync courses, assignments, modules and files; update deadlines without downloading the whole library; or prepare a local space to practice. You can also summarize materials and generate AI drafts for review. You can track each action, and no answer is automatically sent to Canvas."
+          }
+        }
+      ]
     },
     {
       "type": "stats",

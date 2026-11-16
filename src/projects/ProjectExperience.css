@@ -303,9 +303,101 @@
 
 .gallery-grid figcaption {
   margin-top: .8rem;
-  font-size: .7rem;
-  line-height: 1.7;
-  opacity: .7;
+  font-size: .82rem;
+  line-height: 1.65;
+  opacity: .82;
+}
+
+.gallery-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  cursor: zoom-in;
+}
+
+.gallery-image-button:focus-visible {
+  outline: 3px solid var(--experience-accent);
+  outline-offset: 4px;
+}
+
+.gallery-image-button .visual img {
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.gallery-image-button:hover .visual img {
+  transform: scale(1.025);
+  filter: brightness(1.08);
+}
+
+.gallery-lightbox {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(4 9 7 / 88%);
+  backdrop-filter: blur(8px);
+}
+
+.gallery-lightbox__content {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  width: min(100%, 1200px);
+  max-height: 100%;
+  padding: 3.5rem 1rem 1rem;
+  border: 1px solid rgb(236 243 231 / 22%);
+  border-radius: 12px;
+  background: #111a15;
+  color: #f0eee2;
+  box-shadow: 0 24px 90px #000b;
+}
+
+.gallery-lightbox__content img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100svh - 13rem);
+  object-fit: contain;
+}
+
+.gallery-lightbox__content p {
+  max-width: 90ch;
+  max-height: 18svh;
+  margin: 0;
+  overflow: auto;
+  font-size: .85rem;
+  line-height: 1.6;
+  opacity: .88;
+}
+
+.gallery-lightbox__close {
+  position: absolute;
+  top: .65rem;
+  right: .65rem;
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0;
+  border: 1px solid rgb(236 243 231 / 35%);
+  border-radius: 50%;
+  background: #26352c;
+  color: #fff;
+  cursor: pointer;
+  font: 1.8rem/1 system-ui, sans-serif;
+}
+
+.gallery-lightbox__close:focus-visible {
+  outline: 3px solid #a9d18e;
+  outline-offset: 3px;
 }
 
 .experience-links {
